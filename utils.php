@@ -1,5 +1,3 @@
-
-<html>
 <?php
 function generateHTMLHeader($title, $CSS){
     echo <<<CHAINE_DE_FIN
@@ -20,7 +18,7 @@ function generateHTMLHeader($title, $CSS){
     </head>
     <header>
             <nav class="navbar navbar-expand-md navbar-dark  bg-pink">
-                <a class="navbar-brand" href="index.php"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&height=679"> Binet Love</a>
+                <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&height=679"> Binet Love</a>
                 <!-- en cas de collapse de la navbar on va avoir le texte Modal Web tout à gauche et la version collapsée tout à droite -->
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,10 +27,10 @@ function generateHTMLHeader($title, $CSS){
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="submit_letter.php">Ecrire une lettre</a>
+                            <a class="nav-link" href="index.php?page=letter">Ecrire une lettre</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="submit_design.php">Soumettre un Design</a>
+                            <a class="nav-link" href="index.php?page=design">Soumettre un Design</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="contact.php">Contact</a>
@@ -63,7 +61,7 @@ $page_list = array(
     "title"=>"Soumettre un design",
     "menutitle"=>"Soumettre un design"),
      array(
-    "name"=>"lettre",
+    "name"=>"letter",
     "title"=>"Écrire une lettre",
     "menutitle"=>"Écrire une lettre"),
      array(
@@ -75,22 +73,20 @@ $page_list = array(
 function checkPage($askedPage){
     global $page_list;
     foreach($page_list as $page){
-          if ($askedPage == $page["name"]){
+        if ($askedPage === $page["name"]){
             return true;
+        }  
     }
-        return false;
-    }
+    return false;
 }
 
 function getPageTitle($name){
-        global $page_list;
-        foreach($page_list as $page){
-            if ($name == $page["name"]){
-                return $page["title"];
-    }
+    global $page_list;
+    foreach($page_list as $page){
+        if ($name === $page["name"]){
+            return $page["title"];
+        }
     }
 }
 
 ?>
-</html>
-

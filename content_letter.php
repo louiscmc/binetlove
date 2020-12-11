@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <?php require("utils.php");
-        if(isset($_GET['page'])){
-            $askedPage=$_GET['page'];
-        }
-        else{$askedPage="welcome";}
-        $authorized= checkPage($askedPage);
-        if($authorized){
-            $pageTitle= getPageTitle($askedPage);
-        }
-        else{
-           $pageTitle="erreur"; 
-        }
-        $CSS="css/perso.css";
-        generateHTMLHeader($pageTitle, $CSS);
-        ?>
-            <div class="jumbotron jumbotron-fluid bg-faded">
+
+            <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
               <div class="container">
                   <h1 class="display-4">Spread <span class='red'>love</span>, not the virus</h1>
               </div>
@@ -112,8 +96,3 @@
                     </div>
                 </div>
             </div>
-       
-<?php 
-    generateHTMLFooter()
-?>
-</html>
