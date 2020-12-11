@@ -1,5 +1,8 @@
+<html>
 <?php
 function generateHTMLHeader($title, $CSS){
+    global $title;
+    global $CSS;
     echo <<<CHAINE_DE_FIN
     <head>
         <title>$title</title>
@@ -53,9 +56,5 @@ CHAINE_DE_FIN;}
     
 ?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+</html>
