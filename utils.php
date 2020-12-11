@@ -1,5 +1,16 @@
 <?php
 function generateHTMLHeader($title, $CSS){
+    $act_letter="";
+    $act_design="";
+    $act_contact="";
+    switch ($title){
+        case "Écrire une lettre": $act_letter=" active";
+            break;
+        case "Soumettre un design": $act_design=" active";
+            break;
+        case "Contact": $act_contact=" active";
+            break;
+    }
     echo <<<CHAINE_DE_FIN
     <head>
         <title>$title</title>
@@ -19,20 +30,18 @@ function generateHTMLHeader($title, $CSS){
     <header>
             <nav class="navbar navbar-expand-md navbar-dark  bg-pink">
                 <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&height=679"> Binet Love</a>
-                <!-- en cas de collapse de la navbar on va avoir le texte Modal Web tout à gauche et la version collapsée tout à droite -->
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.php?page=letter">Ecrire une lettre</a>
+                        <li class="nav-item$act_letter">
+                            <a class="nav-link" href="index.php?page=letter">Écrire une lettre</a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item$act_design">
                             <a class="nav-link" href="index.php?page=design">Soumettre un Design</a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item$act_contact">
                             <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                     </ul>
