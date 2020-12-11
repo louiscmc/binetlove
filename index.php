@@ -71,5 +71,4 @@
         <?php 
         generateHTMLFooter()
         ?>
-    </body>
 </html>
