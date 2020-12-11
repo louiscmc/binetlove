@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
+    
     <?php require("utils.php");
+        if(isset($_GET['page'])){
+            $askedPage=$page;
+        }
+        else{$askedPage="index.php";}
         $title="Binet Love";
         $CSS="css/perso.css";
         generateHTMLHeader($title, $CSS);
