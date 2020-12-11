@@ -4,7 +4,7 @@
         if(isset($_GET['page'])){
             $askedPage=$_GET['page'];
         }
-        else{$askedPage="erreur";}
+        else{$askedPage="welcome";}
         $authorized= checkPage($askedPage);
         if($authorized){
             $pageTitle= getPageTitle($askedPage);
