@@ -76,7 +76,7 @@ $page_list = array(
 function checkPage($askedPage){
     global $page_list;
     foreach($page_list as $page){
-          if ($askedPage["name"] == $page["name"]){ //Premier cas possible
+          if ($askedPage == $page["name"]){
             return true;
     }
         return false;
@@ -86,7 +86,7 @@ function checkPage($askedPage){
 function getPageTitle($name){
         global $page_list;
         foreach($page_list as $page){
-            if ($name == $page["name"]){ //Premier cas possible
+            if ($name == $page["name"]){
                 return $page["title"];
     }
     }
