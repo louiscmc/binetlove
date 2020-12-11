@@ -1,4 +1,5 @@
 
+<html>
 <?php
 function generateHTMLHeader($title, $CSS){
     global $title;
