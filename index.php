@@ -2,10 +2,11 @@
 <html>
     
     <?php require("utils.php");
+        $page="welcome";
         if(isset($_GET['page'])){
             $askedPage=$_GET['page'];
         }
-        else{$askedPage="welcome";}
+        else{$askedPage="erreur";}
         $authorized= checkPage($askedPage);
         if($authorized){
             $pageTitle= getPageTitle($askedPage);

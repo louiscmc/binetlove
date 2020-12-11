@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
-<?php require("utils.php");
-        $title="Écrire une lettre | Binet Love";
+    <?php require("utils.php");
+        if(isset($_GET['page'])){
+            $askedPage=$_GET['page'];
+        }
+        else{$askedPage="welcome";}
+        $authorized= checkPage($askedPage);
+        if($authorized){
+            $pageTitle= getPageTitle($askedPage);
+        }
+        else{
+           $pageTitle="erreur"; 
+        }
         $CSS="css/perso.css";
-        generateHTMLHeader($title, $CSS);
+        generateHTMLHeader($pageTitle, $CSS);
         ?>
             <div class="jumbotron jumbotron-fluid bg-faded">
               <div class="container">
