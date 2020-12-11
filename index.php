@@ -5,14 +5,14 @@
         if(isset($_GET['page'])){
             $askedPage=$page;
         }
-        else{$askedPage="index.php";}
+        else{$askedPage="welcome";}
         $authorized= checkPage($askedPage);
-        $title="Binet Love";
-        $CSS="css/perso.css";
-        if(!$authorized){
-            echo "vous n'êtes pas authorisés";
+        if($authorized){
+            $pageTitle= getPageTitle($askedPage);
+            $CSS="css/perso.css";
+            generateHTMLHeader($pageTitle, $CSS);
         }
-        generateHTMLHeader($title, $CSS);
+        
         ?>
         <main>  
             <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
