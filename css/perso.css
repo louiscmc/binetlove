@@ -29,8 +29,11 @@ and open the template in the editor.
   background-color: #f1a0dc !important;
 }
 
-.bg-faded {
+#jumbo1.bg-faded {
   background: linear-gradient(#f1a0dc,white) !important;
+}
+#jumbo2.bg-faded {
+  background: linear-gradient(white,#f3b1ec) !important;
 }
 
 .red{

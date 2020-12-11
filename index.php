@@ -6,7 +6,7 @@
         generateHTMLHeader($title, $CSS);
         ?>
         <main>  
-            <div class="jumbotron jumbotron-fluid bg-faded">
+            <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
               <div class="container">
                   <h1 class="display-4">Spread <span class='red'>love</span>, not the virus</h1>
               </div>
@@ -58,7 +58,7 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-            <div id="jumbo2" class="jumbotron jumbotron-fluid">
+            <div id="jumbo2" class="jumbotron jumbotron-fluid bg-faded">
                 <div class="container">
                     <h1 class="display-4">Il est temps d'écrire une lettre !</h1>
                     <p class="lead">N'oubliez pas qu'il sera possible d'écrire des lettres directement sur papier aux prochains événements.</p>
