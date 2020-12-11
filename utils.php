@@ -47,7 +47,7 @@ function generateHTMLFooter(){
         </body>
             <footer class="container">
                 <p class="float-right"><a href="index.php" class="pink">Back to top</a></p>
-                <p>© 2021 Louis Cattin--Mota de Campos, X2019
+                <p>© 2021 Louis Cattin--Mota de Campos, Mathilde André X2019
         </footer>
 CHAINE_DE_FIN;}
     
