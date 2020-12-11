@@ -55,21 +55,40 @@ function generateHTMLFooter(){
 CHAINE_DE_FIN;}
     
 $page_list = array(
-    "index.php",
-    "submit_design.php",
-    "submit_letter.php",
-    "contact.php",
-);
+    array(
+    "name"=>"welcome",
+    "title"=>"Binet Love",
+    "menutitle"=>"Binet Love"),
+    array(
+    "name"=>"design",
+    "title"=>"Soumettre un design",
+    "menutitle"=>"Soumettre un design"),
+     array(
+    "name"=>"lettre",
+    "title"=>"Écrire une lettre",
+    "menutitle"=>"Écrire une lettre"),
+     array(
+    "name"=>"contact",
+    "title"=>"Nous contacter",
+    "menutitle"=>"Nous contacter"),
+    );
 
 function checkPage($askedPage){
     foreach($page_list as $page){
-          if ($askedPage == $page){ //Premier cas possible
-    return true;
+          if ($askedPage["name"] == $page["name"]){ //Premier cas possible
+            return true;
     }
-    return false;
+        return false;
     }
 }
 
+function getPageTitle($name){
+        foreach($page_list as $page){
+            if ($name == $page["name"]){ //Premier cas possible
+                return $page["title"];
+    }
+    }
+}
 
 ?>
 </html>

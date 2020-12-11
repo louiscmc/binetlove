@@ -6,8 +6,12 @@
             $askedPage=$page;
         }
         else{$askedPage="index.php";}
+        $authorized= checkPage($askedPage);
         $title="Binet Love";
         $CSS="css/perso.css";
+        if(!$authorized){
+            echo "vous n'êtes pas authorisés";
+        }
         generateHTMLHeader($title, $CSS);
         ?>
         <main>  
