@@ -1,4 +1,4 @@
-<html>
+
 <?php
 function generateHTMLHeader($title, $CSS){
     global $title;
@@ -54,7 +54,23 @@ function generateHTMLFooter(){
         </footer>
 CHAINE_DE_FIN;}
     
+$page_list = array(
+    "index.php",
+    "submit_design.php",
+    "submit_letter.php",
+    "contact.php",
+);
+
+function checkPage($askedPage){
+    foreach($page_list as $page){
+          if ($askedPage == $page){ //Premier cas possible
+    return true;
+    }
+    return false;
+    }
+}
+
+
 ?>
-
-
 </html>
+
