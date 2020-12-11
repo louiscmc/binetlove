@@ -3,7 +3,7 @@
     
     <?php require("utils.php");
         if(isset($_GET['page'])){
-            $askedPage=$page;
+            $askedPage=$_GET['page'];
         }
         else{$askedPage="welcome";}
         $authorized= checkPage($askedPage);
@@ -12,7 +12,10 @@
             $CSS="css/perso.css";
             generateHTMLHeader($pageTitle, $CSS);
         }
-        
+        else{
+           $pageTitle="erreur"; 
+        }
+        generateHTMLHeader($pageTitle, $CSS);
         ?>
         <main>  
             <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
