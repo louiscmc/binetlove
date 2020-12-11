@@ -85,6 +85,7 @@ function checkPage($askedPage){
 
 function getPageTitle($name){
         global $page_list;
+        global $name;
         foreach($page_list as $page){
             if ($name == $page["name"]){
                 return $page["title"];
