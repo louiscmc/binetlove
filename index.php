@@ -9,12 +9,11 @@
         $authorized= checkPage($askedPage);
         if($authorized){
             $pageTitle= getPageTitle($askedPage);
-            $CSS="css/perso.css";
-            generateHTMLHeader($pageTitle, $CSS);
         }
         else{
            $pageTitle="erreur"; 
         }
+        $CSS="css/perso.css";
         generateHTMLHeader($pageTitle, $CSS);
         ?>
         <main>  
