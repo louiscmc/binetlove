@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 
+    Author     : 
+ */
+ 
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.text-focus-in {
+	animation: text-focus-in 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.heartbeat {
+	animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+
+
+
+.carousel .item {
+  height: 500px;
+}
+
+.item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+[class*="col-"].gris {
+    background-color: grey;
+    border:solid 1px white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.bg-pink {
+  background-color: #f1a0dc !important;
+}
+
+#jumbo1.bg-faded {
+  background: linear-gradient(#f1a0dc,white) !important;
+}
+#jumbo2.bg-faded {
+  background: linear-gradient(white,#f1a0dc) !important;
+}
+
+.red{
+    color: #cc0000 !important;
+}
+
+.pink {
+  color: #ff62cd !important;
+}
+
+#brand-image{
+    height: 40px;
+}
+
+
+.btn-rose {
+  color: #fff;
+  background-color: #ff62cd !important;
+  border-color: #ff62cd !important;
+}
+
+.btn-rose:hover {
+  color: #fff;
+  background-color: #e919a7 !important;
+  border-color: #e919a7 !important;
+}
+
+.btn-rose:focus, .btn-rose.focus {
+  box-shadow: 0 0 0 0.2rem rgba(246, 168, 221, 0.5);
+}
+
+.btn-rose.disabled, .btn-rose:disabled {
+  color: #fff;
+  background-color: #ff62cd !important;
+  border-color: #ff62cd !important;
+}
+
+.btn-rose:not(:disabled):not(.disabled):active, .btn-rose:not(:disabled):not(.disabled).active,
+.show > .btn-rose.dropdown-toggle {
+  color: #fff;
+  background-color: #ff62cd !important;
+  border-color: #ff62cd !important;
+}
+
+.list-group-item-action-rose{
+  color: #ff62cd !important;
+}
+
+#jumbo2{
+    
+}
+
