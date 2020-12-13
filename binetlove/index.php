@@ -15,7 +15,7 @@
         $CSS="css/perso.css";
         generateHTMLHeader($pageTitle, $CSS);
     ?>
-    <div id=content">
+    <div id=content>
         <?php
             if($authorized){
             require("content_$askedPage.php");
