@@ -54,7 +54,7 @@
                               <label for="exampleFormControlTextarea1">Écris ton message !</label>
                               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Écris ton message" rows="12"></textarea>
                               <br>
-                              <button type="submit" class="btn btn-rose">Envoyer</button>
+                              <button type="submit" class="btn btn-rose" value="">Envoyer</button>
                             </div>
                             <div class="col-md-4">
                                 <br>      
@@ -96,3 +96,6 @@
                     </div>
                 </div>
             </div>
+<?php 
+        insererLettre($dbh,'patate','mathilde_andre','coucou');
+        ?>
