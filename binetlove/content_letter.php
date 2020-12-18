@@ -96,4 +96,8 @@
                     </div>
                 </div>
             </div>
-        
+        <?php 
+            $datetime = date_create()->format('Y-m-d H:i:s');
+            insererLettre($dbh,'patate','mathilde_andre','coucou',$datetime); 
+            $dbh = null;
+        ?>
