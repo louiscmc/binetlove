@@ -98,7 +98,7 @@
             </div>
         <?php 
             $date = new DateTime();
-           echo $date->getTimestamp();
+            $date->getTimestamp();
           insererLettre($dbh,'patate','mathilde_andre','coucou',$date);
           $dbh = null;
         ?>
