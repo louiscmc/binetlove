@@ -32,5 +32,4 @@ function getDestinataire($nom,$prenom,$section,$promotion){
 }
 
 
-$dbh = null; // Déconnexion de MySQL
 ?>
