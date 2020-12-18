@@ -99,6 +99,6 @@
         <?php 
             $date = new DateTime();
            echo $date->getTimestamp();
-          insererLettre($dbh,'patate','mathilde_andre','coucou');
+          insererLettre($dbh,'patate','mathilde_andre','coucou',$date);
           $dbh = null;
         ?>
