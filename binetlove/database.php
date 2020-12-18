@@ -23,8 +23,8 @@ function insererUtilisateur($dbh,$login,$nom,$prenom,$section,$promotion,$casert
     $dbh->query("INSERT INTO 'polytechniciens' ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES ('$login', '$nom', '$prenom', $section', '$promotion', '$casert')");
 }
 
-function insererLettre($dbh,$login,$destinataire,$contenu){
-    $dbh->query("INSERT INTO 'lettre' ('login', 'destinataire', 'contenu','time') VALUES ($login,$destinataire, $contenu, $date=->getTimestamp())");
+function insererLettre($dbh,$login,$destinataire,$contenu,$date){
+    $dbh->query("INSERT INTO 'lettre' ('login', 'destinataire', 'contenu','time') VALUES ($login,$destinataire, $contenu, $date)");
 }
 
 function getDestinataire($nom,$prenom,$section,$promotion){
