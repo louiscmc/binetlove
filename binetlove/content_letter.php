@@ -54,7 +54,7 @@
                               <label for="exampleFormControlTextarea1">Écris ton message !</label>
                               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Écris ton message" rows="12"></textarea>
                               <br>
-                              <button type="submit" class="btn btn-rose" value="">Envoyer</button>
+                              <button action='envoyerLettre.php' type="submit" class="btn btn-rose" value="">Envoyer</button>
                             </div>
                             <div class="col-md-4">
                                 <br>      
@@ -96,9 +96,4 @@
                     </div>
                 </div>
             </div>
-        <?php 
-            $datetime = date_create()->format('Y-m-d H:i:s');
-            /*$dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES ('patate', 'mathilde_andre', 'coucou', '2020-12-18 16:32:25')");
-            */insererLettre($dbh,'patate','mathilde_andre','coucou',$datetime); 
-            $dbh = null;
-        ?>
+        
