@@ -42,21 +42,20 @@ CREATE TABLE `lettre` (
 
 CREATE TABLE `polytechniciens` (
   `login` varchar(64) NOT NULL,
-  `Section` varchar(32) NOT NULL,
-  `Promotion` int(11) NOT NULL,
-  `Nom` varchar(64) NOT NULL,
-  `Prenom` varchar(64) NOT NULL,
-  `Casert` int(11) NOT NULL
+  `nom` varchar(64) NOT NULL,
+  `prenom` varchar(64) NOT NULL,
+  `section` varchar(32) NOT NULL,
+  `promotion` int(11) NOT NULL,
+  `casert` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `polytechniciens`
 --
 
-INSERT INTO `polytechniciens` (`login`, `Section`, `Promotion`, `Nom`, `Prenom`, `Casert`) VALUES
-('', 'Escalade', 2019, 'André', 'Mathilde', 123003),
-('', 'Natation', 2019, 'Cattin--Mota de Campos', 'Louis', 702013),
-('', 'section', 2019, 'nom', 'prenom', 0);
+INSERT INTO `polytechniciens` (`login`, `Nom`, `Prenom`,`Section`, `Promotion`, `Casert`) VALUES
+('', 'André', 'Mathilde','Escalade', 2019, 123003),
+('', 'Cattin--Mota de Campos', 'Louis','Natation', 2019, 702013);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

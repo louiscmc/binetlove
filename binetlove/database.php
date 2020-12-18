@@ -19,14 +19,17 @@ class Database {
  
 // opérations sur la base
 $dbh = Database::connect();
-function insererUtilisateur($dbh,$login,$section,$promotion,$nom,$prenom,$casert){
-    $dbh->query("INSERT INTO `polytechniciens` (`login`, `Section`, `Promotion`, `Nom`, `Prenom`, `Casert`) VALUES ('$login',$section', '$promotion', '$nom', '$prenom', '$casert')");
+function insererUtilisateur($dbh,$login,$nom,$prenom,$section,$promotion,$casert){
+    $dbh->query("INSERT INTO 'polytechniciens' ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES ('$login', '$nom', '$prenom', $section', '$promotion', '$casert')");
 }
 
 function insererLettre($dbh,$login,$destinataire,$contenu){
-    $dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`) VALUES ('$login',$destinataire', '$contenu')");
+    $dbh->query("INSERT INTO 'lettre' ('login', 'destinataire', 'contenu','time') VALUES ($login,$destinataire, $contenu, $date=->getTimestamp())");
 }
 
+function getDestinataire($nom,$prenom,$section,$promotion){
+    $dbh->query("SELECT 'login' FROM 'polytechniciens' WHERE 'nom'='$nom' AND 'prenom'='$prenom' AND 'section'='$section' AND 'promotion'=$promotion)");
+}
 
 
 $dbh = null; // Déconnexion de MySQL
