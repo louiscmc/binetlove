@@ -24,7 +24,6 @@ function insererUtilisateur($dbh,$login,$nom,$prenom,$section,$promotion,$casert
 }
 
 function insererLettre($dbh,$login,$destinataire,$contenu,$date){
-    var_dump($date);
     $dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES ('$login', '$destinataire', '$contenu', '$date')");
 }
 
