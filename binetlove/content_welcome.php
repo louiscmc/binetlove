@@ -57,7 +57,7 @@
                     <p class="lead">N'oubliez pas qu'il sera possible d'écrire des lettres directement sur papier aux prochains événements.</p>
                     <hr class="my-4">
                     <p>Envoyez tout votre amour ! &#128149;</p>
-                    <a class="btn btn-rose btn-lg" href="index.php?page=letter" role="button">Ecrire une lettre</a>
+                    <a class="btn btn-rose btn-lg" href="index.php?page=welcome" role="button">Se connecter</a>
                 </div>
             </div>
         </main>

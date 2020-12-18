@@ -19,9 +19,9 @@ class Database {
  
 // opérations sur la base
 $dbh = Database::connect();
-$dbh->query("INSERT INTO `utilisateurs` (`login`, `mdp`, `nom`, `prenom`, `promotion`, `naissance`, `email`, `feuille`) VALUES('moi',SHA1('nombril'),'bebe','louis','2005','1980-03-27','Marcel.Dupont@polytechnique.edu','modal.css')");
-$sth = $dbh->prepare("INSERT INTO `utilisateurs` (`login`, `mdp`, `nom`, `prenom`, `promotion`, `naissance`, `email`, `feuille`) VALUES(?,SHA1(?),?,?,?,?,?,?)");
-$sth->execute(array('SuperMarcel','Mystere','Marcel','Dupont','2005','1980-03-27','Marcel.Dupont@polytechnique.edu','modal.css'));
- 
+function insererUtilisateur($dbh,$section,$promotion,$nom,$prenom,$casert){
+    $dbh->query("INSERT INTO `polytechniciens` (`Section`, `Promotion`, `Nom`, `Prenom`, `Casert`) VALUES ('$section', '$promotion', '$nom', '$prenom', '$casert')");
+}
+
 $dbh = null; // Déconnexion de MySQL
 ?>
