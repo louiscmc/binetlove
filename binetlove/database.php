@@ -19,9 +19,15 @@ class Database {
  
 // opérations sur la base
 $dbh = Database::connect();
-function insererUtilisateur($dbh,$section,$promotion,$nom,$prenom,$casert){
-    $dbh->query("INSERT INTO `polytechniciens` (`Section`, `Promotion`, `Nom`, `Prenom`, `Casert`) VALUES ('$section', '$promotion', '$nom', '$prenom', '$casert')");
+function insererUtilisateur($dbh,$login,$section,$promotion,$nom,$prenom,$casert){
+    $dbh->query("INSERT INTO `polytechniciens` (`login`, `Section`, `Promotion`, `Nom`, `Prenom`, `Casert`) VALUES ('$login',$section', '$promotion', '$nom', '$prenom', '$casert')");
 }
+
+function insererLettre($dbh,$login,$destinataire,$contenu){
+    $dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`) VALUES ('$login',$destinataire', '$contenu')");
+}
+
+
 
 $dbh = null; // Déconnexion de MySQL
 ?>
