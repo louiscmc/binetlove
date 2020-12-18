@@ -24,8 +24,10 @@ function insererUtilisateur($dbh,$login,$nom,$prenom,$section,$promotion,$casert
 }
 
 function insererLettre($dbh,$login,$destinataire,$contenu,$date){
-    $dbh->query("INSERT INTO 'lettre' ('login', 'destinataire', 'contenu','time') VALUES ($login,$destinataire, $contenu, $date)");
+    var_dump($date);
+    $dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES ('$login', '$destinataire', '$contenu', '$date')");
 }
+
 
 function getDestinataire($nom,$prenom,$section,$promotion){
     $dbh->query("SELECT 'login' FROM 'polytechniciens' WHERE 'nom'='$nom' AND 'prenom'='$prenom' AND 'section'='$section' AND 'promotion'=$promotion)");
