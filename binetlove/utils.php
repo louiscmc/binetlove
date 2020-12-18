@@ -76,7 +76,11 @@ $page_list = array(
     "name"=>"contact",
     "title"=>"Nous contacter",
     "menutitle"=>"Nous contacter"),
-    );
+     array(
+         "name"=>'merci',
+         "title"=>"Merci !",
+    "menutitle"=>"Merci !"),
+     );
 
 function checkPage($askedPage){
     global $page_list;

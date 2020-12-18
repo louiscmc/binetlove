@@ -4,22 +4,23 @@
                   <h1 class="display-4 text-focus-in">Spread <span class='red'>love</span>, not the virus</h1>
               </div>
             </div>
+<form action="index.php?page=merci" method="post">
             <div class="container-fluid">
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
                        <form>
                            <div class="row">
                             <div class="form-group col-md-4">
-                              <label for="exampleFormControlInput1">Nom de l'élu.e</label>
-                              <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Prénom Nom">
+                              <label for="prenom_nom">Nom de l'élu.e</label>
+                              <input type="search" class="form-control" id="prenom_nom" placeholder="Prénom Nom">
                             </div>
                             <div class="form-group col-md-4">
-                              <label for="exampleFormControlSelect1">Promotion</label>
-                              <select class="form-control" id="exampleFormControlSelect1">
+                              <label for="promotion">Promotion</label>
+                              <select class="form-control" id="promotion">
                                  <option>Choisir une promotion</option>
-                                <option>X 2018</option>
-                                <option>X 2019</option>
-                                <option>X 2020</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
                                 <option>Bachelor 1</option>
                                 <option>Bachelor 2</option>
                                 <option>Bachelor 3</option>
@@ -27,8 +28,8 @@
                               </select>
                             </div>
                             <div class="form-group col-md-4">
-                              <label for="exampleFormControlSelect2">Section</label>
-                              <select class="form-control" id="exampleFormControlSelect2">
+                              <label for="section">Section</label>
+                              <select class="form-control" id="section">
                                 <option>Choisir une section</option>
                                 <option>Aviron</option>
                                 <option>Bad</option>
@@ -51,10 +52,10 @@
                             </div>
                            <div class="row">
                             <div class="form-group col-md-8">
-                              <label for="exampleFormControlTextarea1">Écris ton message !</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Écris ton message" rows="12"></textarea>
+                              <label for="contenu">Écris ton message !</label>
+                              <textarea class="form-control" name="contenu" placeholder="Votre lettre !" rows="12"></textarea>
                               <br>
-                              <button action='envoyerLettre.php' type="submit" class="btn btn-rose" value="">Envoyer</button>
+                              
                             </div>
                             <div class="col-md-4">
                                 <br>      
@@ -95,9 +96,9 @@
                     </div>
                     </div>
                 </div>
+                <div class="container-fluid offset-md-1">
+                <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
+                </div>
             </div>
-        <?php 
-            $datetime = date_create()->format('Y-m-d H:i:s');
-            insererLettre($dbh,'patate','mathilde_andre','coucou',$datetime); 
-            $dbh = null;
-        ?>
+  </form>
+        
