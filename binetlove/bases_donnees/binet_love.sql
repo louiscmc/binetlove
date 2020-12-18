@@ -31,7 +31,7 @@ CREATE TABLE `lettre` (
   `login` varchar(64) NOT NULL,
   `destinataire` varchar(64) NOT NULL,
   `contenu` text NOT NULL,
-  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
