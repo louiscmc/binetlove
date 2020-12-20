@@ -6,7 +6,7 @@ class Database {
         $password = '';
         $dbh = null;
         try {
-            $dbh = new PDO($dsn, $user, $password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $dbh = new PDO($dsn, $user, $password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
             $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         } catch (PDOException $e) {
             echo 'Connexion échouée : ' . $e->getMessage();
@@ -28,8 +28,8 @@ function insererLettre($dbh,$login,$destinataire,$contenu,$date){
 }
 
 
-function getDestinataire($nom,$prenom,$section,$promotion){
-    $dbh->query("SELECT 'login' FROM 'polytechniciens' WHERE 'nom'='$nom' AND 'prenom'='$prenom' AND 'section'='$section' AND 'promotion'=$promotion)");
+function getDestinataire($dbh,$nom,$prenom,$section,$promotion){
+    $dbh->query("SELECT `login` FROM `polytechniciens` WHERE `nom` LIKE '$nom' AND `prenom` LIKE '$prenom' AND `section` LIKE '$section' AND `promotion`LIKE '$promotion')");
 }
 
 

@@ -54,8 +54,8 @@ CREATE TABLE `polytechniciens` (
 --
 
 INSERT INTO `polytechniciens` (`login`, `Nom`, `Prenom`,`Section`, `Promotion`, `Casert`) VALUES
-('', 'André', 'Mathilde','Escalade', 2019, 123003),
-('', 'Cattin--Mota de Campos', 'Louis','Natation', 2019, 702013);
+('mathilde.andre', 'André', 'Mathilde','Escalade', 2019, 123003),
+('louis.cattin-mota_de_campos', 'Cattin--Mota de Campos', 'Louis','Natation', 2019, 702013);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

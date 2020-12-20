@@ -14,6 +14,7 @@ function generateHTMLHeader($title, $CSS){
     echo <<<CHAINE_DE_FIN
     <head>
         <title>$title</title>
+        <link rel="icon" href="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">

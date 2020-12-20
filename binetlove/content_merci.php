@@ -1,7 +1,12 @@
 <?php
             $datetime = date_create()->format('Y-m-d H:i:s');
             $contenu = $_POST["contenu"];
-            insererLettre($dbh,'patate','mathilde_andre',$contenu,$datetime); 
+            $nom=$_POST["nom"];
+            $prenom=$_POST["prenom"];
+            $promotion=$_POST["promotion"];
+            $section=$_POST["section"];
+            /*$destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);*/
+            insererLettre($dbh,'patate',$prenom.'.'.$nom,"$contenu","$datetime"); 
             $dbh = null;
         ?>
 <div id="jumbo2" class="jumbotron jumbotron-fluid bg-faded">
