@@ -5,18 +5,17 @@
               </div>
             </div>
             <?php
-                $destinataire;
                 $contenu = $bienrecu = "";
                 $contenuErr = $destinataireErr = "";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                     // on regarde si l'utilisateur a bien rempli tous les champs
                    
-                    if (empty($_POST["destinataire"])) {
+                    if (empty($_POST["champ_cache"])) {
                             $destinataireErr = "Il faut remplir le prénom !";
                         } 
                         else {
-                            $destinataire = test_input($_POST["destinataire"]);
+                            $destinataire = test_input($_POST["champ_cache"]);
                     }
                     
                     if (empty($_POST["contenu"])) {
@@ -90,6 +89,7 @@
                             <div class="form-group col-md-12">
                                 <label>Destinataire</label>
                                 <input class="form-control" name="destinataire" id="destinataire" placeholder="Prénom">
+                                <input type="hidden" id="champ_cache" name="champ_cache">
                             </div>
                         </div>
                         <div class="row">
