@@ -5,7 +5,7 @@
               </div>
             </div>
             <?php
-                $contenu = $bienrecu = "";
+                $contenu = $bienrecu = $desti ="";
                 $contenuErr = $destinataireErr = "";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
@@ -16,6 +16,9 @@
                         } 
                         else {
                             $destinataire = test_input($_POST["champ_cache"]);
+                    }
+                    if (! empty($_POST["destinataire"])) {
+                        $desti = test_input($_POST["destinataire"]);
                     }
                     
                     if (empty($_POST["contenu"])) {
@@ -88,7 +91,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label>Destinataire</label>
-                                <input class="form-control" name="destinataire" id="destinataire" placeholder="Prénom">
+                                <input class="form-control" name="destinataire" id="destinataire" placeholder="Prénom" value="<?php echo $desti ?>">
                                 <input type="hidden" id="champ_cache" name="champ_cache">
                             </div>
                         </div>
