@@ -8,57 +8,29 @@
             <div class="container-fluid">
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
-                           <div class="row">
-                            <div class="form-group col-md-8">
-                              <label>Destinataire</label>
-                              <input class="form-control" type="text" name="destinataire" id="destinataire" placeholder="Destinataire">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                              <label>Prénom</label>
+                              <input class="form-control" name="prenom" id="prenom" placeholder="Prénom">
                             </div>
-<!--                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-3">
                               <label for="nom">Nom</label>
                               <input class="form-control" name="nom" id="nom" placeholder="Nom">
                             </div>
-                            <div class="form-group col-md-4">
-                              <label for="promotion">Promotion</label>
-                              <select class="form-control" id="promotion">
-                                 <option selected hidden value="">Choisir une promotion</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option>Bachelor 1</option>
-                                <option>Bachelor 2</option>
-                                <option>Bachelor 3</option>
-                                <option>Master</option>
-                              </select>
-                            </div>-->
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                               <label for="section">Section</label>
-                              <select class="form-control" name="section">
-                                <option selected hidden value="">Choisir une section</option>
-                                <option value="Aviron">Aviron</option>
-                                <option value="Bad">Bad</option>
-                                <option value="Basket">Basket</option>
-                                <option value="Boxe">Boxe</option>
-                                <option value="Équitation">Équitation</option>
-                                <option value="Escalade">Escalade</option>
-                                <option value="Escrime">Escrime</option>
-                                <option value="Foot">Foot</option>
-                                <option value="Hand">Hand</option>
-                                <option value="Judo">Judo</option>
-                                <option value="Natation">Natation</option>
-                                <option value="Raid">Raid</option>
-                                <option value="Rugby">Rugby</option>
-                                <option value="Tennis">Tennis</option>
-                                <option value="Ultimate">Ultimate</option>
-                                <option value="Volley">Volley</option>
-                              </select>
+                              <input class="form-control" name="section" id="section" placeholder="Section">
                             </div>
+                            <div class="form-group col-md-3">
+                              <label>Promotion</label>
+                              <input class="form-control" type="text" name="promotion" id="promotion" placeholder="Promotion">
                             </div>
-                           <div class="row">
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-8">
-                              <label for="contenu">Écris ton message !</label>
-                              <textarea class="form-control" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"></textarea>
-                              <br>
-                              
+                                <label for="contenu">Écris ton message !</label>
+                                <textarea class="form-control" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"></textarea>
+                                <br>                              
                             </div>
                             <div class="col-md-4">
                                 <br>      

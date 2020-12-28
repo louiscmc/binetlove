@@ -29,11 +29,8 @@ function generateHTMLHeader($title, $CSS){
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- Mon CSS Perso -->
         <link href="$CSS" rel="stylesheet">
-        <script> 
-            $(function(){ 
-            $("#destinataire").autocomplete({source:'ac_destinataire.php'});
-            });
-        </script>
+        <script src="js/ac_js.js"></script>
+
     </head>
     <body>
         <header>

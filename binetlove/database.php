@@ -21,26 +21,28 @@ class Database {
 global $dbh;
 $dbh = Database::connect();
 function insererUtilisateur($bh, $login,$nom,$prenom,$section,$promotion,$casert){
-    $dbh->query("INSERT INTO 'polytechniciens' ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES ('$login', '$nom', '$prenom', $section', '$promotion', '$casert')");
+    $dbh->query("INSERT INTO polytechniciens ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES ('$login', '$nom', '$prenom', $section', '$promotion', '$casert')");
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
-    $dbh->query("INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES ('$login', '$destinataire', '$contenu', '$date')");
+    $dbh->query("INSERT INTO lettre (login, destinataire, contenu, time) VALUES ('$login', '$destinataire', '$contenu', '$date')");
 }
 
 
 function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
-    $dbh->query("SELECT `login` FROM `polytechniciens` WHERE `nom` LIKE '$nom' AND `prenom` LIKE '$prenom' AND `section` LIKE '$section' AND `promotion`LIKE '$promotion')");
+    $result = $dbh->query("SELECT login FROM polytechniciens WHERE nom = '$nom' AND prenom = '$prenom' AND section = '$section' AND promotion = '$promotion'");
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    return $row['login'];
 }
 
-function ac($dbh, $user_typed){
+function ac($dbh, $id, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();
-        $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like '%".$user_typed."%' OR nom like '%".$user_typed."%' OR section like '%".$user_typed."%'limit 10";
+        $sql = "select ".$id." from polytechniciens where ".$id." like '%".$user_typed."%' limit 10";
         $result = $dbh->query($sql);
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                array_push($data,"".$row['prenom']." ".$row['nom']." (".$row['section']." ".$row['promotion'].")");
+                array_push($data,$row[$id]);
             }
         } 
         else {

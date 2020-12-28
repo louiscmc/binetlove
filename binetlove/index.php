@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <?php require("utils.php");
+    <?php 
+        require("utils.php");
         require("database.php");
         if(isset($_GET['page'])){
             $askedPage=$_GET['page'];
