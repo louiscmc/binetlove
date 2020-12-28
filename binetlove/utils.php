@@ -25,11 +25,10 @@ function generateHTMLHeader($title, $CSS){
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery UI library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- Mon CSS Perso -->
         <link href="$CSS" rel="stylesheet">
-        <!-- jQuery UI library -->
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script> 
             $(function(){ 
             $("#prenom").autocomplete({source:'ac_prenom.php'});

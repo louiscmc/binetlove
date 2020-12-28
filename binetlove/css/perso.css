@@ -134,62 +134,57 @@ and open the template in the editor.
     
 }
 
-.ac_results {
-	padding: 0px;
-	border: 1px solid #f48fdc;
-	background-color: #f48fdc;
-	overflow: hidden;
+// Autocomplete plugin
+
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 3px 0 !important;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 12px !important;
+  text-align: left;
+  background-color: #f48fdc !important;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
 }
 
-.ac_results ul {
-	width: 100%;
-	list-style-position: outside;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+.ui-autocomplete > li > div {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
 }
 
-.ac_results li {
-	margin: 0px;
-	padding: 2px 5px;
-	cursor: default;
-	display: block;
-	color: #fff;
-	font-family:verdana;
-	/* 
-	if width will be 100% horizontal scrollbar will apear 
-	when scroll mode will be used
-	*/
-	/*width: 100%;*/
-	font-size: 12px;
-	/* 
-	it is very important, if line-height not setted or setted 
-	in relative units scroll will be broken in firefox
-	*/
-	line-height: 16px;
-	overflow: hidden;
-
+.ui-state-hover,
+.ui-state-active,
+.ui-state-focus {
+  text-decoration: none;
+  color: #262626; 
+  background-color: #ef59d3 !important;
+  cursor: pointer;
 }
 
-.ac_odd {
-	background-color: #f48fdc;
-	color: #ffffff;
-}
-
-.ac_over {
-	background-color: #da6ac0;
-	color: #ffffff;
-}
-
-
-.input_text{
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
-	border:1px solid #84a10b;
-	padding:2px;
-	width:150px;
-	color:#000;
-	background:white url(../images/search.png) no-repeat 3px 2px;
-	padding-left:17px;
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 

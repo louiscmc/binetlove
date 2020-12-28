@@ -33,22 +33,21 @@ function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
     $dbh->query("SELECT `login` FROM `polytechniciens` WHERE `nom` LIKE '$nom' AND `prenom` LIKE '$prenom' AND `section` LIKE '$section' AND `promotion`LIKE '$promotion')");
 }
 
-function ac($dbh, $keyword){
-    if (isset($_GET[$keyword])) {
-        $id = $_GET[$keyword]; 
-    }
-    if (strlen($id)>2){
-        $sql = "select ".$keyword." from polytechniciens where prenom like '".$id."%' limit 10";
+function ac($dbh, $keyword, $user_typed){
+    if (strlen($user_typed)>2){
+        $data = array();
+        $sql = "select ".$keyword." from polytechniciens where prenom like '".$user_typed."%' limit 10";
         $result = $dbh->query($sql);
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                echo $row[$keyword]. "\n";
+                array_push($data,$row[$keyword]);
             }
         } 
         else {
-            echo "Pas trouvé :(";
-        }   
+            array_push($data,"Pas trouvé :(");
+        }
     }
+    echo json_encode($data);
 }
 
 
