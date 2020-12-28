@@ -11,7 +11,7 @@
                            <div class="row">
                             <div class="form-group col-md-2">
                               <label>Prénom</label>
-                              <input class="form-control" type="text" id="prenom" placeholder="Prénom">
+                              <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Prénom">
                             </div>
                             <div class="form-group col-md-2">
                               <label for="nom">Nom</label>
@@ -56,7 +56,7 @@
                            <div class="row">
                             <div class="form-group col-md-8">
                               <label for="contenu">Écris ton message !</label>
-                              <textarea class="form-control" type="contenu" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"></textarea>
+                              <textarea class="form-control" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"></textarea>
                               <br>
                               
                             </div>
@@ -104,8 +104,4 @@
                 </div>
             </div>
   <!--</form>-->
-  <script> 
-            jQuery(function(){ 
-            $("#prenom").autocomplete("ac_prenom.php");
-            });
-        </script>
+  

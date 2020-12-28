@@ -27,13 +27,12 @@ function generateHTMLHeader($title, $CSS){
         <script src="js/bootstrap.min.js"></script>
         <!-- Mon CSS Perso -->
         <link href="$CSS" rel="stylesheet">
-        <!-- Autocomplete -->
-        <script src="js/jquery-1.4.2.min_.js"></script>
-        <script src="js/jquery.autocomplete.js"></script>
-        
+        <!-- jQuery UI library -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script> 
-            jQuery(function(){ 
-            $("#prenom").autocomplete("ac_prenom.php");
+            $(function(){ 
+            $("#prenom").autocomplete({source:'ac_prenom.php'});
             });
         </script>
     </head>
