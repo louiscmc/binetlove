@@ -38,7 +38,7 @@ function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
 function ac($dbh, $id, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();
-        $sql = "select ".$id." from polytechniciens where ".$id." like '%".$user_typed."%' limit 10";
+        $sql = "select distinct ".$id." from polytechniciens where ".$id." like '%".$user_typed."%' limit 10";
         $result = $dbh->query($sql);
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

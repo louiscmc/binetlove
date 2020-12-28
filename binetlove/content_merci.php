@@ -1,14 +1,17 @@
 <?php
+//        gestion du stockage de la lettre dans la base de données
             $datetime = date_create()->format('Y-m-d H:i:s');
-            $contenu = $_POST['contenu'];
-            $prenom = $_POST['prenom'];
-            $nom = $_POST['nom'];
-            $promotion = $_POST['promotion'];
-            $section=$_POST["section"];
+            $contenu = trim($_POST['contenu']);
+            $prenom = trim($_POST['prenom']);
+            $nom = trim($_POST['nom']);
+            $promotion = trim($_POST['promotion']);
+            $section=trim($_POST["section"]);
             $destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);
             insererLettre($dbh,"patate", $destinataire, $contenu,"$datetime"); 
             $dbh = null;
         ?>
+
+<!--affichage de la page de remerciements-->
 <div id="jumbo2" class="jumbotron jumbotron-fluid bg-faded">
                 <div class="container">
                     <h1 class="display-4">Merci pour votre lettre !</h1>
