@@ -31,7 +31,7 @@ function generateHTMLHeader($title, $CSS){
         <link href="$CSS" rel="stylesheet">
         <script> 
             $(function(){ 
-            $("#prenom").autocomplete({source:'ac_prenom.php'});
+            $("#destinataire").autocomplete({source:'ac_destinataire.php'});
             });
         </script>
     </head>

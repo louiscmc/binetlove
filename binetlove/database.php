@@ -33,14 +33,14 @@ function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
     $dbh->query("SELECT `login` FROM `polytechniciens` WHERE `nom` LIKE '$nom' AND `prenom` LIKE '$prenom' AND `section` LIKE '$section' AND `promotion`LIKE '$promotion')");
 }
 
-function ac($dbh, $keyword, $user_typed){
+function ac($dbh, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();
-        $sql = "select ".$keyword." from polytechniciens where prenom like '".$user_typed."%' limit 10";
+        $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like '%".$user_typed."%' OR nom like '%".$user_typed."%' OR section like '%".$user_typed."%'limit 10";
         $result = $dbh->query($sql);
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                array_push($data,$row[$keyword]);
+                array_push($data,"".$row['prenom']." ".$row['nom']." (".$row['section']." ".$row['promotion'].")");
             }
         } 
         else {

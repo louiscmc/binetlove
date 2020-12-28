@@ -9,11 +9,11 @@
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
                            <div class="row">
-                            <div class="form-group col-md-2">
-                              <label>Prénom</label>
-                              <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Prénom">
+                            <div class="form-group col-md-8">
+                              <label>Destinataire</label>
+                              <input class="form-control" type="text" name="destinataire" id="destinataire" placeholder="Destinataire">
                             </div>
-                            <div class="form-group col-md-2">
+<!--                            <div class="form-group col-md-2">
                               <label for="nom">Nom</label>
                               <input class="form-control" name="nom" id="nom" placeholder="Nom">
                             </div>
@@ -29,7 +29,7 @@
                                 <option>Bachelor 3</option>
                                 <option>Master</option>
                               </select>
-                            </div>
+                            </div>-->
                             <div class="form-group col-md-4">
                               <label for="section">Section</label>
                               <select class="form-control" name="section">
