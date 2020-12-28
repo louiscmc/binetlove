@@ -5,36 +5,20 @@
               </div>
             </div>
             <?php
-                $prenom = $nom = $section = $promotion = $contenu = $destinataire = $bienrecu ="";
-                $prenomErr = $nomErr = $sectionErr = $promotionErr = $contenuErr = $destinataireErr = $bienreçu = "";
+                $destinataire;
+                $contenu = $bienrecu = "";
+                $contenuErr = $destinataireErr = "";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                     // on regarde si l'utilisateur a bien rempli tous les champs
+                   
+                    if (empty($_POST["destinataire"])) {
+                            $destinataireErr = "Il faut remplir le prénom !";
+                        } 
+                        else {
+                            $destinataire = test_input($_POST["destinataire"]);
+                    }
                     
-                    if (empty($_POST["prenom"])) {
-                            $prenomErr = "Il faut remplir le prénom !";
-                        } 
-                        else {
-                            $prenom = test_input($_POST["prenom"]);
-                    }
-                    if (empty($_POST["nom"])) {
-                            $nomErr = "Il faut remplir le nom !";
-                        } 
-                        else {
-                            $nom = test_input($_POST["nom"]);
-                    }
-                    if (empty($_POST["section"])) {
-                            $sectionErr = "Il faut remplir la section !";
-                        } 
-                        else {
-                            $section = test_input($_POST["section"]);
-                    }
-                    if (empty($_POST["promotion"])) {
-                            $promotionErr = "Il faut remplir la promotion !";
-                        } 
-                        else {
-                            $promotion = test_input($_POST["promotion"]);
-                    }
                     if (empty($_POST["contenu"])) {
                             $contenuErr = "Il faut remplir le contenu !";
                         } 
@@ -42,14 +26,13 @@
                             $contenu = test_input($_POST["contenu"]);
                     }
                     
-                    if ($prenom !="" && $nom !="" && $section !="" && $promotion !="" && $contenu != ""){
+                    if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
-                            $destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);
                             if (!empty($destinataire)){
                                 insererLettre($dbh,"patate", $destinataire, $contenu,"$datetime"); 
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
-                                $prenom = $nom = $section = $promotion = $contenu = $destinataire = "";
-                                $prenomErr = $nomErr = $sectionErr = $promotionErr = $contenuErr = $destinataireErr = $bienreçu = "";
+                                $contenu = $destinataire = "";
+                                $contenuErr = $destinataireErr = "";
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";
                             }
@@ -91,35 +74,6 @@
                         </div>
                         ";}
                         ?>
-                        <?php
-                        if ($prenomErr!=''){echo"
-                        <div class='alert alert-danger' role='alert'>
-                             $prenomErr
-                        </div>
-                        ";}
-                        ?>
-                        
-                        <?php 
-                        if ($nomErr!=""){echo"
-                        <div class='alert alert-danger' role='alert'>
-                             $nomErr
-                        </div>
-                        ";}
-                        ?>
-                        <?php 
-                        if ($sectionErr!=""){echo"
-                        <div class='alert alert-danger' role='alert'>
-                             $sectionErr
-                        </div>
-                        ";}
-                        ?>
-                        <?php 
-                        if ($promotionErr!=""){echo"
-                        <div class='alert alert-danger' role='alert'>
-                             $promotionErr
-                        </div>
-                        ";}
-                        ?>
                         <?php 
                         if ($contenuErr!=""){echo"
                         <div class='alert alert-danger' role='alert'>
@@ -133,21 +87,9 @@
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
                         <div class="row">
-                            <div class="form-group col-md-3">
-                                <label>Prénom</label>
-                                <input class="form-control" name="prenom" id="prenom" value="<?php echo $prenom;?>" placeholder="Prénom">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="nom">Nom</label>
-                                <input class="form-control" name="nom" id="nom" value="<?php echo $nom;?>" placeholder="Nom">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="section">Section</label>
-                                <input class="form-control" name="section" id="section" value="<?php echo $section;?>" placeholder="Section">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label>Promotion</label>
-                                <input class="form-control" type="text" name="promotion" id="promotion" value="<?php echo $promotion;?>" placeholder="Promotion">
+                            <div class="form-group col-md-12">
+                                <label>Destinataire</label>
+                                <input class="form-control" name="destinataire" id="destinataire" placeholder="Prénom">
                             </div>
                         </div>
                         <div class="row">

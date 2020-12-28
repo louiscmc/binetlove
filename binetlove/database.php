@@ -35,18 +35,23 @@ function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
     return $row['login'];
 }
 
-function ac($dbh, $id, $user_typed){
+function ac($dbh, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();
-        $sql = "select distinct ".$id." from polytechniciens where ".$id." like '%".$user_typed."%' limit 10";
+        $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like '%".$user_typed."%' or nom like '%".$user_typed."%' limit 10";
         $result = $dbh->query($sql);
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                array_push($data,$row[$id]);
+                $prenom = $row['prenom'];
+                $nom = $row['nom'];
+                $section = $row['section'];
+                $promotion = $row['promotion'];
+                $destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);
+                array_push($data,array('label' => ''.$prenom.' '.$nom.' ('.$section.' '.$promotion.')', 'login' => $destinataire));
             }
         } 
         else {
-            array_push($data,"Pas trouvé :(");
+            array_push($data, array(label =>"Pas trouvé :(", login => "erreur"));
         }
     }
     echo json_encode($data);
