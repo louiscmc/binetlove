@@ -24,7 +24,9 @@
             else{echo 'pas autorisé';}
         ?>                  
     </div>
+
         <?php 
         generateHTMLFooter()
         ?>
+    </body>
 </html>

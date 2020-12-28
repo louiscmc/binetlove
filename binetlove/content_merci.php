@@ -1,9 +1,7 @@
 <?php
             $datetime = date_create()->format('Y-m-d H:i:s');
             $contenu = $_POST["contenu"];
-            $nom=$_POST["nom"];
-            $prenom=$_POST["prenom"];
-            $promotion=$_POST["promotion"];
+            $prenom = '';
             $section=$_POST["section"];
             /*$destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);*/
             insererLettre($dbh,'patate',$prenom.'.'.$nom,"$contenu","$datetime"); 

@@ -20,17 +20,27 @@ function generateHTMLHeader($title, $CSS){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Optional JavaScript -->
+        <!-- JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!-- Mon CSS Perso -->
         <link href="$CSS" rel="stylesheet">
+        <!-- Autocomplete -->
+        <script src="js/jquery-1.4.2.min_.js"></script>
+        <script src="js/jquery.autocomplete.js"></script>
+        
+        <script> 
+            jQuery(function(){ 
+            $("#prenom").autocomplete("ac_prenom.php");
+            });
+        </script>
     </head>
-    <header>
+    <body>
+        <header>
             <nav class="navbar navbar-expand-md navbar-dark  bg-pink">
-                <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&height=679"> Binet Love</a>
+                <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&amp;height=679"> Binet Love</a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,7 +59,6 @@ function generateHTMLHeader($title, $CSS){
                 </div>
             </nav>
         </header>
-    <body>
 CHAINE_DE_FIN;}
 
 function generateHTMLFooter(){ 

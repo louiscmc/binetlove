@@ -8,15 +8,14 @@
             <div class="container-fluid">
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
-                       <form>
                            <div class="row">
                             <div class="form-group col-md-2">
-                              <label for="prenom">Prénom</label>
-                              <input type="prenom" name="prenom" class="form-control" id="prenom" placeholder="Prénom">
+                              <label>Prénom</label>
+                              <input class="form-control" type="text" id="prenom" placeholder="Prénom">
                             </div>
                             <div class="form-group col-md-2">
                               <label for="nom">Nom</label>
-                              <input class="form-control" type="nom" name="nom" id="nom" placeholder="Nom">
+                              <input class="form-control" name="nom" id="nom" placeholder="Nom">
                             </div>
                             <div class="form-group col-md-4">
                               <label for="promotion">Promotion</label>
@@ -105,3 +104,8 @@
                 </div>
             </div>
   <!--</form>-->
+  <script> 
+            jQuery(function(){ 
+            $("#prenom").autocomplete("ac_prenom.php");
+            });
+        </script>
