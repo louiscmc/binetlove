@@ -104,10 +104,15 @@
                             <div class="col-md-4">
                                 <br> 
                                 <div class="card">
-                                    <div class="card-body">
-                                        <a href="#">&#128512;</a> <a href="#">&#128516;</a> <a href="#">&#128525;</a> <a href="#">&#128151;</a> <a href="#">&#128149;</a> <a href="#">&#128536;</a> <a href="#">&#128522;</a> <a href="#">&#128557;</a> <a href="#">&#128521;</a> 
-                                        <a href="#">&#128546;</a> <a href="#">&#128526;</a> <a href="#">&#128513;</a> <a href="#">&#128527;</a> <a href="#">&#128064;</a> <a href="#">&#128150;</a> <a href="#">&#128523;</a>
-                                        <a href="#">&#128152;</a> <a href="#">&#128158;</a> <a href="#">&#128561;</a> <a href="#">&#128293;</a> <a href="#">&#127881;</a>
+                                    <div class="card-body" >
+                                        <?php
+                                            function emoji($numero){
+                                                echo "<span onclick='addText(event)'>&#".$numero.";</span>";
+                                            }
+                                        emoji('128512'); emoji('128516'); emoji('128525');emoji('128151');emoji('128149');emoji('128536');emoji('128522');emoji('128557');emoji('128521'); 
+                                        emoji('128546');emoji('128526');emoji('128513');emoji('128527');emoji('128064');emoji('128150');emoji('128523');
+                                        emoji('128152');emoji('128158');emoji('128561');emoji('128293');emoji('127881');
+                                        ?>
                                     </div>
                                 </div>
                             </div>
