@@ -31,7 +31,7 @@
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
                             if (!empty($destinataire)){
-                                insererLettre($dbh,"patate", $destinataire, $contenu,"$datetime"); 
+                                insererLettre($dbh,$username, $destinataire, $contenu,"$datetime"); 
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 
-                <div class="container-fluid offset-md-1">
+                <div class="container-fluid col-md-10 offset-md-1">
                 <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
                 <br>
                 </div>

@@ -52,6 +52,9 @@ function generateHTMLHeader($title, $CSS){
                         </li>
                     </ul>
                 </div>
+            <form class="logout" method='post' action="">
+                                <input class="btn-rose" type="submit" value="Se déconnecter" name="but_logout">
+            </form>
             </nav>
         </header>
 CHAINE_DE_FIN;}

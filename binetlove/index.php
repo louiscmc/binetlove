@@ -1,8 +1,25 @@
+<?php
+    session_start();
+    require("utils.php");
+    require ("database.php");
+        
+     // Check user login or not
+     if(!isset($_SESSION['userid'])){ 
+       header('Location: login.php');
+       exit();
+     }
+
+     // logout
+     if(isset($_POST['but_logout'])){
+       session_destroy();
+       header('Location: login.php');
+       exit();
+     }
+
+?>
 <!DOCTYPE html>
 <html>
     <?php 
-        require("utils.php");
-        require("database.php");
         if(isset($_GET['page'])){
             $askedPage=$_GET['page'];
         }
@@ -22,7 +39,7 @@
             if($authorized){
             require("content_$askedPage.php");
             }
-            else{echo 'pas autorisé';}
+            else{echo "Cette page n'existe pas";}
         ?>                  
     </div>
 

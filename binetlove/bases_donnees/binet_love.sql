@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 18 déc. 2020 à 14:58
+-- Généré le : mar. 29 déc. 2020 à 10:37
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -34,6 +34,14 @@ CREATE TABLE `lettre` (
   `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `lettre`
+--
+
+INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES
+('patate', 'mathilde.andre', 'coucou test', '2020-12-28 22:54:45'),
+('patate', 'louis.cattin-mota_de_campos', 'viospmnpn', '2020-12-29 00:51:59');
+
 -- --------------------------------------------------------
 
 --
@@ -53,9 +61,48 @@ CREATE TABLE `polytechniciens` (
 -- Déchargement des données de la table `polytechniciens`
 --
 
-INSERT INTO `polytechniciens` (`login`, `Nom`, `Prenom`,`Section`, `Promotion`, `Casert`) VALUES
-('mathilde.andre', 'André', 'Mathilde','Escalade', 2019, 123003),
-('louis.cattin-mota_de_campos', 'Cattin--Mota de Campos', 'Louis','Natation', 2019, 702013);
+INSERT INTO `polytechniciens` (`login`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
+('mathilde.andre', 'André', 'Mathilde', 'Escalade', 2019, 123003),
+('louis.cattin-mota_de_campos', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
