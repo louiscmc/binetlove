@@ -13,4 +13,3 @@ function addText(event) {
     var targ = event.target || event.srcElement;
     document.getElementById("contenu").value += targ.textContent || targ.innerText;
 }
-

@@ -21,7 +21,7 @@ if(isset($_POST['but_submit'])){
      
      if($count > 0){
         $userid = $record['id'];
-
+        $_SESSION['username']= $username;
         $_SESSION['userid'] = $userid;
         header('Location: index.php');
         exit;
