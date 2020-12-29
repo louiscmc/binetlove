@@ -144,12 +144,15 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="container-fluid col-md-10 offset-md-1">
-                <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
-                <br>
+                <div class="container-fluid col-md-2 offset-md-1">
+                    <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
+                </div>
+            </form>
+                    <br>
+                <div class="container-fluid col-md-2 offset-md-1">
+                    <a class="btn btn-light" href="index.php?page=envoye" role="button">Voir les lettres envoyées</a>
                 </div>
             </div>
-            </form>    
-  <!--</form>-->
+            </form>  
+            <br>
   

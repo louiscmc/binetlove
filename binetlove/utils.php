@@ -82,6 +82,10 @@ $page_list = array(
     "name"=>"letter",
     "title"=>"Écrire une lettre",
     "menutitle"=>"Écrire une lettre"),
+    array(
+    "name"=>"envoye",
+    "title"=>"Lettres envoyées",
+    "menutitle"=>"Lettres envoyées"),
      array(
     "name"=>"contact",
     "title"=>"Nous contacter",
