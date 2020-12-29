@@ -1,6 +1,6 @@
 <?php
 session_start();
- require_once("database.php");
+require_once("database.php");
 
 // On submit
 if(isset($_POST['but_submit'])){
@@ -56,7 +56,7 @@ if(isset($_POST['but_submit'])){
         <script src="js/ac_js.js"></script>
 
   </head>
-  <body class="bg-pink">
+  <body class="color-change-2x">
      <div id="container" class="container-login">
        
        <form class="form-login" method="post" action="">
@@ -69,7 +69,7 @@ if(isset($_POST['but_submit'])){
               <input  type="password" class="textbox" name="txt_pwd" value="" placeholder="Mot de Passe"/>
             </div>
             <div>
-              <input  class="btn-rose btn-login" type="submit" value="Se connecter" name="but_submit" id="but_submit" />
+              <input  class="btn-rose btn-login heartbeat" type="submit" value="Se connecter" name="but_submit" id="but_submit" />
             </div>
          </div>
         </form>

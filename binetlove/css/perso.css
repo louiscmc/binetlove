@@ -225,3 +225,16 @@ input[type=text], input[type=password] {
 .logout{
     float :right;
 }
+
+@keyframes color-change-2x {
+  0% {
+    background: #f1a0dc ;
+  }
+  100% {
+    background:  #ef59d3;
+  }
+}
+
+.color-change-2x {
+	animation: color-change-2x 2s linear infinite alternate;
+}
