@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : mar. 29 déc. 2020 à 10:37
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.0
+-- Hôte : 127.0.0.1
+-- Généré le :  mar. 29 déc. 2020 à 22:50
+-- Version du serveur :  10.4.8-MariaDB
+-- Version de PHP :  7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `binet_love`
+-- Base de données :  `binet_love`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +41,16 @@ CREATE TABLE `lettre` (
 
 INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES
 ('patate', 'mathilde.andre', 'coucou test', '2020-12-28 22:54:45'),
-('patate', 'louis.cattin-mota_de_campos', 'viospmnpn', '2020-12-29 00:51:59');
+('patate', 'louis.cattin-mota_de_campos', 'viospmnpn', '2020-12-29 00:51:59'),
+('', 'louis.cattin-mota_de_campos', 'dfsdfsd😊😊😊', '2020-12-29 20:00:25'),
+('1', 'louis.cattin-mota_de_campos', 'dqsdqsd', '2020-12-29 20:15:51'),
+('_', 'louis.cattin-mota_de_campos', 'dfsfsdfsdf', '2020-12-29 20:18:32'),
+('_', 'louis.cattin-mota_de_campos', 'dfsfsdfsdf', '2020-12-29 20:18:48'),
+('', 'louis.cattin-mota_de_campos', 'cxwcwx', '2020-12-29 20:19:01'),
+('', 'louis.cattin-mota_de_campos', 'cxwcwx', '2020-12-29 20:54:29'),
+('', 'louis.cattin-mota_de_campos', 'cxwcwx', '2020-12-29 20:55:21'),
+('', 'louis.cattin-mota_de_campos', 'cxwcwx', '2020-12-29 20:59:14'),
+('admin', 'louis.cattin-mota_de_campos', 'dsdqsdsqdq', '2020-12-29 21:00:19');
 
 -- --------------------------------------------------------
 
@@ -50,6 +60,7 @@ INSERT INTO `lettre` (`login`, `destinataire`, `contenu`, `time`) VALUES
 
 CREATE TABLE `polytechniciens` (
   `login` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `nom` varchar(64) NOT NULL,
   `prenom` varchar(64) NOT NULL,
   `section` varchar(32) NOT NULL,
@@ -61,48 +72,9 @@ CREATE TABLE `polytechniciens` (
 -- Déchargement des données de la table `polytechniciens`
 --
 
-INSERT INTO `polytechniciens` (`login`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
-('mathilde.andre', 'André', 'Mathilde', 'Escalade', 2019, 123003),
-('louis.cattin-mota_de_campos', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(64) NOT NULL,
-  `password` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+INSERT INTO `polytechniciens` (`login`, `password`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
+('louis.cattin--mota_de_campos', 'pass_louis', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013),
+('mathilde_andre', 'pass_mathilde', 'André', 'Mathilde', 'Escalade', 2019, 123003);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

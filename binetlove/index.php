@@ -4,7 +4,7 @@
     require ("database.php");
         
      // Check user login or not
-     if(!isset($_SESSION['userid'])){ 
+     if(!isset($_SESSION['login'])){ 
        header('Location: login.php');
        exit();
      }

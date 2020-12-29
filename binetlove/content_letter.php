@@ -31,8 +31,7 @@
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
                             if (!empty($destinataire)){
-                                var_dump($_SESSION['username']);
-                                insererLettre($dbh,$_SESSION['username'], $destinataire, $contenu,"$datetime"); 
+                                insererLettre($dbh,$_SESSION['login'], $destinataire, addslashes($contenu),"$datetime"); 
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";

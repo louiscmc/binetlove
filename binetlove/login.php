@@ -5,14 +5,13 @@ require_once("database.php");
 // On submit
 if(isset($_POST['but_submit'])){
 
-   $username = $_POST['txt_uname'];
+   $login = $_POST['txt_login'];
    $password = $_POST['txt_pwd'];
-
-   if ($username != "" && $password != ""){
+   if ($login != "" && $password != ""){
 
      // Fetch records
-     $stmt = $dbh->prepare("SELECT count(*) as cntUser,id FROM users WHERE username=:username and password=:password ");
-     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+     $stmt = $dbh->prepare("SELECT count(*) as cntUser,login FROM polytechniciens WHERE login=:login and password=:password ");
+     $stmt->bindValue(':login', $login, PDO::PARAM_STR);
      $stmt->bindValue(':password', $password, PDO::PARAM_STR);
      $stmt->execute(); 
      $record = $stmt->fetch(); 
@@ -20,13 +19,11 @@ if(isset($_POST['but_submit'])){
      $count = $record['cntUser'];
      
      if($count > 0){
-        $userid = $record['id'];
-        $_SESSION['username']= $username;
-        $_SESSION['userid'] = $userid;
+        $_SESSION['login'] = $login;
         header('Location: index.php');
         exit;
     }else{
-        echo "Invalid username and password";
+        echo "Invalid login and password";
     }
 
   }
@@ -63,7 +60,7 @@ if(isset($_POST['but_submit'])){
          <div id="div_login">
              <h1>Connecte toi !</h1>
             <div>
-              <input type="text" class="textbox" name="txt_uname" value="" placeholder="Login" />
+              <input type="text" class="textbox" name="txt_login" value="" placeholder="Login" />
             </div>
             <div>
               <input  type="password" class="textbox" name="txt_pwd" value="" placeholder="Mot de Passe"/>
