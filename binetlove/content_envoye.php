@@ -1,9 +1,15 @@
 <div class="container">
     <br>
-    <a class="btn btn-light float-right" href="index.php?page=letter" role="button">Revenir au formulaire</a>
+    <div class='row justify-content-md-center'>
+    <a class="btn btn-light" href="index.php?page=letter" role="button">Revenir au formulaire</a>
+    </div>
+    <br>
     <?php
     $login = $_SESSION['login'];
-    $result = $dbh->query("SELECT id, destinataire, contenu, time FROM lettre WHERE login='$login' and supprime=0");
+    $result = $dbh->query("SELECT id, destinataire, contenu, time "
+            . "FROM lettre "
+            . "WHERE login='$login' and supprime=0 "
+            . "ORDER BY id DESC");
         if ($result->rowCount() > 0){
                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     $id=$row['id'];
@@ -28,9 +34,11 @@
                                     <label for='contenumod'>Écris ton message !</label>
                                     <textarea class='form-control' name='contenumod$id' id='contenumod$id' placeholder='Votre lettre !' rows='12'>$contenu</textarea>
                                     <br>
-                                    <button type='submit' class='btn btn-success' >Modifier</button>
+                                    <div class='row justify-content-md-center'>
+                                        <button type='submit' class='btn btn-success' style='margin:5px;'>Modifier</button>
+                                        <button type='button' class='btn cancel' onclick='closeForm()' style='margin:5px;'>Fermer</button>
+                                    </div>
                                 </form>
-                                    <button type='button' class='btn cancel' onclick='closeForm()'>Fermer</button>
                             </div>
                             <br>
                         ";
@@ -44,18 +52,20 @@
                     }
                     echo "
                         <div class='row'>
-                            <div class='card' >
-                                <div class='card-body'>
-                                    <h5 class='card-title'>$prenom $nom ($section $promotion)</h5>
-                                    <h6 class='card-subtitle mb-2 text-muted'>Envoyé à $time</h6>
-                                    <p class='card-text'>$contenu</p>
-                                    <form method='post'> 
-                                            <input type='submit' name='modifier$id'
-                                                    class='btn btn-light' value='Modifier' /> 
+                            <div class='col-sm'>
+                                <div class='card' >
+                                    <div class='card-header'>$prenom $nom ($section $promotion)</div>
+                                    <div class='card-body'>
+                                        <p class='card-text' style='white-space: pre-wrap;'>$contenu</p>
+                                        <form method='post'> 
+                                                <input type='submit' name='modifier$id'
+                                                        class='btn btn-light' value='Modifier' /> 
 
-                                            <input type='submit' name='supprimer$id'
-                                                    class='btn btn-danger' value='Supprimer' /> 
-                                    </form> 
+                                                <input type='submit' name='supprimer$id'
+                                                        class='btn btn-danger' value='Supprimer' /> 
+                                        </form> 
+                                    </div>
+                                    <div class='card-footer text-muted'>Envoyé à $time</div>
                                 </div>
                             </div>
                         </div> 
