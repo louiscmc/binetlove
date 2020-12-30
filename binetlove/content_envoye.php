@@ -24,19 +24,23 @@
                     if(array_key_exists('modifier'.$stringid, $_POST)){
                         echo "
                             <div id='myForm'>
-                                <form mehod='post'>
+                                <form method='post'>
                                     <label for='contenumod'>Écris ton message !</label>
-                                    <textarea class='form-control' name='contenumod' id='contenumod' placeholder='Votre lettre !' rows='12'>$contenu</textarea>
+                                    <textarea class='form-control' name='contenumod$id' id='contenumod$id' placeholder='Votre lettre !' rows='12'>$contenu</textarea>
                                     <br>
-                                    <button type='submit' class='btn btn-success' onclick='closeForm()'>Modifier</button>
-                                    <button type='button' class='btn cancel' onclick='closeForm()'>Fermer</button>
+                                    <button type='submit' class='btn btn-success' >Modifier</button>
                                 </form>
+                                    <button type='button' class='btn cancel' onclick='closeForm()'>Fermer</button>
                             </div>
                             <br>
                         ";
-                        if(array_key_exists('contenumod', $_POST)){
-                            modifierLettre($dbh, $id, $_POST('contenumod'));
-                        }
+                    }
+                    
+                    if(array_key_exists('contenumod'.$id, $_POST)){
+                        $contenumod=$_POST['contenumod'.$id];
+                        $contenumodok=addslashes(test_input($contenumod));
+                        modifierLettre($dbh, $id, $contenumodok);
+                        header("Refresh:0");
                     }
                     echo "
                         <div class='row'>

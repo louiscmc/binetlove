@@ -31,7 +31,7 @@ function insererLettre($dbh, $login,$destinataire,$contenu,$date){
 
 function modifierLettre($dbh, $id, $contenumod){
     $contenumodok=addslashes(test_input($contenumod));
-    $dbh->query("UPDATE lettre SET contenu=$contenumodok WHERE id=$id");
+    $dbh->query("UPDATE lettre SET contenu='$contenumodok' WHERE id=$id");
 }
 
 function supprimerLettre($dbh, $id){
@@ -73,6 +73,13 @@ function ac($dbh, $user_typed){
     }
     echo json_encode($data);
 }
-  
+
+
+function test_input($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data;
+                }
 
 ?>
