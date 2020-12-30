@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 30 déc. 2020 à 00:53
+-- Généré le :  mer. 30 déc. 2020 à 01:50
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.11
 
@@ -29,11 +29,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `lettre` (
+  `id` int(11) NOT NULL,
   `login` varchar(64) NOT NULL,
   `destinataire` varchar(64) NOT NULL,
   `contenu` text NOT NULL,
-  `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `supprime` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `lettre`
+--
+
+INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `time`, `supprime`) VALUES
+(1, 'louis.cattin--mota_de_campos', 'mathilde_andre', 'dkqsjdslqkds', '2020-12-30 01:48:12', 1),
+(2, 'louis.cattin--mota_de_campos', 'mathilde_andre', 'ddsddsdqs😎😎😎', '2020-12-30 01:48:49', 1),
+(3, 'louis.cattin--mota_de_campos', 'mathilde_andre', 'dzezdqzdqdzq😎😎😎', '2020-12-30 01:49:56', 1);
 
 -- --------------------------------------------------------
 

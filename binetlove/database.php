@@ -25,7 +25,12 @@ function insererUtilisateur($dbh, $login,$nom,$prenom,$section,$promotion,$caser
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
-    $dbh->query("INSERT INTO lettre (login, destinataire, contenu, time) VALUES ('$login', '$destinataire', '$contenu', '$date')");
+    $id=$dbh->query("SELECT COUNT(*) FROM lettre;")->fetchColumn()+1;
+    $dbh->query("INSERT INTO lettre (id, login, destinataire, contenu, time, supprime) VALUES ($id,'$login', '$destinataire', '$contenu', '$date', 0)");
+}
+
+function supprimerLettre($dbh, $id){
+    $dbh->query("UPDATE lettre SET supprime=1 WHERE id=$id");
 }
 
 
@@ -65,18 +70,27 @@ function ac($dbh, $user_typed){
 }
 
 function get_lettres($dbh, $login){
-    $result = $dbh->query("SELECT destinataire, contenu, time FROM lettre WHERE login='$login'");
+    $result = $dbh->query("SELECT id, destinataire, contenu, time FROM lettre WHERE login='$login' and supprime=0");
+    global $data;
+    $data = array();
     if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                $id=$row['id'];
                 $destinataire = $row['destinataire'];
                 $contenu = $row['contenu'];
+                $temps=$row['time'];
                 setlocale(LC_ALL, 'fr_FR');
-                $time= strftime('%T le %D', strtotime($row['time']));
+                $time= strftime('%T le %D', strtotime($temps));
                 $desti_data= getDestinataireReverse($dbh, $destinataire);
                 $prenom = $desti_data['prenom'];
                 $nom=$desti_data['nom'];
                 $section = $desti_data['section'];
                 $promotion = $desti_data['promotion'];
+                $stringid=strval($id);
+                if(array_key_exists('supprimer'.$stringid, $_POST)) { 
+                    supprimerLettre($dbh, $id);
+                    header("Refresh:0");
+                } 
                 echo "
                     <div class='row'>
                         <div class='card' >
@@ -84,8 +98,13 @@ function get_lettres($dbh, $login){
                                 <h5 class='card-title'>$prenom $nom ($section $promotion)</h5>
                                 <h6 class='card-subtitle mb-2 text-muted'>Envoyé à $time</h6>
                                 <p class='card-text'>$contenu</p>
-                                <a href='#' class='card-link'>Modifier</a>
-                                <a href='#' class='card-link'>Supprimer</a>
+                                <form method='post'> 
+                                        <input type='submit' name='modifier$id'
+                                                class='btn btn-light' value='Modifier' /> 
+
+                                        <input type='submit' name='supprimer$id'
+                                                class='btn btn-danger' value='Supprimer' /> 
+                                </form> 
                             </div>
                         </div>
                     </div> 
