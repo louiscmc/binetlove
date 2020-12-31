@@ -52,6 +52,12 @@ function getDestinataireReverse($dbh,$login){
     return $data;
 }
 
+function getPrenom($dbh, $login){
+    $result = $dbh->query("SELECT prenom FROM polytechniciens WHERE login = '$login'");
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    return $row['prenom'];
+}
+
 function ac($dbh, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();

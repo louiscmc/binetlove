@@ -31,8 +31,9 @@
         else{
            $pageTitle="erreur"; 
         }
+        $utilisateur = getPrenom($dbh, $_SESSION['login']);
         $CSS="css/perso.css";
-        generateHTMLHeader($pageTitle, $CSS);
+        generateHTMLHeader($pageTitle, $CSS, $utilisateur);
     ?>
     <div id=content>
         <?php

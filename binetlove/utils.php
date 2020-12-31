@@ -1,5 +1,5 @@
 <?php
-function generateHTMLHeader($title, $CSS){
+function generateHTMLHeader($title, $CSS, $utilisateur){
     $act_letter="";
     $act_design="";
     $act_contact="";
@@ -51,6 +51,9 @@ function generateHTMLHeader($title, $CSS){
                             <a class="nav-link" href="index.php?page=contact">Contact</a>
                         </li>
                     </ul>
+                </div>
+                <div class="bonjour">
+                <p> Bonjour, $utilisateur </p>
                 </div>
                 <form class="logout" method='post' action="">
                                     <input class="btn btn-rose" type="submit" value="Se déconnecter" name="but_logout">

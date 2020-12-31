@@ -225,6 +225,12 @@ input[type=text], input[type=password] {
 .logout{
     float :right;
 }
+.bonjour{
+    float: right;
+    color : white;
+    margin-top: 1%;
+    margin-right: 2%;
+}
 
 @keyframes color-change-2x {
   0% {
