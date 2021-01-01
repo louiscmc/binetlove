@@ -244,3 +244,19 @@ input[type=text], input[type=password] {
 .color-change-2x {
 	animation: color-change-2x 2s linear infinite alternate;
 }
+
+.small {
+  font-size: 12px !important;
+}
+.gras{
+   font-weight: bold; 
+}
+.italique{
+  font-style: italic;  
+}
+.souligne{
+  text-decoration: underline;
+}
+.barre{
+   text-decoration: line-through; 
+}

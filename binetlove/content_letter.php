@@ -87,12 +87,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-8">
-                                <label for="contenu">Écris ton message !</label>
-                                <textarea class="form-control" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"><?php echo $contenu;?></textarea>
-                                <br>                              
+                            <div class="col-md-12">
+                                        <textarea class="form-control" name="contenu" id="contenu" placeholder="Votre lettre !" rows="12"><?php echo $contenu;?></textarea>
+                                        <br>                              
+                                    
+                                </div>
                             </div>
-                            <div class="col-md-4">
+                    </div>
+                          <!-- <div class="col-md-4">
                                 <br> 
                                 <div class="card">
                                     <div class="card-body" >
@@ -106,9 +108,7 @@
                                         ?>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </div> --> 
                     <div class="col-md-3">
                     <p>Choix du design</p>
                         <div class="row">
@@ -146,4 +146,7 @@
             </div>
             </form>  
             <br>
-  
+            <script src="ckeditor/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace('contenu');
+            </script>
