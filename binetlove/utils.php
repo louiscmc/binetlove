@@ -27,9 +27,11 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
         <script src="js/bootstrap.min.js"></script>
         <!-- jQuery UI library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- Mon CSS Perso -->
+        <!-- CSS et scripts persos -->
         <link href="$CSS" rel="stylesheet">
         <script src="js/ac_js.js"></script>
+        <!-- CKEDITOR -->
+        
 
     </head>
     <body>

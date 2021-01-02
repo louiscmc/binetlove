@@ -50,15 +50,17 @@
                         modifierLettre($dbh, $id, $contenumodok);
                         header("Refresh:0");
                     }
+                    $contenu=htmlspecialchars_decode(str_replace( '&', '&amp;', $contenu));
+                    var_dump($contenu);
                     echo "
                         <div class='row'>
                             <div class='col-sm'>
                                 <div class='card' >
                                     <div class='card-header'>$prenom $nom ($section $promotion)</div>
-                                    <div class='card-body'>
-                                        <p class='card-text' style='white-space: pre-wrap;'>$contenu</p>
-                                        <form method='post'> 
-                                                <input type='submit' name='modifier$id'
+                                    <div class='card-body'>";
+                                        echo $contenu;
+                                        echo"<br><form method='post'> 
+                                                <input type='submit' nsame='modifier$id'
                                                         class='btn btn-light' value='Modifier' /> 
 
                                                 <input type='submit' name='supprimer$id'
