@@ -11,8 +11,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.height = '20em';
 	config.contentsCss = "css/fonts.css";
 	config.font_names = " Caveat;Fine College;" + config.font_names;
-	font_defaultLabel = 'Caveat';
-	fontSize_defaultLabel = '16';
+	config.font_defaultLabel = 'Caveat';
+	config.fontSize_defaultLabel = '16';
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
