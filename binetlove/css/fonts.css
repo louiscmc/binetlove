@@ -1,0 +1,13 @@
+/* fonts perso */
+
+@font-face {  
+    font-family: "caveat"; 
+    src: local("Caveat"), url("fonts/caveat/Caveat-Regular.ttf") format("truetype");  
+  }
+
+@font-face {  
+    font-family: "fine_college"; 
+    src: local("Fine College"), url("fonts/Fine College.ttf") format("truetype");  
+  }
+
+  
