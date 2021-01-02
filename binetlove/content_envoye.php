@@ -50,8 +50,7 @@
                         modifierLettre($dbh, $id, $contenumodok);
                         header("Refresh:0");
                     }
-                    $contenu=htmlspecialchars_decode(str_replace( '&', '&amp;', $contenu));
-                    var_dump($contenu);
+                    $contenu='<div>'.html_entity_decode($contenu).'</div>';
                     echo "
                         <div class='row'>
                             <div class='col-sm'>
@@ -82,5 +81,10 @@
             ";
         }
     ?>
+    <br>
+    <div class='row justify-content-md-center'>
+    <a class="btn btn-light" href="index.php?page=letter" role="button">Revenir au formulaire</a>
+    </div>
+    <br>
 </div>
 
