@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.uiColor = "#f1a0dc";
 	config.height = '20em';
 	config.contentsCss = "perso.css";
-	config.font_names = " Fine College;Caveat;" + config.font_names;
+	config.font_names = " Caveat;Fine College;" + config.font_names;
 	font_defaultLabel = 'Caveat';
 	fontSize_defaultLabel = '16';
 
