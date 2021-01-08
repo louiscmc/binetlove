@@ -22,7 +22,7 @@ global $dbh;
 $dbh = Database::connect();
 function insererUtilisateur($dbh, $login, $admin, $password,$nom,$prenom,$section,$promotion,$casert){
     $sth = $dbh->prepare("INSERT INTO polytechniciens ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES (?, ?, ?, ?, ?, ?,?,?)");
-    $sth -> exectute(array($login,$admin, hash('sha512', $password),$nom,$prenom, $section, $promotion, $casert));
+    $sth -> exectute(array($login,$admin, hash('md5', $password),$nom,$prenom, $section, $promotion, $casert));
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
