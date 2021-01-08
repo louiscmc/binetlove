@@ -10,8 +10,10 @@ if(isset($_POST['but_submit'])){
    if ($login != "" && $password != ""){
 
      // Fetch records
-     $stmt = $dbh->prepare("SELECT count(*) as cntUser,login FROM polytechniciens WHERE login=? and password=?");
-     $stmt->execute(array($login, $password ));
+     $stmt = $dbh->prepare("SELECT count(*) as cntUser,login FROM polytechniciens WHERE login=:login and password=:password ");
+     $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+     $stmt->execute();
 
      $count = $record['cntUser'];
      
