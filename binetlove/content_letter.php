@@ -31,7 +31,11 @@
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
                             if (!empty($destinataire)){
-                                insererLettre($dbh,$_SESSION['login'], $destinataire, addslashes($contenu),"$datetime"); 
+                                if(isset($_POST['anonyme']) && $_POST['anonyme']=='Yes'){
+                                    $envoyeur = 'anonyme';
+                                }
+                                else {$envoyeur = $_SESSION['login']; }
+                                insererLettre($dbh,$envoyeur, $destinataire, addslashes($contenu),"$datetime"); 
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
@@ -135,6 +139,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="container-fluid col-md-7 offset-md-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="anonyme">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Je souhaite envoyer cette lettre anonymement (&#9888; Vous ne pourrez plus modifier ou supprimer la lettre !)
+                        </label>
+                    </div>
+                </div>
+                <br>
                 <div class="container-fluid col-md-2 offset-md-1">
                     <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
                 </div>
