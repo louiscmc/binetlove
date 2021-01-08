@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 08 jan. 2021 à 14:37
+-- Généré le :  ven. 08 jan. 2021 à 16:43
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.11
 
@@ -45,10 +45,10 @@ INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `time`, `supprim
 (1, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;sdqsdsqdsqdsqdsqd&lt;/p&gt;', '2021-01-02 22:31:32', 0),
 (2, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;&lt;span style=&quot;font-family:Fine College&quot;&gt;sdqsdqsdqsdsqd&lt;/span&gt;&lt;/p&gt;', '2021-01-02 22:32:24', 0),
 (3, 'louis.cattin--mota_de_campos', 'mathilde_andre', '&lt;p&gt;wxwxw&amp;lt;x&amp;lt;wxw&amp;lt;xw&amp;lt;&lt;span style=&quot;font-family:Fine College&quot;&gt;wxw&amp;lt;xw&amp;lt;xw&amp;lt;x&amp;lt;wx&lt;/span&gt;&lt;/p&gt;', '2021-01-02 22:38:43', 0),
-(4, 'louis.cattin--mota_de_campos', 'louis_vaneau', '&lt;p&gt;dsdqsdqsdsqdqsdqsdsqd&lt;span style=&quot;font-family:Caveat&quot;&gt;sdqsdsqdqsdsq&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;sdqsdsqdqsd&lt;/span&gt;&lt;span style=&quot;font-family:Caveat&quot;&gt;sdqdsdqsd&lt;/span&gt;sdqsdsqdqsd&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;&gt;sdqsdqsd&lt;/span&gt;&lt;/p&gt;', '2021-01-02 22:48:52', 0),
-(5, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;dfsdfsdfdsfsdfsdfsdsd&lt;strong&gt;fsdfsdfsdfs&lt;em&gt;dfsdfsd&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;', '2021-01-04 10:13:21', 0),
-(6, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;ljnkjbnjknhiubn&lt;span style=&quot;font-family:Fine College&quot;&gt;&lt;span style=&quot;font-size:72px&quot;&gt;;:m,kjln,lkjn&lt;/span&gt;&lt;/span&gt;😗&lt;/p&gt;', '2021-01-06 17:00:30', 0),
-(7, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;zeaeazeazeaz&lt;span style=&quot;font-family:Fine College&quot;&gt;erzerzerzer&lt;/span&gt;&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;&gt;rzerezrze&lt;/span&gt;&lt;/p&gt;', '2021-01-08 14:22:30', 0);
+(4, 'louis.cattin--mota_de_campos', 'louis_vaneau', '&amp;lt;p&amp;gt;dsdqsdqsdsqdqsdqsdsqd&amp;lt;span style=&amp;quot;font-family:Caveat&amp;quot;&amp;gt;sdqsdsqdqsdsq&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-family:Arial,Helvetica,sans-serif&amp;quot;&amp;gt;sdqsdsqdqsd&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-family:Caveat&amp;quot;&amp;gt;sdqdsdqsd&amp;lt;/span&amp;gt;sdqsdsqdqsd&amp;lt;span style=&amp;quot;font-family:Arial,Helvetica,sans-serif&amp;quot;&amp;gt;sdqsdqsd&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;', '2021-01-08 15:37:12', 1),
+(5, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&amp;lt;p&amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;amp;lt;p&amp;amp;amp;gt;&amp;amp;amp;amp;lt;p&amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;lt;p&amp;amp;amp;amp;amp;gt;dfsdfsdfdsfsdfsdfsdsd&amp;amp;amp;amp;amp;lt;strong&amp;amp;amp;amp;amp;gt;fsdfsdfsdfs&amp;amp;amp;amp;amp;lt;em&amp;amp;amp;amp;amp;gt;dfsdfsd&amp;amp;amp;amp;amp;lt;/em&amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;lt;/strong&amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;lt;/p&amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;lt;/p&amp;amp;amp;amp;gt;&amp;amp;amp;lt;/p&amp;amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/p&amp;gt;', '2021-01-08 15:36:25', 1),
+(6, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;ljnkjbnjknhiubn&lt;span style=&quot;font-family:Fine College&quot;&gt;&lt;span style=&quot;font-size:72px&quot;&gt;;:m,kjln,lkjn&lt;/span&gt;&lt;/span&gt;😗&lt;/p&gt;', '2021-01-08 15:20:51', 1),
+(7, 'louis.cattin--mota_de_campos', 'louis.cattin--mota_de_campos', '&lt;p&gt;zeaeazeazeaz&lt;span style=&quot;font-family:Fine College&quot;&gt;erzerzerzer&lt;/span&gt;&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;&gt;rzerezrze&lt;/span&gt;&lt;/p&gt;', '2021-01-08 15:21:07', 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,8 @@ CREATE TABLE `polytechniciens` (
 INSERT INTO `polytechniciens` (`login`, `admin`, `password`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
 ('louis.cattin--mota_de_campos', 1, 'pass_louis', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013),
 ('mathilde_andre', 1, 'pass_mathilde', 'André', 'Mathilde', 'Escalade', 2019, 123003),
-('louis_vaneau', 0, 'pass_vaneau', 'Vaneau', 'Louis', 'Roulade', 1828, 11001);
+('louis_vaneau', 0, 'pass_vaneau', 'Vaneau', 'Louis', 'Roulade', 1828, 11001),
+('louiscmc', 1, '777cadc280bb23ebea268ded98338c39', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
 
 --
 -- Index pour les tables déchargées

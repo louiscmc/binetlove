@@ -6,7 +6,7 @@ require_once("database.php");
 if(isset($_POST['but_submit'])){
 
    $login = $_POST['txt_login'];
-   $password = hash('sha512', $_POST['txt_pwd']);
+   $password = hash('md5', $_POST['txt_pwd']);
    if ($login != "" && $password != ""){
 
      // Fetch records
