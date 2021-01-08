@@ -13,7 +13,8 @@ if(isset($_POST['but_submit'])){
      $stmt = $dbh->prepare("SELECT count(*) as cntUser,login FROM polytechniciens WHERE login=:login and password=:password ");
      $stmt->bindValue(':login', $login, PDO::PARAM_STR);
      $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-     $stmt->execute();
+     $stmt->execute(); 
+     $record = $stmt->fetch(); 
 
      $count = $record['cntUser'];
      
