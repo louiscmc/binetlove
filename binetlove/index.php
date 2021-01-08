@@ -10,13 +10,14 @@
      }
 
      // logout
-     $inactive=60;
-     $session_life=time()-$_SESSION['timeout'];
-     if((isset($_POST['but_logout']))||($session_life>$inactive)){
-       session_destroy();
-       header('Location: login.php');
-       exit();
+     if((isset($_POST['but_logout']))||(isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10))){
+        session_unset(); 
+        session_destroy();
+        header('Location: login.php');
+        exit();
      }
+
+    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
 ?>
 <!DOCTYPE html>
