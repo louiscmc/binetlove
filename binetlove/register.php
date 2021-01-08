@@ -80,27 +80,27 @@ require_once("database.php");
             <div class="row">
              <div class='col-md-6'>
             <select class="form-select" name='section' id="section" aria-label="Default select example">
-            <option selected>Section</option>
-            <option value="Aviron">Aviron</option>
-            <option value="Bad">Bad</option>
-            <option value="Basket">Basket</option>
-            <option value="Boxe">Boxe</option>
-            <option value="Crossfit">Crossfit</option>
-            <option value="Équitation">Équitation</option>
-            <option value="Escalade">Escalade</option>
-            <option value="Foot">Foot</option>
-            <option value="Hand">Hand</option>
-            <option value="Judo">Judo</option>
-            <option value="Natation">Natation</option>
-            <option value="Raid">Raid</option>
-            <option value="Roulade">Roulade</option>
-            <option value="Rugby">Rugby</option>
-            <option value="Tennis">Tennis</option>
-            <option value="Ultimate">Ultimate</option>
-            <option value="Volley">Volley</option>
+              <option selected>Section</option>
+              <option value="Aviron">Aviron</option>
+              <option value="Bad">Bad</option>
+              <option value="Basket">Basket</option>
+              <option value="Boxe">Boxe</option>
+              <option value="Crossfit">Crossfit</option>
+              <option value="Équitation">Équitation</option>
+              <option value="Escalade">Escalade</option>
+              <option value="Foot">Foot</option>
+              <option value="Hand">Hand</option>
+              <option value="Judo">Judo</option>
+              <option value="Natation">Natation</option>
+              <option value="Raid">Raid</option>
+              <option value="Roulade">Roulade</option>
+              <option value="Rugby">Rugby</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Ultimate">Ultimate</option>
+              <option value="Volley">Volley</option>
             </select>  
              </div>
-              <div <div class='col-md-6'>
+              <div class='col-md-6'>
             <select class="form-select" name="promo" id="promo" aria-label="Default select example">
             <option selected>Promotion</option>
             <option value="2018">2018</option>

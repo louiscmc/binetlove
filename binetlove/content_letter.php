@@ -13,6 +13,7 @@
                    
                     if (empty($_POST["champ_cache"])) {
                             $destinataireErr = "Il faut remplir le prénom !";
+                            $destinataire="";
                         } 
                         else {
                             $destinataire = test_input($_POST["champ_cache"]);
