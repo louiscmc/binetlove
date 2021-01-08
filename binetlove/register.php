@@ -1,4 +1,7 @@
+<!doctype html>
+<html>
 <?php
+require_once("database.php");
                 $nom = $prenom= "";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
@@ -76,7 +79,7 @@
             </div>
             <div class="row">
              <div class='col-md-6'>
-            <select class="form-select" name='section' aria-label="Default select example">
+            <select class="form-select" name='section' id="section" aria-label="Default select example">
             <option selected>Section</option>
             <option value="Aviron">Aviron</option>
             <option value="Bad">Bad</option>
@@ -98,7 +101,7 @@
             </select>  
              </div>
               <div <div class='col-md-6'>
-            <select class="form-select" name="promo" aria-label="Default select example">
+            <select class="form-select" name="promo" id="promo" aria-label="Default select example">
             <option selected>Promotion</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
@@ -116,4 +119,4 @@
         </form>
     </div>
    </body>
- 
+</html>
