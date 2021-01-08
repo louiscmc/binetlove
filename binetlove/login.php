@@ -18,6 +18,7 @@ if(isset($_POST['but_submit'])){
      
      if($count > 0){
         $_SESSION['login'] = $login;
+        $_SESSION['timeout']=time();
         header('Location: index.php');
         exit;
     }else{
