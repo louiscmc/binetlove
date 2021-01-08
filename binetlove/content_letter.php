@@ -141,7 +141,7 @@
                 </div>
                 <div class="container-fluid col-md-7 offset-md-1">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="anonyme">
+                        <input class="form-check-input" type="checkbox" value="Yes" id="anonyme" name="anonyme">
                         <label class="form-check-label" for="defaultCheck1">
                             Je souhaite envoyer cette lettre anonymement (&#9888; Vous ne pourrez plus modifier ou supprimer la lettre !)
                         </label>
