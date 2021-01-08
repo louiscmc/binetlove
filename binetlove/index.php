@@ -10,7 +10,9 @@
      }
 
      // logout
-     if(isset($_POST['but_logout'])){
+     $inactive=10;
+     $session_life=time()-$_session['timeout'];
+     if(isset($_POST['but_logout'])||$session_life>$inactive){
        session_destroy();
        header('Location: login.php');
        exit();
