@@ -21,39 +21,46 @@ class Database {
 global $dbh;
 $dbh = Database::connect();
 function insererUtilisateur($dbh, $login,$nom,$prenom,$section,$promotion,$casert){
-    $dbh->query("INSERT INTO polytechniciens ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES ('$login', '$nom', '$prenom', $section', '$promotion', '$casert')");
+    $sth = $dbh->prepare("INSERT INTO polytechniciens ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES (?, ?, ?, ?, ?, ?)");
+    $sth -> exectute(array($login,$nom,$prenom, $section, $promotion, $casert));
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
-    $id=$dbh->query("SELECT COUNT(*) FROM lettre;")->fetchColumn()+1;
-    $dbh->query("INSERT INTO lettre (id, login, destinataire, contenu, time, supprime) VALUES ($id,'$login', '$destinataire', '$contenu', '$date', 0)");
+    $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, time, supprime) VALUES (?,?, ?, ?, ?, ?)");
+    $sth -> execute(array($login, $destinataire, $contenu, $date, 0));
 }
 
 function modifierLettre($dbh, $id, $contenumod){
     $contenumodok=addslashes(test_input($contenumod));
-    $dbh->query("UPDATE lettre SET contenu='$contenumodok' WHERE id=$id");
+    $sth = $dbh->prepare("UPDATE lettre SET contenu=? WHERE id=?");
+    $sth -> execute(array($contenumodok,$id));
 }
 
 function supprimerLettre($dbh, $id){
-    $dbh->query("UPDATE lettre SET supprime=1 WHERE id=$id");
+    $sth= $dbh->prepare("UPDATE lettre SET supprime=1 WHERE id=?");
+    $sth->execute(array($id));
+    
 }
 
 
 function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
-    $result = $dbh->query("SELECT login FROM polytechniciens WHERE nom = '$nom' AND prenom = '$prenom' AND section = '$section' AND promotion = '$promotion'");
+    $result = $dbh->prepare("SELECT login FROM polytechniciens WHERE nom = ? AND prenom = ? AND section = ? AND promotion = ?");
+    $result -> execute(array($nom, $prenom,$section,$promotion));
     $row = $result->fetch(PDO::FETCH_ASSOC);
     return $row['login'];
 }
 
 function getDestinataireReverse($dbh,$login){
-    $result = $dbh->query("SELECT prenom, nom, section, promotion FROM polytechniciens WHERE login = '$login'");
+    $result = $dbh->prepare("SELECT prenom, nom, section, promotion FROM polytechniciens WHERE login = ?");
+    $result -> execute(array($login));
     $row = $result->fetch(PDO::FETCH_ASSOC);
     $data= array('prenom' =>$row['prenom'], 'nom' => $row['nom'], 'section' => $row['section'], 'promotion' => $row['promotion']);
     return $data;
 }
 
 function getPrenom($dbh, $login){
-    $result = $dbh->query("SELECT prenom FROM polytechniciens WHERE login = '$login'");
+    $result = $dbh->prepare("SELECT prenom FROM polytechniciens WHERE login = ?");
+    $result -> execute(array($login));
     $row = $result->fetch(PDO::FETCH_ASSOC);
     return $row['prenom'];
 }
@@ -61,8 +68,9 @@ function getPrenom($dbh, $login){
 function ac($dbh, $user_typed){
     if (strlen($user_typed)>2){
         $data = array();
-        $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like '%".$user_typed."%' or nom like '%".$user_typed."%' limit 10";
-        $result = $dbh->query($sql);
+        $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like ? or nom like ? limit 10";
+        $result = $dbh->prepare($sql);
+        $result-> execute(array('%".$user_typed."%','%".$user_typed."%'));
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 $prenom = $row['prenom'];

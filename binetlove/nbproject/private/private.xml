@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/login.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/content_envoye.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/content_letter.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/ac_destinataire.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/database.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/content_merci.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/utils.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/index.php</file>
-            <file>file:/C:/xampp/htdocs/github/binetlove/binetlove/js/ac_js.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/ckeditor/ckeditor.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/utils.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/content_letter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/ckeditor/contents.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/ckeditor/samples/css/samples.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/css/perso.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/bases_donnees/binet_love.sql</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/ckeditor/styles.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/ckeditor/build-config.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/github/binetlove/database.php</file>
         </group>
     </open-files>
 </project-private>
