@@ -15,7 +15,7 @@
   {
       /* Font */
       /* Emoji fonts are added to visualise them nicely in Internet Explorer. */
-      font-family: Caveat;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
   
       /* Text color */
@@ -29,7 +29,7 @@
   
   .cke_editable
   {
-      font-family: Caveat;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
       line-height: 1.6;
   

@@ -6,10 +6,11 @@
     <br>
     <?php
     $login = $_SESSION['login'];
-    $result = $dbh->query("SELECT id, destinataire, contenu, time "
+    $result = $dbh->prepare("SELECT id, destinataire, contenu, time "
             . "FROM lettre "
-            . "WHERE login='$login' and supprime=0 "
+            . "WHERE login=? and supprime=0 "
             . "ORDER BY id DESC");
+    $result->execute(array($login));
         if ($result->rowCount() > 0){
                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     $id=$row['id'];
@@ -28,6 +29,7 @@
                         header("Refresh:0");
                     } 
                     if(array_key_exists('modifier'.$stringid, $_POST)){
+                        
                         echo "
                             <div id='myForm'>
                                 <form method='post'>
@@ -41,12 +43,17 @@
                                 </form>
                             </div>
                             <br>
+                            <script src='ckeditor/ckeditor.js'></script>;
+                            <script>
+                                CKEDITOR.replace('contenumod$id');
+                            </script>
                         ";
+                        
                     }
                     
                     if(array_key_exists('contenumod'.$id, $_POST)){
                         $contenumod=$_POST['contenumod'.$id];
-                        $contenumodok=addslashes(test_input($contenumod));
+                        $contenumodok=test_input($contenumod);
                         modifierLettre($dbh, $id, $contenumodok);
                         header("Refresh:0");
                     }
@@ -63,7 +70,7 @@
                                         </style>";
                                         echo $contenu;
                                         echo"</div><br><form method='post'> 
-                                                <input type='submit' nsame='modifier$id'
+                                                <input type='submit' name='modifier$id'
                                                         class='btn btn-light' value='Modifier' /> 
 
                                                 <input type='submit' name='supprimer$id'

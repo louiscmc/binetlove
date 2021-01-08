@@ -31,9 +31,8 @@ function insererLettre($dbh, $login,$destinataire,$contenu,$date){
 }
 
 function modifierLettre($dbh, $id, $contenumod){
-    $contenumodok=addslashes(test_input($contenumod));
     $sth = $dbh->prepare("UPDATE lettre SET contenu=? WHERE id=?");
-    $sth -> execute(array($contenumodok,$id));
+    $sth -> execute(array($contenumod,$id));
 }
 
 function supprimerLettre($dbh, $id){
