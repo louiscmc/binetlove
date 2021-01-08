@@ -51,6 +51,7 @@
                         header("Refresh:0");
                     }
                     $contenu=html_entity_decode($contenu);
+                    var_dump(htmlentities($contenu));
                     echo "
                         <div class='row'>
                             <div class='col-sm'>

@@ -26,7 +26,7 @@ function insererUtilisateur($dbh, $login,$nom,$prenom,$section,$promotion,$caser
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
-    $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, time, supprime) VALUES (?,?, ?, ?, ?, ?)");
+    $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, time, supprime) VALUES (?, ?, ?, ?, ?)");
     $sth -> execute(array($login, $destinataire, $contenu, $date, 0));
 }
 
@@ -70,7 +70,7 @@ function ac($dbh, $user_typed){
         $data = array();
         $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like ? or nom like ? limit 10";
         $result = $dbh->prepare($sql);
-        $result-> execute(array('%".$user_typed."%','%".$user_typed."%'));
+        $result-> execute(array('%'.$user_typed.'%','%'.$user_typed.'%'));
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 $prenom = $row['prenom'];
