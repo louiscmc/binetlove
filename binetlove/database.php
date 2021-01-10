@@ -21,8 +21,8 @@ class Database {
 global $dbh;
 $dbh = Database::connect();
 function insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
-    $sth = $dbh->prepare("INSERT INTO polytechniciens ('login', 'nom', 'prenom','section', 'promotion', 'casert') VALUES (?, ?, ?, ?, ?,?,?)");
-    $sth -> exectute(array($login, hash('sha512', $password),$nom,$prenom, $section, $promotion, $casert));
+    $sth = $dbh->prepare("INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert) VALUES (?, ?, ?, ?, ?,?,?,?)");
+    $sth -> exectute(array($login, 0, hash('md5', $password),$nom,$prenom, $section, $promotion, $casert));
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){

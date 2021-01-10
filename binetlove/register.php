@@ -1,81 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+     <title>S'inscrire | Binet Love</title>
+        <link rel="icon" href="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery UI library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- Mon CSS Perso -->
+        <link href="css/perso.css" rel="stylesheet">
+        <script src="js/ac_js.js"></script>
+
+  </head>
+<body class="color-change-2x">
 <?php
-require_once("database.php");
-                $nom = $prenom= "";
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    
-                    // on regarde si l'utilisateur a bien rempli tous les champs
-                   
-                    if (empty($_POST["name"])) {
-                            $nameErr = "Il faut remplir le prénom !";
-                        } 
-                        else {
-                            $prenom = test_input($_POST["name"]);
-                    }
-                    if (empty($_POST["surname"])) {
-                            $surnameErr = "Il faut remplir le nom !";
-                        } 
-                        else {
-                            $nom = test_input($_POST["surname"]);
-                    }
-                    if (empty($_POST["section"])) {
-                            $sectionErr = "Il faut choisir la section !";
-                        } 
-                        else {
-                            $section = $_POST["section"];
-                    }
-                    if (empty($_POST["casert"])) {
-                            $casertErr = "Il faut remplir le casert !";
-                        } 
-                        else {
-                            $casert = test_input($_POST["casert"]);
-                    }
-                    if (empty($_POST["promo"])) {
-                            $promoErr = "Il faut choisir la promo !";
-                        }
-                        else {
-                            $promotion = $_POST["promo"];
-                    }
-                    if (empty($_POST["pwd"])) {
-                            $passwordErr = "Il faut remplir le mot de passe !";
-                        } 
-                        else {
-                            $pwd = test_input($_POST["pwd"]);
-                    }
-                    if (empty($_POST["login"])) {
-                            $passwordErr = "Il faut remplir le login !";
-                        } 
-                        else {
-                            $login = test_input($_POST["login"]);
-                    }
-                    if ($nom !="" && $prenom != "" ){
-                                insererUtilisateur($dbh, $login, $pwd ,$nom,$prenom,$section,$promotion,$casert);
-                    }               
-            ?>
+    require_once("database.php");
+if(isset($_POST['but_submit'])){
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $section = $_POST['section'];
+        $promotion = $_POST['promotion'];
+        $casert = $_POST['casert'];
 
 
-  <body class="color-change-2x">
-     <div id="container" class="container-login">
-       <form class='login-form' action="
-                <?php 
-                    $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
-                    echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
-                ?>
-            " method="post">
+        $result = insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert);
+        var_dump($result);
+        
+        /*if ($result) {
+            echo "<div class='form'>
+                  <h3>Tu es enregistré !</h3><br/>
+                  <a href='login.php'>Se connecter</a>
+                  </div>";
+        } else {
+            echo "<div class='form'>
+                  <h3>Il manque des champs à remplir !</h3><br/>
+                  <a href='registration.php'>Réessayer</a>
+                  </div>";
+        } */
+    }
+?>
+  <div id="container" class="container-login">
+    <form class="login-form" action="" method="post">
          <div id="div_login">
              <h1>Bienvenue au binet love !</h1>
             <div>
-              <input type="text" class="textbox" name="name" value="" placeholder="Prénom" />
+              <input type="text" class="textbox" name="prenom" value="" placeholder="Prénom" />
             </div>
             <div>
-              <input type="text" class="textbox" name="surname" value="" placeholder="Nom" />
+              <input type="text" class="textbox" name="nom" value="" placeholder="Nom" />
             </div>
              <div>
-              <input  type="login" class="textbox" name="login" value="" placeholder="Login"/>
+              <input  type="text" class="textbox" name="login" value="" placeholder="Login"/>
             </div>
             <div>
-              <input  type="password" class="textbox" name="pwd" value="" placeholder="Mot de Passe"/>
+              <input  type="password" class="textbox" name="password" value="" placeholder="Mot de Passe"/>
             </div>
             <div class="row">
              <div class='col-md-6'>
@@ -101,7 +89,7 @@ require_once("database.php");
             </select>  
              </div>
               <div class='col-md-6'>
-            <select class="form-select" name="promo" id="promo" aria-label="Default select example">
+            <select class="form-select" name="promotion" id="promotion" aria-label="Default select example">
             <option selected>Promotion</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
@@ -116,7 +104,6 @@ require_once("database.php");
               <input  class="btn-rose btn-login heartbeat" type="submit" value="S'inscire" name="but_submit" id="but_submit" />
             </div>
          </div>
-        </form>
-    </div>
-   </body>
+    </form>
+</body>
 </html>
