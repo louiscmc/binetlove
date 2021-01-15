@@ -1,9 +1,9 @@
 <?php
-if (array_key_exists($nom,$_POST)){
+if (array_key_exists('nom',$_POST)){
     $nom=$_POST['nom'];
 }
 $nom="";
-if (array_key_exists($prenom,$_POST)){
+if (array_key_exists('prenom',$_POST)){
     $prenom=$_POST['prenom'];
 }
 $prenom="" ;
