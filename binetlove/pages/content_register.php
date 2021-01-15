@@ -15,14 +15,11 @@ if(array_key_exists('login',$_POST) && !$_POST['login']=="" && array_key_exists(
     $tentative=true;
     $ok=Utilisateur::insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom);
 }
-if{$ok}{
+if ($ok) {
     echo "<p> Inscription réussie ! </p>";
 }
-else if {$tentative}{
+else if ($tentative){
     echo "<p> Il faut remplir le login </p>";
-}
-else{
-
 }
 ?>
 
