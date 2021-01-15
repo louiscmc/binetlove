@@ -65,7 +65,6 @@ CHAINE_DE_FIN;
                 <div style="text-align:right">
 CHAINE_DE_FIN;
 if (isset($_SESSION['loggedIn'])){
-    LogOut();
     printLogoutForm();}
 else {
     printLoginForm($_GET['page']);}
