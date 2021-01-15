@@ -19,6 +19,7 @@ class Database {
  
 // opérations sur la base
 global $dbh;
+$dbh= Database::connect();
 
 function insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
     $sth = $dbh->prepare("INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert) VALUES (?, ?, ?, ?, ?,?,?,?)");
@@ -68,7 +69,6 @@ function ac($dbh, $user_typed){
         $data = array();
         $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like ? or nom like ? limit 10";
         $result = $dbh->prepare($sql);
-        var_dump($data);
         $result-> execute(array('%'.$user_typed.'%','%'.$user_typed.'%'));
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
