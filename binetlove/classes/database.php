@@ -19,7 +19,7 @@ class Database {
  
 // opérations sur la base
 global $dbh;
-$dbh = Database::connect();
+
 function insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
     $sth = $dbh->prepare("INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert) VALUES (?, ?, ?, ?, ?,?,?,?)");
     $sth -> exectute(array($login, 0, hash('md5', $password),$nom,$prenom, $section, $promotion, $casert));
@@ -86,7 +86,6 @@ function ac($dbh, $user_typed){
     }
     echo json_encode($data);
 }
-
 
 function test_input($data) {
                     $data = trim($data);

@@ -1,11 +1,11 @@
 <?php
     session_start();
-    require("utils.php");
-    require ("database.php");
+    require("classes/utils.php");
+    require ("classes/database.php");
         
      // Check user login or not
      if(!isset($_SESSION['login'])){ 
-       header('Location: login.php');
+       header('Location: classes/login.php');
        exit();
      }
 
@@ -13,7 +13,7 @@
      if((isset($_POST['but_logout']))||(isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*30))){
         session_unset(); 
         session_destroy();
-        header('Location: login.php');
+        header('Location: classes/login.php');
         exit();
      }
 
@@ -41,7 +41,7 @@
     <div id=content>
         <?php
             if($authorized){
-            require("content_$askedPage.php");
+            require("classes/content_$askedPage.php");
             }
             else{echo "Cette page n'existe pas";}
         ?>                  

@@ -32,21 +32,21 @@ if(isset($_POST['but_submit'])){
         $promotion = $_POST['promotion'];
         $casert = $_POST['casert'];
 
-
+      if($login!="" && $password!="" && $nom!="" && $prenom!="" &&$section!=""&&$promotion!=""&&$casert!=""){
+        echo "il se passe un truc";
         $result = insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert);
         var_dump($result);
-        
-        /*if ($result) {
-            echo "<div class='form'>
+        echo "<div class='form'>
                   <h3>Tu es enregistré !</h3><br/>
                   <a href='login.php'>Se connecter</a>
                   </div>";
-        } else {
+      }
+      else {
             echo "<div class='form'>
                   <h3>Il manque des champs à remplir !</h3><br/>
-                  <a href='registration.php'>Réessayer</a>
+                  <a href='register.php'>Réessayer</a>
                   </div>";
-        } */
+        }
     }
 ?>
   <div id="container" class="container-login">

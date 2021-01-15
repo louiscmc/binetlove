@@ -12,6 +12,8 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
             break;
     }
     echo <<<CHAINE_DE_FIN
+<!DOCTYPE html>
+<html>
     <head>
         <title>$title</title>
         <link rel="icon" href="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png">
@@ -72,6 +74,8 @@ function generateHTMLFooter(){
                 
                 <p>© 2021 Louis Cattin--Mota de Campos, Mathilde André X2019
         </footer>
+        </body>
+        </html>
 CHAINE_DE_FIN;}
     
 $page_list = array(
