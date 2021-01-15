@@ -4,7 +4,7 @@ function logIn($dbh){
         $login = $_POST['login'];
         $password = $_POST['password'];
         $user = Utilisateur::getUser($dbh,$login);
-        if ((!user==null)&&$user->testPassword($dbh,$password)){
+        if ((!$user==null)&&$user->testPassword($dbh,$password)){
             $_SESSION['loggedIn']= true;
             $_SESSION['login']= $login;
             $_SESSION['user']=$user;

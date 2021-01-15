@@ -22,11 +22,10 @@ class Utilisateur {
             return null;
         }
     }
+
+    public static function testPassword($dbh,$password){
+        return Utilisateur::$password==hash('sha1', $password);
+    }
 }
 
 
-
-
-function testPassword($dbh,$password){
-
-}
