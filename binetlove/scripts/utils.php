@@ -50,7 +50,7 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
                 </button>
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                     <ul class="navbar-nav mr-auto">
-                    CHAINE_DE_FIN;
+CHAINE_DE_FIN;
                     if ($logguedIn){
                         echo <<<CHAINE_DE_FIN
                         <li class="nav-item$act_letter">
@@ -59,7 +59,7 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
                         <li class="nav-item$act_design">
                             <a class="nav-link" href="index.php?page=design">Soumettre un Design</a>
                         </li>
-                        CHAINE_DE_FIN;
+CHAINE_DE_FIN;
                     }
                     echo <<<CHAINE_DE_FIN
                         <li class="nav-item$act_contact">
@@ -69,11 +69,10 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
                 </div>
                 <div class="bonjour">
 CHAINE_DE_FIN;
-if (!$logguedIn){
-    printLoginForm($askedPage);}
+if ($logguedIn){
+    printLogOutForm();}
 else {
-    printLogOutForm($askedPage);
-}
+printLoginForm($askedPage);}
 echo <<<CHAINE_DE_FIN
 </div>
 </nav>

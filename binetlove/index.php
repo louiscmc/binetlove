@@ -18,22 +18,22 @@
         register();
     }
     $_SESSION['LAST_ACTIVITY'] = time(); 
+    global $askedPage;
 
-
-        if(isset($_GET['page'])){
-            $askedPage=$_GET['page'];
-        }
-        else{$askedPage="welcome";}
-        $authorized= checkPage($askedPage);
-        if($authorized){
-            $pageTitle= getPageTitle($askedPage);
-        }
-        else{
-           $pageTitle="erreur"; 
-        }
-        $utilisateur = getPrenom($dbh, $_SESSION['login']);
-        $CSS="css/perso.css";
-        generateHTMLHeader($pageTitle, $CSS, $utilisateur);
+    if(isset($_GET['page'])){
+        $askedPage=$_GET['page'];
+    }
+    else{$askedPage="welcome";}
+    $authorized= checkPage($askedPage);
+    if($authorized){
+        $pageTitle= getPageTitle($askedPage);
+    }
+    else{
+        $pageTitle="erreur"; 
+    }
+    $utilisateur = getPrenom($dbh, $_SESSION['login']);
+    $CSS="css/perso.css";
+    generateHTMLHeader($pageTitle, $CSS, $utilisateur);
     ?>
     <div id=content>
         <?php
@@ -48,4 +48,3 @@
         generateHTMLFooter();
         $dbh=null;
         ?>
-
