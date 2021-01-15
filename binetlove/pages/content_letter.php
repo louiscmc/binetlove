@@ -99,21 +99,6 @@
                                 </div>
                             </div>
                     </div>
-                          <!-- <div class="col-md-4">
-                                <br> 
-                                <div class="card">
-                                    <div class="card-body" >
-                                        <?php
-                                            function emoji($numero){
-                                                echo "<span onclick='addText(event)'>&#".$numero.";</span>";
-                                            }
-                                        emoji('128512'); emoji('128516'); emoji('128525');emoji('128151');emoji('128149');emoji('128536');emoji('128522');emoji('128557');emoji('128521'); 
-                                        emoji('128546');emoji('128526');emoji('128513');emoji('128527');emoji('128064');emoji('128150');emoji('128523');
-                                        emoji('128152');emoji('128158');emoji('128561');emoji('128293');emoji('127881');
-                                        ?>
-                                    </div>
-                                </div>
-                            </div> --> 
                     <div class="col-md-3">
                     <p>Choix du design</p>
                         <div class="row">

@@ -6,11 +6,16 @@
     require('scripts/printForms.php');
     require('scripts/logInOut.php');
 
+    $err=false;
     $dbh= Database::connect();
-    if(isset($_GET['page'])){
+    if(isset($_GET['page'])&& $_SESSION['loggedIn']){
         $askedPage=$_GET['page'];
     }
-    else{$askedPage="welcome";}
+    else{
+        if(isset($_GET['page']) && !$_SESSION['loggedIn']){
+            $err=true;}
+    
+        $askedPage="welcome";}
     
     if (array_key_exists('todo',$_GET) && $_GET['todo']=='login'){
         logIn($dbh);
@@ -33,6 +38,7 @@
     $CSS="css/perso.css";
     generateHTMLHeader($pageTitle, $CSS, $utilisateur);
     ?>
+
     <div id=content>
         <?php
             if($authorized){

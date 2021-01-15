@@ -4,6 +4,13 @@
                   <h1 class="display-4 text-focus-in">Spread <span class='red'>love</span>, not the virus</h1>
               </div>
             </div>
+            
+            <?php if($err){
+             echo' 
+             <div class="alert alert-warning alert-dismissible fade show" style="text-align:center" role="alert">
+              Vous devez vous connecter pour cela!
+            </div>
+            ';} ?>
             <div id="myCarousel" class="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#myCarousel" data-slide-to="0" class=""></li>
