@@ -12,7 +12,7 @@ CHAINE_DE_FIN;
 
 function printLogoutForm($askedPage){
 echo<<<CHAINE_DE_FIN
-<a href='index.php?page=welcome&todo=logout'><input type="submit" value="Se déconnecter" class="btn-rose btn-login my-2 my-sm-0" name="but_logout" id="but_logout"/></a>
+<a href='index.php?page=welcome&todo=logout'><input type="submit" value="Se déconnecter" class="btn btn-rose btn-login my-2 my-sm-0" name="but_logout" id="but_logout"/></a>
 CHAINE_DE_FIN;
 }
 
