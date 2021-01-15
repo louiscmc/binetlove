@@ -14,7 +14,7 @@
         $err=false;
     }
     else{
-        if(isset($_GET['page']) && !isset($_SESSION['loggedIn'])){
+        if(isset($_GET['page']) && !isset($_SESSION['loggedIn']) && $_GET['page']!='welcome'){
             $err=true;}
     
         $askedPage="welcome";}
