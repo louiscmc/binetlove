@@ -74,7 +74,7 @@ CREATE TABLE `polytechniciens` (
 INSERT INTO `polytechniciens` (`login`, `admin`, `password`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
 ('mathilde_andre', 1, 'pass_mathilde', 'André', 'Mathilde', 'Escalade', 2019, 123003),
 ('louis_vaneau', 0, 'pass_vaneau', 'Vaneau', 'Louis', 'Roulade', 1828, 11001),
-('louiscmc', 1, '777cadc280bb23ebea268ded98338c39', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
+('louiscmc', 1, 'd82ece8d514aca7e24d3fc11fbb8dada57f2966c', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
 
 --
 -- Index pour les tables déchargées

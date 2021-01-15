@@ -23,8 +23,8 @@ class Utilisateur {
         }
     }
 
-    public static function testPassword($dbh,$password){
-        return Utilisateur::$password==hash('sha1', $password);
+    function testPassword($dbh,$password){
+        return $this->password==hash('sha1', $password);
     }
 }
 
