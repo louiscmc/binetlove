@@ -57,14 +57,15 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
                     </ul>
                 </div>
                 <div class="bonjour">
-                <p> Bonjour, $utilisateur </p>
-                </div>
-                <form class="logout" method='post' action="">
-                                    <input class="btn btn-rose" type="submit" value="Se déconnecter" name="but_logout">
-                </form>
-            </nav>
-        </header>
-CHAINE_DE_FIN;}
+CHAINE_DE_FIN;
+printLoginForm($askedPage);
+
+echo <<<CHAINE_DE_FIN
+</div>
+</nav>
+</header>
+CHAINE_DE_FIN;
+}
 
 function generateHTMLFooter(){ 
     echo <<<CHAINE_DE_FIN
