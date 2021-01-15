@@ -22,7 +22,7 @@ global $dbh;
 
 function insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
     $sth = $dbh->prepare("INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert) VALUES (?, ?, ?, ?, ?,?,?,?)");
-    $sth -> exectute(array($login, 0, hash('md5', $password),$nom,$prenom, $section, $promotion, $casert));
+    $sth -> exectute(array($login, 0, hash('sha1', $password),$nom,$prenom, $section, $promotion, $casert));
 }
 
 function insererLettre($dbh, $login,$destinataire,$contenu,$date){
@@ -40,7 +40,6 @@ function supprimerLettre($dbh, $id){
     $sth->execute(array($id));
     
 }
-
 
 function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
     $result = $dbh->prepare("SELECT login FROM polytechniciens WHERE nom = ? AND prenom = ? AND section = ? AND promotion = ?");
@@ -88,10 +87,10 @@ function ac($dbh, $user_typed){
 }
 
 function test_input($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
-                }
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 ?>

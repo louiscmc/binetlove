@@ -14,7 +14,7 @@
     if (array_key_exists('todo',$_GET) && $_GET['todo']=='logout' || (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*30))){
         logOut();
     }
-    if (array_key_exists('todo',$_GET) && $_GET['todo']=='login'){
+    if (array_key_exists('todo',$_GET) && $_GET['todo']=='register'){
         register();
     }
     $_SESSION['LAST_ACTIVITY'] = time(); 
