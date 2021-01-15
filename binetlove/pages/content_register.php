@@ -13,9 +13,9 @@ $ok= false;
 $tentative = false;
 if(array_key_exists('login',$_POST) && !$_POST['login']=="" && array_key_exists("password",$_POST)){
     $tentative=true;
-    $ok=Utilisateur::insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom)
+    $ok=Utilisateur::insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom);
 }
-
+?>
 
 <div id="container" class="container-login">
 <form class="form-login" action="index.php?page=$askedPage&todo=register" method="POST">
