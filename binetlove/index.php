@@ -8,6 +8,7 @@
 
     $err=false;
     $dbh= Database::connect();
+<<<<<<< HEAD
     if(isset($_GET['page'])&& $_SESSION['loggedIn']){
         $askedPage=$_GET['page'];
     }
@@ -17,16 +18,21 @@
     
         $askedPage="welcome";}
     
+=======
+    $_SESSION['LAST_ACTIVITY'] = time(); 
+    
+    if(isset($_GET['page'])){
+        $askedPage=$_GET['page'];
+    }
+    else{$askedPage="welcome";}
+
+>>>>>>> 6268ad150394610fcf22e7da9dd131df965e43f6
     if (array_key_exists('todo',$_GET) && $_GET['todo']=='login'){
         logIn($dbh);
     }
     if (array_key_exists('todo',$_GET) && $_GET['todo']=='logout' || (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*30))){
         logOut();
     }
-    $_SESSION['LAST_ACTIVITY'] = time(); 
-    global $askedPage;
-
-    
     $authorized= checkPage($askedPage);
     if($authorized){
         $pageTitle= getPageTitle($askedPage);
