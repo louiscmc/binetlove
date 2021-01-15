@@ -4,7 +4,7 @@ echo <<<CHAINE_DE_FIN
 <form class="form-inline my-2 my-lg-0" action="index.php?page=$askedPage&todo=login" method="POST">
      <input type="text" class="form-control mr-sm-1" name="login" value="" placeholder="Login" />
      <input  type="password" class="form-control mr-sm-1" name="password" value="" placeholder="Mot de Passe"/>
-     <input  class="btn btn-rose my-1 my-sm-0" type="submit" value="Se connecter" name="but_submit" id="but_submit" />
+     <input  class="btn btn-rose my-A my-sm-0" type="submit" value="Se connecter" name="but_submit" id="but_submit" />
      <a href='index.php?page=welcome&todo=register'><input class="btn btn-rose my-1 my-sm-0" type="submit" value="S'inscrire" name="but_register" id="but_register" /></a>
 </form>
 CHAINE_DE_FIN;
