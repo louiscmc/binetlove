@@ -1,5 +1,5 @@
 <?php
-function generateHTMLHeader($title, $CSS, $utilisateur){
+function generateHTMLHeader($title, $CSS){
     $act_letter="";
     $act_design="";
     $act_contact="";

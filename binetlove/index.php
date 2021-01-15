@@ -8,11 +8,11 @@
 
     $err=false;
     $dbh= Database::connect();
-    if(isset($_GET['page'])&& $_SESSION['loggedIn']){
+    if(isset($_GET['page'])&& isset($_SESSION['loggedIn'])){
         $askedPage=$_GET['page'];
     }
     else{
-        if(isset($_GET['page']) && !$_SESSION['loggedIn']){
+        if(isset($_GET['page']) && !isset($_SESSION['loggedIn'])){
             $err=true;}
     
         $askedPage="welcome";}
@@ -34,9 +34,9 @@
     else{
         $pageTitle="erreur"; 
     }
-    $utilisateur = getPrenom($dbh, $_SESSION['login']);
+    //$utilisateur = getPrenom($dbh, $_SESSION['login']);
     $CSS="css/perso.css";
-    generateHTMLHeader($pageTitle, $CSS, $utilisateur);
+    generateHTMLHeader($pageTitle, $CSS);
     ?>
 
     <div id=content>
