@@ -77,6 +77,7 @@ and open the template in the editor.
   background-color: #f1a0dc !important;
 }
 
+
 #jumbo1.bg-faded {
   background: linear-gradient(#f1a0dc,white) !important;
 }
@@ -199,7 +200,7 @@ and open the template in the editor.
     width:100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
-    background: #fff;
+    background: linear-gradient(#f1a0dc,white) !important;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 

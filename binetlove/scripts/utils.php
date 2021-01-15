@@ -112,6 +112,10 @@ $page_list = array(
          "name"=>'merci',
          "title"=>"Merci !",
     "menutitle"=>"Merci !"),
+    array(
+        "name"=>"register",
+        "title"=>"S'inscrire",
+        "menutitle"=>"S'inscrire"),
      );
 
 function checkPage($askedPage){
