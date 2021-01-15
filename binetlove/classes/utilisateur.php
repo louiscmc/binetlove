@@ -30,6 +30,10 @@ class Polytechniciens {
     function testPassword($dbh,$password){
         return $this->password==hash('sha1', $password);
     }
+
+    function insertUser($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
+        
+    }
 }
 
 
