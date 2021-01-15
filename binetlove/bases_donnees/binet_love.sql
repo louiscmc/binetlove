@@ -72,7 +72,6 @@ CREATE TABLE `polytechniciens` (
 --
 
 INSERT INTO `polytechniciens` (`login`, `admin`, `password`, `nom`, `prenom`, `section`, `promotion`, `casert`) VALUES
-('louis.cattin--mota_de_campos', 1, 'pass_louis', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013),
 ('mathilde_andre', 1, 'pass_mathilde', 'André', 'Mathilde', 'Escalade', 2019, 123003),
 ('louis_vaneau', 0, 'pass_vaneau', 'Vaneau', 'Louis', 'Roulade', 1828, 11001),
 ('louiscmc', 1, '777cadc280bb23ebea268ded98338c39', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013);
