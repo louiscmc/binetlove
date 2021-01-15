@@ -16,4 +16,5 @@ function logIn($dbh){
 function logOut(){
     $_SESSION['loggedIn']=false;
     unset($_SESSION['login']);
+    session_destroy();
 }
