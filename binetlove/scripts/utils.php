@@ -62,7 +62,7 @@ CHAINE_DE_FIN;
                         </li>
                     </ul>
                 </div>
-                <div class="bonjour">
+                <div style="text-align:right">
 CHAINE_DE_FIN;
 if ($_SESSION['loggedIn']){
     printLogOutForm();}

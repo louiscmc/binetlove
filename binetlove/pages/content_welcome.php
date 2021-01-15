@@ -13,33 +13,17 @@
                 <div class="carousel-inner">
                   <div class="carousel-item">
                       <img class="d-block w-100" src="images/pulllove.jpg">
-                    <div class="container">
-                      <div class="carousel-caption text-left">
-                        <h1>Example headline.</h1>
-                        <p>Texte random.</p>
-                        <p><a class="btn btn-lg btn-rose" href="index.php?page=design" role="button">Envoyer un design de lettre</a></p>
-                      </div>
-                    </div>
                   </div>
                   <div class="carousel-item active">
                       <img class="d-block w-100" src="images/lettrelove.jpg">
                     <div class="container">
                       <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Crédits : <a href="https://photo.binets.fr"> binet photo </a></p>
                         <p><a class="btn btn-lg btn-rose heartbeat" href="index.php?page=letter" role="button">Envoie ta lettre</a></p>
                       </div>
                     </div>
                   </div>
                   <div class="carousel-item">
                       <img class="d-block w-100" src="images/chatnoir.jpg">
-                    <div class="container">
-                      <div class="carousel-caption text-right">
-                        <h1>Prochains événements bientôt !</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-rose" href="#" role="button">Browse gallery</a></p>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

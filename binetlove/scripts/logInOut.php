@@ -16,7 +16,3 @@ function logOut(){
     $_SESSION['loggedIn']=false;
     unset($_SESSION['login']);
 }
-
-function register(){
-
-}
