@@ -11,11 +11,6 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
         case "Contact": $act_contact=" active";
             break;
     }
-    if (isset($_SESSION['loggedIn'])){
-        $logguedIn=True;
-    }
-    else {$logguedIn=False;}
-
     echo <<<CHAINE_DE_FIN
 <!DOCTYPE html>
 <html>
@@ -51,7 +46,7 @@ function generateHTMLHeader($title, $CSS, $utilisateur){
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                     <ul class="navbar-nav mr-auto">
 CHAINE_DE_FIN;
-                    if ($logguedIn){
+                    if ($_SESSION['loggedIn']){
                         echo <<<CHAINE_DE_FIN
                         <li class="nav-item$act_letter">
                             <a class="nav-link" href="index.php?page=letter">Écrire une lettre</a>
@@ -69,7 +64,7 @@ CHAINE_DE_FIN;
                 </div>
                 <div class="bonjour">
 CHAINE_DE_FIN;
-if ($logguedIn){
+if ($_SESSION['loggedIn']){
     printLogOutForm();}
 else {
 printLoginForm($askedPage);}

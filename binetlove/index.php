@@ -7,7 +7,11 @@
     require('scripts/logInOut.php');
 
     $dbh= Database::connect();
-
+    if(isset($_GET['page'])){
+        $askedPage=$_GET['page'];
+    }
+    else{$askedPage="welcome";}
+    
     if (array_key_exists('todo',$_GET) && $_GET['todo']=='login'){
         logIn($dbh);
     }
@@ -20,10 +24,7 @@
     $_SESSION['LAST_ACTIVITY'] = time(); 
     global $askedPage;
 
-    if(isset($_GET['page'])){
-        $askedPage=$_GET['page'];
-    }
-    else{$askedPage="welcome";}
+    
     $authorized= checkPage($askedPage);
     if($authorized){
         $pageTitle= getPageTitle($askedPage);
