@@ -1,28 +1,25 @@
 <?php
     session_start();
-    require("classes/utils.php");
-    require ("classes/database.php");
-        
-     // Check user login or not
-     if(!isset($_SESSION['login'])){ 
-       header('Location: classes/login.php');
-       exit();
-     }
+    require("scripts/utils.php");
+    require("classes/database.php");
+    require("classes/utilisateur.php");
+    require('scripts/printForms.php');
+    require('scripts/logInOut.php');
 
-     // logout
-     if((isset($_POST['but_logout']))||(isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*30))){
-        session_unset(); 
-        session_destroy();
-        header('Location: classes/login.php');
-        exit();
-     }
+    $dbh= Database::connect();
 
-    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+    if (array_key_exists('todo',$_GET) && $_GET['todo']=='login'){
+        logIn($dbh);
+    }
+    if (array_key_exists('todo',$_GET) && $_GET['todo']=='logout' || (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*30))){
+        logOut();
+    }
+    if (array_key_exists('todo',$_GET) && $_GET['todo']=='register'){
+        register();
+    }
+    $_SESSION['LAST_ACTIVITY'] = time(); 
 
-?>
-<!DOCTYPE html>
-<html>
-    <?php 
+
         if(isset($_GET['page'])){
             $askedPage=$_GET['page'];
         }
@@ -41,14 +38,14 @@
     <div id=content>
         <?php
             if($authorized){
-            require("classes/content_$askedPage.php");
+            require("pages/content_$askedPage.php");
             }
             else{echo "Cette page n'existe pas";}
         ?>                  
     </div>
 
         <?php 
-        generateHTMLFooter()
+        generateHTMLFooter();
+        $dbh=null;
         ?>
-    </body>
-</html>
+
