@@ -1,3 +1,22 @@
+<?php
+if (array_key_exists($nom,$_POST)){
+    $nom=$_POST['nom'];
+}
+$nom="";
+if (array_key_exists($prenom,$_POST)){
+    $prenom=$_POST['prenom'];
+}
+$prenom="" ;
+
+$erreur ="";
+$ok= false;
+$tentative = false;
+if(array_key_exists('login',$_POST) && !$_POST['login']=="" && array_key_exists("password",$_POST)){
+    $tentative=true;
+    $ok=Utilisateur::insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom)
+}
+
+
 <div id="container" class="container-login">
 <form class="form-login" action="index.php?page=$askedPage&todo=register" method="POST">
 <div id="div_login">
