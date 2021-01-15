@@ -1,10 +1,14 @@
 <?php
 
-class Utilisateur {
+class Polytechniciens {
     public $login;
     public $nom;
     public $prenom;
     public $password;
+    public $admin;
+    public $section;
+    public $promotion;
+    public $casert;
     
     public function __toString() {
         return "[{$this->login}] {$this->prenom}";
@@ -13,7 +17,7 @@ class Utilisateur {
     public static function getUser($dbh,$login){
         $query = "SELECT * FROM polytechniciens WHERE login = ?";
         $sth = $dbh->prepare($query);
-        $sth->setFetchMode(PDO::FETCH_CLASS, 'Utilisateur');
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'Polytechniciens');
         $sth->execute(array($login));
         if ($user = $sth->fetch()){
             return $user;
