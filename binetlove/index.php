@@ -6,10 +6,12 @@
     require('scripts/printForms.php');
     require('scripts/logInOut.php');
 
+    global $err ;
     $err=false;
     $dbh= Database::connect();
     if(isset($_GET['page'])&& isset($_SESSION['loggedIn'])){
         $askedPage=$_GET['page'];
+        $err=false;
     }
     else{
         if(isset($_GET['page']) && !isset($_SESSION['loggedIn'])){
