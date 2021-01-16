@@ -7,40 +7,35 @@ if (array_key_exists('prenom',$_POST)){
     $prenom=$_POST['prenom'];
 }
 $prenom="" ;
+if (array_key_exists('casert',$_POST)){
+    $casert=$_POST['casert'];
+}
+$prenom="" ;
+$section="Roulade";
+$promotion="2019";
 
 $erreur ="";
 $ok= false;
-$tentative = false;
+$attempt = false;
 if(array_key_exists('login',$_POST) && !$_POST['login']=="" && array_key_exists("password",$_POST)){
     $tentative=true;
-    $ok=Polytechniciens::insertUser($dbh,$_POST['login'],$_POST['password'], $nom, $prenom);
+    $ok=Polytechniciens::insertUser($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
 }
 if ($ok) {
     echo "<p> Inscription réussie ! </p>";
 }
-else if ($tentative){
-    echo "<p> Il faut remplir le login </p>";
+else if ($attempt){
+    echo "<p> Login déjà pris !</p>";
 }
 ?>
 
 <div id="container" class="container-login">
-<form class="form-login" action="index.php?page=$askedPage&todo=register" method="POST">
-<div id="div_login">
-    <h1>Bienvenue au binet love !</h1>
-   <div>
-     <input type="text" class="textbox" name="prenom" value="" placeholder="Prénom" />
-   </div>
-   <div>
-     <input type="text" class="textbox" name="nom" value="" placeholder="Nom" />
-   </div>
-    <div>
-     <input  type="text" class="textbox" name="login" value="" placeholder="Login"/>
-   </div>
-   <div>
-     <input  type="password" class="textbox" name="password" value="" placeholder="Mot de Passe"/>
-   </div>
-   <div class="row">
-    <div class='col-md-6'>
+<form class="form-login" role="form" action="index.php?page=register" method="POST">
+    <h4>Bienvenue au Binet Love &#128149;</h4>
+     <input type="text" class="form-control" name="prenom" value="" placeholder="Prénom" required/>
+     <input type="text" class="form-control" name="nom" value="" placeholder="Nom" required/>
+     <input  type="text" class="form-control" name="login" value="" placeholder="Login"required/>
+     <input  type="password" class="form-control" name="password" value="" placeholder="Mot de Passe"required/>
    <select class="form-select" name='section' id="section" aria-label="Default select example">
      <option selected>Section</option>
      <option value="Aviron">Aviron</option>
@@ -61,22 +56,13 @@ else if ($tentative){
      <option value="Ultimate">Ultimate</option>
      <option value="Volley">Volley</option>
    </select>  
-    </div>
-     <div class='col-md-6'>
    <select class="form-select" name="promotion" id="promotion" aria-label="Default select example">
    <option selected>Promotion</option>
    <option value="2018">2018</option>
    <option value="2019">2019</option>
    <option value="2020">2020</option>
    </select>  
-    </div>
-   </div>
-    <div>
-     <input type="text" class="textbox" name="casert" value="" placeholder="Casert" />
-   </div>
-   <div>
-     <input  class="btn-rose btn-login heartbeat" type="submit" value="S'inscire" name="but_submit" id="but_submit" />
-   </div>
-</div>
+     <input type="text" class="form-control" name="casert" value="" placeholder="Casert" required/>
+     <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>
 </form>
 </div>
