@@ -63,6 +63,6 @@ else if ($attempt){
    <option value="2020">2020</option>
    </select>  
      <input type="text" class="form-control" name="casert" value="" placeholder="Casert" required/>
-     <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>
+     <button  class="btn-rose btn-login heartbeat" type="submit" action="index.php?page=welcome">S'inscire</button>
 </form>
 </div>
