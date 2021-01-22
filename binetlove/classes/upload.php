@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
   $countfiles = count($_FILES['files']['name']);
  
   // Prepared statement
-  $query = "INSERT INTO images (name,image) VALUES(?,?)";
+  $query = "INSERT INTO images (name,login,image) VALUES(?,?,?)";
 
   $statement = $dbh->prepare($query);
 
@@ -31,12 +31,12 @@ if(isset($_POST['submit'])){
        if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
 
           // Execute query
-	  $statement->execute(array($filename,$target_file));
+	  $statement->execute(array($filename,$login,$target_file));
 
        }
     }
  
   }
-  echo "File upload successfully";
+  echo "Upload réussi ! Merci :)";
 }
 ?>
