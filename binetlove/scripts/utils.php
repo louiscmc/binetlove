@@ -3,12 +3,15 @@ function generateHTMLHeader($title, $CSS){
     $act_letter="";
     $act_design="";
     $act_contact="";
+    $act_stats="";
     switch ($title){
         case "Écrire une lettre": $act_letter=" active";
             break;
         case "Soumettre un design": $act_design=" active";
             break;
         case "Contact": $act_contact=" active";
+            break;
+        case "Statistiques": $act_stats=" active";
             break;
     }
     echo <<<CHAINE_DE_FIN
@@ -53,6 +56,9 @@ CHAINE_DE_FIN;
                         </li>
                         <li class="nav-item$act_design">
                             <a class="nav-link" href="index.php?page=design">Soumettre un Design</a>
+                        </li>
+                        <li class="nav-item$act_stats">
+                            <a class="nav-link" href="index.php?page=stats">Statistiques</a>
                         </li>
 CHAINE_DE_FIN;
                     }
@@ -116,6 +122,10 @@ $page_list = array(
         "name"=>"register",
         "title"=>"S'inscrire",
         "menutitle"=>"S'inscrire"),
+    array(
+        "name"=>"stats",
+        "title"=>"Statistiques",
+        "menutitle"=>"Statiqtiques"),
      );
 
 function checkPage($askedPage){
