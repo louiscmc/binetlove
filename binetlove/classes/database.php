@@ -79,7 +79,7 @@ function ac($dbh, $user_typed){
                 $destinataire= getDestinataire($dbh, $nom, $prenom, $section, $promotion);
                 array_push($data,array('label' => ''.$prenom.' '.$nom.' ('.$section.' '.$promotion.')', 'login' => $destinataire));
             }
-        } 
+        }
         else {
             array_push($data, array(label =>"Pas trouvé :(", login => "erreur"));
         }
@@ -94,4 +94,13 @@ function test_input($data) {
     return $data;
 }
 
+function dest_alea($dbh){
+    $sql = "SELECT COUNT(*) from polytechniciens";
+    $nombre = $dbh->prepare($sql);
+    $nombre -> execute();
+    $sql = "select prenom, nom, section, promotion from polytechniciens where id = ?";
+    $result = $dbh->prepare($sql);
+    $result-> execute(array(rand(0,$nombre)));
+
+}
 ?>
