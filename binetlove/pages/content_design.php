@@ -3,7 +3,7 @@
 if(isset($_POST['submit'])){
  
   // Prepared statement
-  $query = "INSERT INTO images (name,login,image) VALUES(?,?,?)";
+  $query = "INSERT INTO images (nom,login,image) VALUES(?,?,?)";
 
   $statement = $dbh->prepare($query);
 
@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
 
     $allowedExtensions = array("jpeg", "jpg", "png", "pdf");
 
-    if (in_array(end(explode(".", $_FILES['files']['name'])), $allowedExtensions)){
+    if (in_array(end(explode(".", $filename)), $allowedExtensions)){
 
        // Upload file
        if(move_uploaded_file($_FILES['files']['tmp_name'],$target_file)){
