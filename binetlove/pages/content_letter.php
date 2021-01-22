@@ -109,29 +109,8 @@
                             </div>
                     </div>
                     <div class="col-md-3">
-                    <p>Choix du design</p>
-                        <div class="row">
-                            <div id="list-example" class="list-group col-md-1">
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-1">1</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-2">2</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-3">3</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-4">4</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-5">5</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-6">6</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-7">7</a>
-                                <a class="list-group-item list-group-item-action-rose" href="#list-item-8">8</a>
-                            </div>
-                            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example col-md-11">
-                                <p id="list-item-1"></p>
-                                <p id="list-item-2"></p>
-                                <p id="list-item-3"></p>
-                                <p id="list-item-4"></p>
-                                <p id="list-item-5"></p>
-                                <p id="list-item-6"></p>
-                                <p id="list-item-7"></p>
-                                <p id="list-item-8"></p>
-                            </div>
-                        </div>
+                    
+                        
                     </div>
                 </div>
                 <div class="container-fluid col-md-7 offset-md-1">
