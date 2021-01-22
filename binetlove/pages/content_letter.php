@@ -91,10 +91,13 @@
                                 <input type="hidden" id="champ_cache" name="champ_cache">
                             </div>
                             <div class="form-group col-md-6">
-                                <input class="form-check-input" type="checkbox" value="Yes" id="alea" name="alea">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Destinataire aléatoire 💖
-                                </label>
+                                <br><br>
+                                <div class='container' style='text-align:right;'>
+                                    <input class="form-check-input" type="checkbox" value="Yes" id="alea" name="alea">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Destinataire aléatoire 💖
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
