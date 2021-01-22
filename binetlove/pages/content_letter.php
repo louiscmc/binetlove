@@ -85,10 +85,16 @@
                 <div class="row">                 
                     <div class="col-md-7 offset-md-1">
                         <div class="row">
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-6">
                                 <label>Destinataire</label>
                                 <input class="form-control" name="destinataire" id="destinataire" placeholder="Prénom" value="<?php echo $desti ?>">
                                 <input type="hidden" id="champ_cache" name="champ_cache">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="form-check-input" type="checkbox" value="Yes" id="alea" name="alea">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Destinataire aléatoire 💖
+                                </label>
                             </div>
                         </div>
                         <div class="row">
