@@ -1,50 +1,41 @@
 <?php 
 
 if(isset($_POST['submit'])){
-  // Count total files
-  $countfiles = count($_FILES['files']['name']);
  
   // Prepared statement
   $query = "INSERT INTO images (name,login,image) VALUES(?,?,?)";
 
   $statement = $dbh->prepare($query);
 
-  // Loop all files
-  for($i=0;$i<$countfiles;$i++){
-
     // File name
-    $filename = $_FILES['files']['name'][$i];
+    $filename = $_FILES['files']['name'];
 
     // Location
     $target_file = 'upload/'.$filename;
-
-    // file extension
-    $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-    $file_extension = strtolower($file_extension);
-
     // Valid image extension
-    $valid_extension = array("png","jpeg","jpg");
 
-    if(in_array($file_extension, $valid_extension)){
+    $allowedExtensions = array("jpeg", "jpg", "png", "pdf");
+
+    if (in_array(end(explode(".", $_FILES['files']['name'])), $allowedExtensions)){
 
        // Upload file
-       if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
+       if(move_uploaded_file($_FILES['files']['tmp_name'],$target_file)){
 
-          // Execute query
+       // Execute query
 	  $statement->execute(array($filename,$login,$target_file));
-
-       }
-    }
+     echo "Upload réussi ! Merci :)";
+   }
  
   }
-  echo "Upload réussi ! Merci :)";
+  
 }
 ?>
 
 <div id="jumbo1" class="container-fluid bg-faded">
    <div class="row">
       <form method='post' action='' enctype='multipart/form-data'>
-      <input type='file' name='files[]' multiple />
+      <input type='file' name='files' />
+      <br>
       <input type='submit' value='Submit' name='submit' />
       </form>
    </div>
