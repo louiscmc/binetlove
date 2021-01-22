@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  ven. 22 jan. 2021 à 14:55
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.3.11
+-- Hôte : localhost
+-- Généré le : ven. 22 jan. 2021 à 16:50
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,8 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `binet_love`
+-- Base de données : `binet_love`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(32) NOT NULL,
+  `login` varchar(32) NOT NULL,
+  `image` varbinary(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -86,6 +98,12 @@ INSERT INTO `polytechniciens` (`id`, `login`, `admin`, `password`, `nom`, `preno
 --
 
 --
+-- Index pour la table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `lettre`
 --
 ALTER TABLE `lettre`
@@ -100,6 +118,12 @@ ALTER TABLE `polytechniciens`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `lettre`
