@@ -26,9 +26,9 @@ function insererUtilisateur($dbh, $login, $password,$nom,$prenom,$section,$promo
     $sth -> exectute(array($login, 0, hash('sha1', $password),$nom,$prenom, $section, $promotion, $casert));
 }
 
-function insererLettre($dbh, $login,$destinataire,$contenu,$date){
-    $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, time, supprime) VALUES (?, ?, ?, ?, ?)");
-    $sth -> execute(array($login, $destinataire, $contenu, $date, 0));
+function insererLettre($dbh, $login,$destinataire,$contenu, $design, $chupachups ,$date){
+    $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, design, chupachups, time, supprime) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $sth -> execute(array($login, $destinataire, $contenu, $design, $chupachups, $date, 0));
 }
 
 function modifierLettre($dbh, $id, $contenumod){
