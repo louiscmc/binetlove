@@ -32,8 +32,8 @@ if(isset($_POST['submit'])){
 ?>
 
 <div id="jumbo1" class="container-fluid bg-faded">
-   <div class="row text-center">
-   <div class="col-md-4">
+   <div class="row">
+   <div class="col-md-4 offset-md-4">
       <form method='post' action='' enctype='multipart/form-data'>
       <input type='file' name='files' />
       <br>
