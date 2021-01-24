@@ -83,7 +83,7 @@
                     <div class="col"></div>
                 </div>
                 <div class="row">                 
-                    <div class="col-md-7 offset-md-1">
+                    <div class="col-md-6 offset-md-1">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Destinataire</label>
@@ -91,7 +91,8 @@
                                 <input type="hidden" id="champ_cache" name="champ_cache">
                             </div>
                             <div class="form-group col-md-6">
-                                <br><br>
+                                <br>
+                                <br>
                                 <div class='container' style='text-align:right;'>
                                     <input class="form-check-input" type="checkbox" value="Yes" id="alea" name="alea">
                                     <label class="form-check-label" for="defaultCheck1">
@@ -108,32 +109,34 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        <p> Choisis ton design </p>
                         <div class="container vertical-scrollable">  
-                            <div class="row text-center">  
-                                <div class="col-sm-8"> 
-                                1</div>  
-                                <div class="col-sm-8"> 
-                                2</div>  
-                                <div class="col-sm-8"> 
-                                3</div>  
-                                <div class="col-sm-8"> 
-                                4</div>  
-                                <div class="col-sm-8"> 
-                                5</div>  
-                                <div class="col-sm-8"> 
-                                6</div>  
-                                <div class="col-sm-8"> 
-                                7</div>  
+                            <div class="row text-center"> 
+                                <div class=container> 
+                                <img id="1" class="design" src=upload/design1.png></img>
+                                 </div> 
+                                 <div class=container> 
+                                <img class="design" src=upload/design2.png></img> 
+                                 </div> 
+                                 <div class=container> 
+                                <img class="design" src=upload/design3.png></img> 
+                                 </div> 
                             </div>  
                         </div>  
                     </div>
                 </div>
-                <div class="container-fluid col-md-7 offset-md-1">
+                <div class="container-fluid col-md-6 offset-md-1">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Yes" id="anonyme" name="anonyme">
                         <label class="form-check-label" for="defaultCheck1">
                             Je souhaite envoyer cette lettre anonymement (&#9888; Vous ne pourrez plus modifier ou supprimer la lettre !)
+                        </label>
+                    </div>
+                    <div class='form-check'>
+                        <input class="form-check-input" type="checkbox" value="Yes" id="chupa" name="chupa">
+                        <label class="form-check-label" for="defaultCheck1">
+                        Envoyer une chupa-chups
                         </label>
                     </div>
                 </div>

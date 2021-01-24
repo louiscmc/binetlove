@@ -264,23 +264,14 @@ input[type=text], input[type=password] {
 
 .vertical-scrollable> .row { 
   position: absolute; 
-  top: 120px; 
-  bottom: 100px; 
-  left: 180px; 
-  width: 50%; 
+  top: 75px; 
+  bottom: 50px; 
+  width: 100%; 
   overflow-y: scroll;  
-} 
-.col-sm-8 {  
-    color: white;  
-    font-size: 24px;  
-    padding-bottom: 20px;  
-    padding-top: 18px;  
 }  
-  
-.col-sm-8:nth-child(2n+1) {  
-    background: green;  
-}  
-  
-.col-sm-8:nth-child(2n+2) {  
-    background: black;  
-}  
+
+.design { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+}

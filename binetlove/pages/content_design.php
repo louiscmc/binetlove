@@ -32,11 +32,13 @@ if(isset($_POST['submit'])){
 ?>
 
 <div id="jumbo1" class="container-fluid bg-faded">
-   <div class="row">
+   <div class="row text-center">
+   <div class="col-md-4">
       <form method='post' action='' enctype='multipart/form-data'>
       <input type='file' name='files' />
       <br>
       <input type='submit' value='Submit' name='submit' />
       </form>
+   </div>
    </div>
 </div>
