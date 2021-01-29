@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    define ('SITE_ROOT', realpath(dirname(__FILE__)));
     session_start();
     require("scripts/utils.php");
     require("classes/database.php");

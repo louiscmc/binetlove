@@ -7,7 +7,7 @@
 <div class="container">
 <div class="container">
  <div id="preview"><img src="no-image.jpg" /></div>
- <form action="classes/upload.php" method="post" enctype="multipart/form-data">
+ <form action="upload/upload.php" method="post" enctype="multipart/form-data">
   Select image to upload:
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
