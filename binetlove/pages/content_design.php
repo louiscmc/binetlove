@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+  $upload=false;
 
   // Check if image file is a actual image or fake image
   if(isset($_POST["submit"])) {
@@ -41,14 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $patate =htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
-      echo "<div class='alert alert-success' role='alert'>" ;
-      echo "Le fichier $patate a bien été uploadé !.";
-      echo "</div>";
-    } else {
-      echo "<div class='alert alert-danger' role='alert'>";
-      echo "Votre design n'a pas pu être uploadé... :(";
-      echo "</div>";
-    }
+      $upload=true;
+    } 
   }
 }
 ?>
@@ -58,7 +53,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1 class="display-4 text-focus-in">Envoie ton plus <span class='red'>beau</span> design !</h1>
 </div>
 </div>
+<div class="container-fluid">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6">
 <div class="container">
+</div>
+<?php
+if ($upload!=''){echo"
+<div class='alert alert-success' role='alert'>
+Le fichier $patate a bien été uploadé !.
+</div>
+";}
+else{echo"
+<div class='alert alert-danger' role='alert'>
+Votre design n'a pas pu être uploadé... :(
+</div>
+";}
+?>
+<div class="col"></div>
+ </div>
  <form action="
                 <?php 
                     $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
