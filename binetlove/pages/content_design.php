@@ -1,8 +1,6 @@
 <?php 
 
     // Database connection
-    include("database.php");
-    
     if(isset($_POST["submit"])) {
         // Set image placement folder
         $target_dir = "upload/";

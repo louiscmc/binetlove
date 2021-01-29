@@ -10,7 +10,10 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                     // on regarde si l'utilisateur a bien rempli tous les champs
-                   
+                    if(isset($_POST['alea']) && $_POST['alea']=='Yes'){
+                        $envoyeur = 'anonyme';
+                    }
+
                     if (empty($_POST["champ_cache"])) {
                             $destinataireErr = "Il faut remplir le prénom !";
                             $destinataire="";
