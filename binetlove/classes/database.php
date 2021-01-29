@@ -103,7 +103,7 @@ function dest_alea($dbh){
 }
 
 function insererImage($dbh, $nom, $login, $image){
-    $sth = $dbh->prepare("INSERT INTO images (nom, login, imge) VALUES (?, ?, ?)");
+    $sth = $dbh->prepare("INSERT INTO images (nom, login, image) VALUES (?, ?, ?)");
     $sth -> execute(array($nom, $login, $image));
 }
 ?>
