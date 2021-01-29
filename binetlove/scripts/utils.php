@@ -36,7 +36,6 @@ function generateHTMLHeader($title, $CSS){
         <link href="$CSS" rel="stylesheet">
         <script src="js/ac_js.js"></script>
         <script src="js/perso.js"></script>
-        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
         </style>
     <!-- blueimp Gallery styles -->
     <link

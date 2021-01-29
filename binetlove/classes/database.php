@@ -101,23 +101,4 @@ function dest_alea($dbh){
     $result-> execute(array(rand(0,$nombre)));
     return $result->fetch(PDO::FETCH_ASSOC)['login'];
 }
-
-function timeline($dbh){
-    $data = array();
-        $sql = "select time from lettre where supprime=0";
-        $result = $dbh->prepare($sql);
-        $result-> execute();
-        $nombre=0;
-        if ($result->rowCount() > 0) {
-            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                $time = $row['time'];
-                $nombre++;
-                array_push($data,array('time' => $time, 'nombre' => $nombre));
-            }
-        }
-        else {
-            array_push($data,array('time' => date('Y-m-d H:i:s');, 'nombre' => 0));
-        }
-    return json_encode($array);
-}
 ?>
