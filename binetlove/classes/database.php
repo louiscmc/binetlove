@@ -70,7 +70,7 @@ function ac($dbh, $user_typed){
         $sql = "select prenom, nom, section, promotion from polytechniciens where prenom like ? or nom like ? limit 10";
         $result = $dbh->prepare($sql);
         $result-> execute(array('%'.$user_typed.'%','%'.$user_typed.'%'));
-        if ($result->rowCount() > 0){
+        if ($result->rowCount() > 0) {
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 $prenom = $row['prenom'];
                 $nom = $row['nom'];
