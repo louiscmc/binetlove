@@ -35,6 +35,7 @@ function generateHTMLHeader($title, $CSS){
         <!-- CSS et scripts persos -->
         <link href="$CSS" rel="stylesheet">
         <script src="js/ac_js.js"></script>
+        <script src="js/perso.js"></script>
         <!-- CKEDITOR -->
         
 

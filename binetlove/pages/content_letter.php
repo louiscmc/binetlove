@@ -28,7 +28,14 @@
                         else {
                             $contenu = test_input($_POST["contenu"]);
                     }
-                    
+                    $chupachups = 0;
+                    if(isset($_POST['chupachups']) && $_POST['chupachups']=='Yes'){
+                        $chupachups = 1;
+                    }
+                    $design = 'upload/design1';
+                    if(isset($_POST['design'])){
+                        $design='upload/'.$_POST['design'];
+                    }
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
                             if (!empty($destinataire)){
@@ -36,16 +43,15 @@
                                     $envoyeur = 'anonyme';
                                 }
                                 else {$envoyeur = $_SESSION['login']; }
-                                insererLettre($dbh,$envoyeur, $destinataire, addslashes($contenu),"$datetime"); 
+                                insererLettre($dbh,$envoyeur, $destinataire, addslashes($contenu), $design, $chupachups ,"$datetime"); 
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";
                             }
-                            
-                            $dbh = null;
                     }
+
                 }
             ?>
             <form action="
@@ -83,7 +89,7 @@
                     <div class="col"></div>
                 </div>
                 <div class="row">                 
-                    <div class="col-md-7 offset-md-1">
+                    <div class="col-md-6 offset-md-1">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Destinataire</label>
@@ -91,7 +97,8 @@
                                 <input type="hidden" id="champ_cache" name="champ_cache">
                             </div>
                             <div class="form-group col-md-6">
-                                <br><br>
+                                <br>
+                                <br>
                                 <div class='container' style='text-align:right;'>
                                     <input class="form-check-input" type="checkbox" value="Yes" id="alea" name="alea">
                                     <label class="form-check-label" for="defaultCheck1">
@@ -108,32 +115,63 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        <p> Choisis ton design </p>
                         <div class="container vertical-scrollable">  
-                            <div class="row text-center">  
-                                <div class="col-sm-8"> 
-                                1</div>  
-                                <div class="col-sm-8"> 
-                                2</div>  
-                                <div class="col-sm-8"> 
-                                3</div>  
-                                <div class="col-sm-8"> 
-                                4</div>  
-                                <div class="col-sm-8"> 
-                                5</div>  
-                                <div class="col-sm-8"> 
-                                6</div>  
-                                <div class="col-sm-8"> 
-                                7</div>  
+                            <div class="row text-center"> 
+                                <div class=container> 
+                                <img class="design" src="upload/design1.png" >
+                                <br>
+                                <br>
+                                <br>
+                                 </div> 
+                                 <div class=container> 
+                                <input type="radio" id='design1' name="design" value="design1"
+                                        checked>
+                                <label for="design2">Design 1</label>
+                                <img class="design" src="upload/design2.png" >
+                                <br>
+                                <br>
+                                <br>
+                                 </div> 
+                                 <div class=container> 
+                                <input type="radio" id='design2' name="design" value="design2"
+                                        checked>
+                                <label for="design3">Design 2</label>
+                                <img class="design" src="upload/design3.png" >
+                                <br>
+                                <br>
+                                <br>
+                                 </div> 
+                                 <div class=container> 
+                                <input type="radio" id='design3' name="design" value="design3"
+                                        checked>
+                                <label for="design4">Design 3</label>
+                                <img class="design" src="upload/design4.png" >
+                                <div class="container">
+                                <input type="radio" id='design4' name="design" value="design4"
+                                        checked>
+                                <label for="design4">Design 4</label>
+                                </div>
+                                 </div> 
                             </div>  
-                        </div>  
+                        </div>
+                        <div class="container-fluid">
+                    <a class="btn btn-rose" href="index.php?page=design" role="button">Âme de graphiste ? Soumets un nouveau design !</a>
+                         </div>
                     </div>
                 </div>
-                <div class="container-fluid col-md-7 offset-md-1">
+                <div class="container-fluid col-md-6 offset-md-1">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Yes" id="anonyme" name="anonyme">
                         <label class="form-check-label" for="defaultCheck1">
                             Je souhaite envoyer cette lettre anonymement (&#9888; Vous ne pourrez plus modifier ou supprimer la lettre !)
+                        </label>
+                    </div>
+                    <div class='form-check'>
+                        <input class="form-check-input" type="checkbox" value="Yes" id="chupachups" name="chupachups">
+                        <label class="form-check-label" for="defaultCheck1">
+                        Envoyer une chupa-chups
                         </label>
                     </div>
                 </div>
