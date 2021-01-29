@@ -7,10 +7,11 @@
 <div class="container">
 <div class="container">
  <div id="preview"><img src="no-image.jpg" /></div>
- <form id="form" action="classes/upload.php" method="post" enctype="multipart/form-data">
-  <input id="uploadImage" type="file" accept="image/*" name="image" />
-  <input id="button" type="submit" value="Upload">
- </form>
+ <form action="classes/upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
     <div id="err"></div>
  <hr>
 </div>
