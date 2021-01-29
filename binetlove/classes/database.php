@@ -95,12 +95,10 @@ function test_input($data) {
 }
 
 function dest_alea($dbh){
-    $sql = "SELECT COUNT(*) from polytechniciens";
-    $nombre = $dbh->prepare($sql);
-    $nombre -> execute();
-    $sql = "select prenom, nom, section, promotion from polytechniciens where id = ?";
+    $nombre = $dbh->query('select count(*) from polytechniciens')->fetchColumn();
+    $sql = "select login from polytechniciens where id = ?";
     $result = $dbh->prepare($sql);
     $result-> execute(array(rand(0,$nombre)));
-
+    return $result->fetch(PDO::FETCH_ASSOC)['login'];
 }
 ?>

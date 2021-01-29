@@ -11,15 +11,16 @@
                     
                     // on regarde si l'utilisateur a bien rempli tous les champs
                     if(isset($_POST['alea']) && $_POST['alea']=='Yes'){
-                        $envoyeur = 'anonyme';
+                        $destinataire = dest_alea($dbh);
                     }
-
-                    if (empty($_POST["champ_cache"])) {
-                            $destinataireErr = "Il faut remplir le prénom !";
-                            $destinataire="";
-                        } 
-                        else {
-                            $destinataire = test_input($_POST["champ_cache"]);
+                    else{
+                        if (empty($_POST["champ_cache"])) {
+                                $destinataireErr = "Il faut remplir le prénom !";
+                                $destinataire="";
+                            } 
+                            else {
+                                $destinataire = test_input($_POST["champ_cache"]);
+                        }
                     }
                     if (! empty($_POST["destinataire"])) {
                         $desti = test_input($_POST["destinataire"]);
