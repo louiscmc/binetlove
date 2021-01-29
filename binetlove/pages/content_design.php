@@ -59,7 +59,7 @@
 <h1 class="display-4 text-focus-in">Envoie ton plus <span class='red'>beau</span> design !</h1>
 </div>
 </div>
-
+<div class="container">
 <form action="" method="post" enctype="multipart/form-data" class="mb-3">
       <div class="user-image mb-3 text-center">
         <div style="width: 300px; height: 200px; overflow: hidden; background: #cccccc; margin: 0 auto">
@@ -76,7 +76,7 @@
         Upload File
       </button>
     </form>
-
+</div>
     <!-- Display response messages -->
     <?php if(!empty($resMessage)) {?>
     <div class="alert <?php echo $resMessage['status']?>">
