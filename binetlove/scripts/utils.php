@@ -34,10 +34,8 @@ function generateHTMLHeader($title, $CSS){
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- CSS et scripts persos -->
         <link href="$CSS" rel="stylesheet">
-        <script src="js/ac_js.js"></script>
-        <script src="js/perso.js"></script>
         <!-- Graphes pour stats -->
-        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
         
 
     </head>
@@ -91,6 +89,9 @@ function generateHTMLFooter(){
                 
                 <p>© 2021 Louis Cattin--Mota de Campos, Mathilde André X2019
         </footer>
+        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <script src="js/ac_js.js"></script>
+        <script src="js/perso.js"></script>
         </body>
         </html>
 CHAINE_DE_FIN;}

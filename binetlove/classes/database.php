@@ -106,4 +106,22 @@ function insererImage($dbh, $nom, $login, $image){
     $sth = $dbh->prepare("INSERT INTO images (nom, login, image) VALUES (?, ?, ?)");
     $sth -> execute(array($nom, $login, $image));
 }
+
+function timeline($dbh){
+    $lettres = array();
+        $sql = "select date, chupachups from lettre where supprime=0";
+        $result = $dbh->prepare($sql);
+        $result-> execute();
+        $nb_lettres=0;
+        $nb_chupa=0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $nb_lettre++;
+            $has_chupa=$row['chupachups'];
+            if ($has_chupa==1){
+                $nb_chupa++;
+            }
+            array_push($lettres,array('dates' => $row['date'], 'nombre' => $nb_lettre, 'chupa' => $nb_chupa));
+        }
+        echo json_encode($lettres);
+}
 ?>

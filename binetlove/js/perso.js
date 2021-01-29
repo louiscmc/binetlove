@@ -1,36 +1,32 @@
-window.onload = function() {
+var data = {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    series: [
+    [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
+    [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
+  ]
+};
 
-  var dataPoints = [];
-  
-  var chart = new CanvasJS.Chart("timeline", {
-    animationEnabled: true,
-    theme: "light2",
-    title: {
-      text: "Timeline des Lettres"
-    },
-    axisY: {
-      title: "Units",
-      titleFontSize: 24,
-      includeZero: true
-    },
-    data: [{
-      type: "column",
-      yValueFormatString: "#,### Units",
-      dataPoints: dataPoints
-    }]
-  });
-  
-  function addData(data) {
-    for (var i = 0; i < data.length; i++) {
-      dataPoints.push({
-        x: new Date(data[i].date),
-        y: data[i].units
-      });
+var options = {
+  seriesBarDistance: 15
+};
+
+var responsiveOptions = [
+  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+    seriesBarDistance: 10,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value;
+      }
     }
-    chart.render();
-  
-  }
-  
-  $.getJSON("https://canvasjs.com/data/gallery/javascript/daily-sales-data.json", addData);
-  
-  }
+  }],
+  ['screen and (max-width: 640px)', {
+    seriesBarDistance: 5,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value[0];
+      }
+    }
+  }]
+];
+
+new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
