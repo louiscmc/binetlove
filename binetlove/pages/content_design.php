@@ -2,7 +2,8 @@
 $upload=3;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $target_dir = "upload/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $nom = basename($_FILES["fileToUpload"]["name"]);
+  $target_file = $target_dir . $nom;
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -43,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $patate =htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
       $upload=1;
+      insererImage($dbh,$nom, $_SESSION['login'], $target_file); 
     }
     else{
       $upload=0;

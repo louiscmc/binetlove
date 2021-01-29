@@ -101,4 +101,9 @@ function dest_alea($dbh){
     $result-> execute(array(rand(0,$nombre)));
     return $result->fetch(PDO::FETCH_ASSOC)['login'];
 }
+
+function insererImage($dbh, $nom, $login, $image){
+    $sth = $dbh->prepare("INSERT INTO images (nom, login, imge) VALUES (?, ?, ?)");
+    $sth -> execute(array($nom, $login, $image));
+}
 ?>
