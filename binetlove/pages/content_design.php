@@ -40,8 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // if everything is ok, try to upload file
   } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      $patate =htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
       echo "<div class='alert alert-success' role='alert'>" ;
-      echo 'Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a bien été uploadé !.';
+      echo "Le fichier $patate a bien été uploadé !.";
       echo "</div>";
     } else {
       echo "<div class='alert alert-danger' role='alert'>";
