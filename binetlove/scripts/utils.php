@@ -36,6 +36,8 @@ function generateHTMLHeader($title, $CSS){
         <link href="$CSS" rel="stylesheet">
         <script src="js/ac_js.js"></script>
         <script src="js/perso.js"></script>
+        <!-- Graphes pour stats -->
+        <script src="https://d3js.org/d3.v6.min.js"></script>
         
 
     </head>

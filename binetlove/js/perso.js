@@ -2,11 +2,11 @@ window.onload = function() {
 
   var dataPoints = [];
   
-  var chart = new CanvasJS.Chart("chartContainer", {
+  var chart = new CanvasJS.Chart("timeline", {
     animationEnabled: true,
     theme: "light2",
     title: {
-      text: "Lettres"
+      text: "Timeline des Lettres"
     },
     axisY: {
       title: "Units",
