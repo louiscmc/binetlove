@@ -1,42 +1,22 @@
-<?php 
+<?php
 
-if(isset($_POST['submit'])){
-  // Count total files
-  $countfiles = count($_FILES['files']['name']);
- 
-  // Prepared statement
-  $query = "INSERT INTO images (name,login,image) VALUES(?,?,?)";
+// A list of permitted file extensions
+$allowed = array('png', 'jpg', 'gif','zip');
 
-  $statement = $dbh->prepare($query);
+if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 
-  // Loop all files
-  for($i=0;$i<$countfiles;$i++){
+    $extension = pathinfo($_FILES['upl']['name'], PATHINFO_EXTENSION);
 
-    // File name
-    $filename = $_FILES['files']['name'][$i];
-
-    // Location
-    $target_file = 'upload/'.$filename;
-
-    // file extension
-    $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-    $file_extension = strtolower($file_extension);
-
-    // Valid image extension
-    $valid_extension = array("png","jpeg","jpg");
-
-    if(in_array($file_extension, $valid_extension)){
-
-       // Upload file
-       if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
-
-          // Execute query
-	  $statement->execute(array($filename,$login,$target_file));
-
-       }
+    if(!in_array(strtolower($extension), $allowed)){
+        echo '{"status":"error"}';
+        exit;
     }
- 
-  }
-  echo "Upload réussi ! Merci :)";
+
+    if(move_uploaded_file($_FILES['upl']['tmp_name'], 'upload/'.$_FILES['upl']['name'])){
+        echo '{"status":"success"}';
+        exit;
+    }
 }
-?>
+
+echo '{"status":"error"}';
+exit;
