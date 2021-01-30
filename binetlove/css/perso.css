@@ -272,6 +272,20 @@ input[type=text], input[type=password] {
   height: 100%; 
   object-fit: contain; 
 }
+/* 
+.card-header {
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  top: -.35rem;
+  font-size: 2.5em;
+} */
+
+
+
+
 
 /* CHART */
 

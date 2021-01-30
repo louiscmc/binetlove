@@ -6,7 +6,7 @@
     <br>
     <?php
     $login = $_SESSION['login'];
-    $result = $dbh->prepare("SELECT id, destinataire, contenu, time "
+    $result = $dbh->prepare("SELECT id, destinataire, contenu, time, chupachups "
             . "FROM lettre "
             . "WHERE login=? and supprime=0 "
             . "ORDER BY id DESC");
@@ -18,6 +18,11 @@
                     $contenu = $row['contenu'];
                     $temps=$row['time'];
                     $time= strftime('%T le %D', strtotime($temps));
+                    $chupa= $row['chupachups'];
+                    $dessin_chupa="";
+                    if ($chupa==1){
+                        $dessin_chupa="🍭";
+                    }
                     $desti_data= getDestinataireReverse($dbh, $destinataire);
                     $prenom = $desti_data['prenom'];
                     $nom=$desti_data['nom'];
@@ -30,7 +35,7 @@
                     } 
                     if(array_key_exists('modifier'.$stringid, $_POST)){
                         
-                        echo "
+                        echo <<<carte_modif
                             <div id='myForm'>
                                 <form method='post'>
                                     <label for='contenumod'>Écris ton message !</label>
@@ -47,7 +52,7 @@
                             <script>
                                 CKEDITOR.replace('contenumod$id');
                             </script>
-                        ";
+carte_modif;
                         
                     }
                     
@@ -59,17 +64,16 @@
                     }
                     $contenu=html_entity_decode($contenu);
                     //var_dump(htmlentities($contenu));
-                    echo "
+                    echo <<<carte
                         <div class='row'>
                             <div class='col-sm'>
                                 <div class='card' >
-                                    <div class='card-header'>$prenom $nom ($section $promotion)</div>
+                                    <div class='card-header'><span>$prenom $nom ($section $promotion)</span>
+                                        <span class='float-right'>$dessin_chupa</span>
+                                    </div>
                                     <div class='card-body'><div>
-                                        <style>
-                                        .entry-content {font-family: Caveat;}
-                                        </style>";
-                                        echo $contenu;
-                                        echo"</div><br><form method='post'> 
+                                        $contenu
+                                        </div><br><form method='post'> 
                                                 <input type='submit' name='modifier$id'
                                                         class='btn btn-light' value='Modifier' /> 
 
@@ -82,7 +86,7 @@
                             </div>
                         </div> 
                         <br>
-                    "; 
+carte; 
                 }
             } 
         else {
