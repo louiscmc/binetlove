@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : ven. 29 jan. 2021 à 13:54
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.0
+-- Hôte : 127.0.0.1
+-- Généré le :  sam. 30 jan. 2021 à 19:03
+-- Version du serveur :  10.4.8-MariaDB
+-- Version de PHP :  7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `binet_love`
+-- Base de données :  `binet_love`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +43,9 @@ INSERT INTO `images` (`id`, `nom`, `login`, `image`) VALUES
 (1, 'design1', 'louiscmc', 'upload/design1\r\n'),
 (2, 'design2', 'louiscmc', 'upload/design2'),
 (3, 'design3', 'louiscmc', 'upload/design3'),
-(4, 'design4', 'louiscmc', 'upload/design4\r\n');
+(4, 'design4', 'louiscmc', 'upload/design4\r\n'),
+(6, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png'),
+(7, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png');
 
 -- --------------------------------------------------------
 
@@ -66,17 +69,10 @@ CREATE TABLE `lettre` (
 --
 
 INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `design`, `chupachups`, `time`, `supprime`) VALUES
-(12, 'mathildea', 'louiscmc', '&lt;p&gt;coucou&lt;/p&gt;', '', 1, '2021-01-24 14:35:53', 1),
-(13, 'anonyme', 'mathildea', '&lt;p&gt;lfksndv&amp;ugrave;n&lt;/p&gt;', '', 1, '2021-01-24 11:35:27', 0),
-(14, 'anonyme', 'mathildea', '&lt;p&gt;lfksndv&amp;ugrave;n&lt;/p&gt;', '', 1, '2021-01-24 11:37:19', 0),
-(15, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:52', 1),
-(16, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:51', 1),
-(17, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:50', 1),
-(18, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:50', 1),
-(19, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:49', 1),
-(20, 'mathildea', 'louis_vaneau', '&lt;p&gt;lfkdnfv&amp;ugrave;sn&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:48', 1),
-(21, 'mathildea', 'mathildea', '&lt;p&gt;coucou je veux le design 2 car chamby &amp;lt;3&lt;/p&gt;', 'upload/design2', 0, '2021-01-24 14:35:48', 1),
-(22, 'mathildea', 'mathildea', '&lt;p&gt;&amp;ugrave;isdj&amp;ugrave;voqisj&amp;ugrave;&amp;lt;wcpoj&lt;/p&gt;', 'upload/design1', 1, '2021-01-24 14:35:46', 1);
+(45, 'louiscmc', 'louiscmc', '&lt;p&gt;sdffdfsdfsdfdfsdfs&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 18:59:42', 0),
+(46, 'louiscmc', 'mathildea', '&lt;p&gt;fsdfdfsfsdf&lt;/p&gt;', 'upload/design4', 0, '2021-01-30 19:02:27', 0),
+(47, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdfsfdfsfdfsdfdsfsdfsdfqsdferbgese gte rb g esrg serg esrg bserg ersg ddfs fsqdqsdsq&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:26', 0),
+(48, 'louiscmc', 'louiscmc', '&lt;p&gt;hgfjugfj&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:39', 0);
 
 -- --------------------------------------------------------
 
@@ -135,13 +131,13 @@ ALTER TABLE `polytechniciens`
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `lettre`
 --
 ALTER TABLE `lettre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
