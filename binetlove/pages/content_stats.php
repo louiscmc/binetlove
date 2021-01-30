@@ -3,7 +3,7 @@
 
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
     <div class="container">
-        <h1 class="display-4 text-focus-in">Voici quelques <span class='red'>statistiques</span> !</h1>
+        <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne en cours !</h1>
     </div>
 </div>
 <div class='container chart'>
@@ -19,6 +19,7 @@
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script src="js/chartist-plugin-axistitle.js"></script>
 <script src="js/chartist-plugin-zoom.js"></script>
+<script src="js/chartist-plugin-legend.js"></script>
 
 <script>
     // On récupère les données de la DB grâce à la fonction timeline de database.php qui renvoie un JSON
@@ -63,6 +64,10 @@
         plugins: [
             //Zoom
             Chartist.plugins.zoom({onZoom: onZoom }),
+            //legend
+            Chartist.plugins.legend({
+            legendNames: ['Lettres', 'Chupa Chups 🍭'],
+        }),
             //Axes
             Chartist.plugins.ctAxisTitle({
                 axisX: {

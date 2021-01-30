@@ -1,3 +1,8 @@
+<div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
+    <div class="container">
+        <h1 class="display-4 text-focus-in"><span class='red'>Modifie</span> ou <span class='grey'>supprime</span> tes <span class='red'>lettres</span> !</h1>
+    </div>
+</div>
 <div class="container">
     <br>
     <div class='row justify-content-md-center'>
