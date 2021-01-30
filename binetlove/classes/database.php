@@ -108,11 +108,13 @@ function insererImage($dbh, $nom, $login, $image){
 }
 
 function timeline($dbh){
-    $lettres = array();
-        $sql = "select date, chupachups from lettre where supprime=0";
+    $dates = array();
+    $nombre = array();
+    $chupa = array();
+        $sql = "select time, chupachups from lettre where supprime=0";
         $result = $dbh->prepare($sql);
         $result-> execute();
-        $nb_lettres=0;
+        $nb_lettre=0;
         $nb_chupa=0;
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $nb_lettre++;
@@ -120,7 +122,11 @@ function timeline($dbh){
             if ($has_chupa==1){
                 $nb_chupa++;
             }
-            array_push($lettres,array('dates' => $row['date'], 'nombre' => $nb_lettre, 'chupa' => $nb_chupa));
+            $date_loc=date_create($row['time']);
+            array_push($dates, $date_loc->getTimestamp()*1000);
+            array_push($nombre, $nb_lettre);
+            array_push($chupa, $nb_chupa);
+            $lettres = array('dates' => $dates, 'nombre' => $nombre, 'chupa' => $chupa);
         }
         echo json_encode($lettres);
 }

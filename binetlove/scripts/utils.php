@@ -89,7 +89,7 @@ function generateHTMLFooter(){
                 
                 <p>© 2021 Louis Cattin--Mota de Campos, Mathilde André X2019
         </footer>
-        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
         <script src="js/ac_js.js"></script>
         <script src="js/perso.js"></script>
         </body>
