@@ -57,7 +57,7 @@
             type: Chartist.FixedScaleAxis,
             divisor: 5,
             labelInterpolationFnc: function(value) {
-                return moment(value).format('ddd DD/MM HH:mm');
+                return moment(value).format('ddd DD/MM HH:mm:ss');
             }
         },
         plugins: [
