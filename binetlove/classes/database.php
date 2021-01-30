@@ -39,7 +39,12 @@ function modifierLettre($dbh, $id, $contenumod){
 function supprimerLettre($dbh, $id){
     $sth= $dbh->prepare("UPDATE lettre SET supprime=1 WHERE id=?");
     $sth->execute(array($id));
-    
+}
+
+function modifierChupa($dbh, $id, $chupa){
+    if ($chupa==1) {$sth= $dbh->prepare("UPDATE lettre SET chupachups=0 WHERE id=?");}
+    else{$sth= $dbh->prepare("UPDATE lettre SET chupachups=1 WHERE id=?");}
+    $sth->execute(array($id));
 }
 
 function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
@@ -110,7 +115,7 @@ function insererImage($dbh, $nom, $login, $image){
 function timeline($dbh){
     $lettres = array();
     $chupas = array();
-        $sql = "select time, chupachups from lettre where supprime=0";
+        $sql = "select time, chupachups from lettre where supprime=0 order by time";
         $result = $dbh->prepare($sql);
         $result-> execute();
         $nb_lettre=0;
@@ -129,4 +134,5 @@ function timeline($dbh){
         }
         echo json_encode($data);
 }
+
 ?>
