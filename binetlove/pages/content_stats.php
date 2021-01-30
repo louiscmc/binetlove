@@ -57,38 +57,40 @@
             type: Chartist.FixedScaleAxis,
             divisor: 5,
             labelInterpolationFnc: function(value) {
-                return moment(value).format('MMM D');
+                return moment(value).format('ddd DD/MM HH:mm');
             }
         },
         plugins: [
-            Chartist.plugins.zoom({onZoom: onZoom })
-        ]
-        /* plugins: [
+            //Zoom
+            Chartist.plugins.zoom({onZoom: onZoom }),
+            //Axes
             Chartist.plugins.ctAxisTitle({
                 axisX: {
-                axisTitle: 'Temps',
-                axisClass: 'ct-axis-title',
+                axisTitle: 'Rose :  Lettres, Rouge :  Chupa Chups',
+                axisClass: 'ct-axis-title-x',
                 offset: {
                     x: 0,
-                    y: 50
+                    y: 30
                 },
                 textAnchor: 'middle'
                 },
                 axisY: {
-                axisTitle: 'Y title',
-                axisClass: 'ct-axis-title',
+                axisTitle: 'Rose :  Lettres, Rouge :  Chupa Chups',
+                axisClass: 'ct-axis-title-y',
                 offset: {
                     x: 0,
-                    y: 0
+                    y: -1000
                 },
                 textAnchor: 'middle',
-                flipTitle: false
+                flipTitle: true
                 }
             })
-        ] */
+        ] 
 };
-
+    //Magie !
     var chart = Chartist.Line('.ct-chart', data, options);
+
+    //On crée le bouton pour dézoomer
     var resetFnc;
     function onZoom(chart, reset) {
         resetFnc = reset;
