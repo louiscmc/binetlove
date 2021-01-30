@@ -11,53 +11,50 @@
 </div>
 
 <!-- scripts pour graphes -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script>
-    var lettres = '<?php timeline($dbh); ?>';
-    var JSONObject = JSON.parse(lettres);
-    len=JSONObject.dates.length;
-    console.log(JSONObject.dates);
-    for (k= 0; k < len; k++ ){
-        JSONObject.dates[k]=JSON.stringify(new Date(JSONObject.dates[k]));
+    // On récupère les données de la DB grâce à la fonction timeline de database.php qui renvoie un JSON
+    var data_ini = '<?php timeline($dbh); ?>';
+    var JSONObject = JSON.parse(data_ini);
+
+    // On transforme les dates en js Date
+    console.log(JSONObject);
+    len_lettres=JSONObject.lettres.length;
+    len_chupas = JSONObject.chupas.length;
+
+    for (k= 0; k < len_lettres; k++ ){
+        JSONObject.lettres[k]['x']=new Date(JSONObject.lettres[k]['x']);
     }; 
-    var data = {"labels":JSONObject.dates, "series":[JSONObject.nombre, JSONObject.chupa]};
-    var options = {
-    seriesBarDistance: 15,
-    axisX: {
-            type: Chartist.FixedScaleAxis,
-        divisor: 5,
-        labelInterpolationFnc: function (value) {
-                const date = luxon.DateTime.fromISO(value);
-                return date.toLocaleString(luxon.DateTime.DATETIME_MED);
-            }
-    }
+    for (i= 0; i < len_chupas; i++ ){
+        JSONObject.chupas[i]['x']=new Date(JSONObject.chupas[i]['x']);
+    }; 
+
+    // on formate pour Chartist
+    var data = { 
+        series : [
+            {
+                name: 'lettres',
+                data: JSONObject.lettres
+            },
+            {
+                name: 'chupas',
+                data: JSONObject.chupas
+            },
+        ]
     };
 
-    var responsiveOptions = [
-    ['screen and (min-width: 641px) and (max-width: 1024px)', {
-        seriesBarDistance: 10,
-            axisX: {
-                type: Chartist.FixedScaleAxis,
-            divisor: 5,
-            labelInterpolationFnc: function (value) {
-                $date = DateTime.fromISO(value);
-                return $date.toLocaleString(DateTime.DATETIME_MED);
-            }
-        }
-    }],
-    ['screen and (max-width: 640px)', {
-        seriesBarDistance: 5,
-        axisX: {
-            type: Chartist.FixedScaleAxis,
-        divisor: 5,
-        labelInterpolationFnc: function (value) {
-            $date = DateTime.fromISO(value);
-            return $date.toLocaleString(DateTime.DATETIME_MED);
-        }
-        }
-    }]
-    ];
+    // On donne les options pour que ça formate bien (espacement des dates conforme)
+    var options = {
+  axisX: {
+    type: Chartist.FixedScaleAxis,
+    divisor: 5,
+    labelInterpolationFnc: function(value) {
+      return moment(value).format('MMM D');
+    }
+  }
+};
 
-    new Chartist.Line('.ct-chart', data, options, responsiveOptions);
+    new Chartist.Line('.ct-chart', data, options);
 </script>
