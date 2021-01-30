@@ -309,3 +309,10 @@ input[type=text], input[type=password] {
 .chartist-tooltip-value {
   display: none;
 }
+
+/* zoom graph */
+
+.ct-zoom-rect {
+  fill: rgba(253, 110, 193, 0.3);
+  stroke: rgb(185, 3, 110);
+}
