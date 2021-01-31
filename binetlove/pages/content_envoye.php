@@ -88,7 +88,7 @@ carte_modif;
                             <div class='col-sm'>
                                 <div class='card' >
                                     <div class='card-header' style="background-image: url('$design.png'); background-position: center;">
-                                        <span style="color: #fff;text-shadow: 1px 0 0 #555, 0 -1px 0 #555, 0 1px 0 #555, -1px 0 0 #555;">
+                                        <span class="card-txt">
                                             $prenom $nom ($section $promotion)
                                         </span>
                                         <span class='float-right'>$dessin_chupa</span>
@@ -99,13 +99,13 @@ carte_modif;
                                         </div>
                                         <br>
                                         <form method='post'> 
-                                                <input type='submit' name='modifier$id' class='btn btn-info' value='Modifier' /> 
+                                                <input type='submit' name='modifier$id' class='btn btn-light' value='Modifier' /> 
                                                 <input type='submit' name='supprimer$id' class='btn btn-danger' value='Supprimer' /> 
                                                 <input type='submit' name='chupa$id' class='btn btn-$css_chupa' value='$btn_chupa' /> 
                                         </form> 
                                     </div>
-                                    <div class='card-footer text-muted' style="background-image: url('$design.png');background-position: center;">
-                                    <span style="color: #fff;text-shadow: 1px 0 0 #555, 0 -1px 0 #555, 0 1px 0 #555, -1px 0 0 #555;">
+                                    <div class='card-footer text-muted' style="background-image: url('$design.png');background-position: bottom;">
+                                    <span class="card-txt">
                                         Envoyé à $time</span>
                                     </div>
                                 </div>
