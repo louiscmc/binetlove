@@ -11,7 +11,7 @@
     <br>
     <?php
     $login = $_SESSION['login'];
-    $result = $dbh->prepare("SELECT id, destinataire, contenu, time, chupachups "
+    $result = $dbh->prepare("SELECT id, destinataire, contenu, time, chupachups, design "
             . "FROM lettre "
             . "WHERE login=? and supprime=0 "
             . "order by time desc");
@@ -24,6 +24,7 @@
                     $contenu = $row['contenu'];
                     $temps=$row['time'];
                     $time= strftime('%T le %D', strtotime($temps));
+                    $design=$row['design'];
 
                     //bails de chupas
                     $chupa= $row['chupachups'];
@@ -86,22 +87,30 @@ carte_modif;
                         <div class='row'>
                             <div class='col-sm'>
                                 <div class='card' >
-                                    <div class='card-header'><span>$prenom $nom ($section $promotion)</span>
-                                        <span class='float-right'>$dessin_chupa</span>
+                                    <div class='card-header'>
+                                        <img class="card-img" src="$design.png" alt="Card image">
+                                        <div class="card-img-overlay">
+                                            <span>$prenom $nom ($section $promotion)</span>
+                                            <span class='float-right'>$dessin_chupa</span>
+                                        </div>
                                     </div>
-                                    <div class='card-body'><div>
-                                        $contenu
-                                        </div><br><form method='post'> 
+                                    <div class='card-body'>
+                                        <div>
+                                            $contenu
+                                        </div>
+                                        <br>
+                                        <form method='post'> 
                                                 <input type='submit' name='modifier$id' class='btn btn-info' value='Modifier' /> 
-
                                                 <input type='submit' name='supprimer$id' class='btn btn-danger' value='Supprimer' /> 
                                                 <input type='submit' name='chupa$id' class='btn btn-$css_chupa' value='$btn_chupa' /> 
                                         </form> 
                                     </div>
-                                    <div class='card-footer text-muted'>Envoyé à $time</div>
+                                    <div class='card-footer text-muted'>
+                                        Envoyé à $time
+                                    </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <br>
 carte; }
                     if(array_key_exists('modfinal'.$stringid, $_POST)){

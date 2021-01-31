@@ -53,7 +53,7 @@
     };
 
     // On donne les options pour que ça formate bien (espacement des dates conforme)
-    var options = {
+    var options = {onlyInteger: true,
         axisX: {
             type: Chartist.FixedScaleAxis,
             divisor: 5,
