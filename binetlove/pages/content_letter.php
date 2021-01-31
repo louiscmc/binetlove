@@ -181,7 +181,7 @@
                 </div>
                 <br>
                 <div class="container-fluid col-md-2 offset-md-1">
-                    <button type="submit" class="btn btn-rose" value="envoye">Envoyer</button>
+                    <button type="submit" class="btn btn-rose" value="envoye" data-toggle="tooltip" title="N'oubliez pas de vous relire !">Envoyer</button>
                 </div>
             </form>
                     <br>
