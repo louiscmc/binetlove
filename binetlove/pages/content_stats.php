@@ -19,7 +19,7 @@
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script src="js/chartist-plugin-axistitle.js"></script>
 <script src="js/chartist-plugin-zoom.js"></script>
-<script src="js/chartist-plugin-legend.js"></script>
+
 
 <script>
     // On récupère les données de la DB grâce à la fonction timeline de database.php qui renvoie un JSON
@@ -64,10 +64,6 @@
         plugins: [
             //Zoom
             Chartist.plugins.zoom({onZoom: onZoom }),
-            //legend
-            Chartist.plugins.legend({
-            legendNames: ['Lettres', 'Chupa Chups 🍭'],
-        }),
             //Axes
             Chartist.plugins.ctAxisTitle({
                 axisX: {
