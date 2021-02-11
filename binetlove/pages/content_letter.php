@@ -39,9 +39,9 @@
                     if(isset($_POST['chupachups']) && $_POST['chupachups']=='Yes'){
                         $chupachups = 1;
                     }
-                    $design = 'upload/design1';
+                    $design = 'upload/design1.png';
                     if(isset($_POST['design'])){
-                        $design='upload/'.$_POST['design'];
+                        $design='upload/'.$_POST['design'].'.png';
                     }
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
@@ -54,7 +54,8 @@
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
-                                $numero=getIdLettre($dbh,$envoyeur, $destinataire, addslashes($contenu), $design, $chupachups ,"$datetime");
+                                $numero=getIdLettre($dbh,$envoyeur, $destinataire, addslashes($contenu));
+                                var_dump($numero);
                                 if($numero%3==0){
                                     $felicitation=true;
                                 }
@@ -81,15 +82,11 @@
                              Ce destinataire n'existe pas !
                         </div>
                         ";}
-                        ?>
-                        <?php
                         if ($bienrecu!=''){echo"
                         <div class='alert alert-success' role='alert'>
                             $bienrecu
                         </div>
                         ";}
-                        ?>
-                        <?php
                         var_dump($felicitation);
                         var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
@@ -146,7 +143,7 @@ felicitation;
                         <div class="container vertical-scrollable">  
                             <div class="row text-center"> 
                             <?php
-                                    $result = $dbh->prepare("SELECT image, nom "
+                                    $result = $dbh->prepare("SELECT image, nom, id "
                                         . "FROM images "
                                         . "WHERE selec=1 ");
                                     $result->execute();
@@ -155,10 +152,11 @@ felicitation;
                                         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                             $image=$row['image'];
                                             $nom = $row['nom'];
+                                            $id=$row['id'];
                                             echo <<<lettre
                                                 <div class=container> 
                                                     <img class="design" src="$image" >
-                                                    <input type="radio" id='$nom' name="$nom" value="$nom">
+                                                    <input type="radio" id='$nom' name="design" value="$nom">
                                                     <label for="$nom">Design $count_design</label>
                                                     <br>
                                                     <br>

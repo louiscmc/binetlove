@@ -34,6 +34,8 @@ function insererLettre($dbh, $login,$destinataire,$contenu, $design, $chupachups
 function getIdLettre($dbh,$envoyeur, $destinataire, $contenu){
     $sth = $dbh->prepare("SELECT id FROM lettre WHERE login=? and destinataire=? and contenu=?");
     $sth -> execute(array($envoyeur, $destinataire, $contenu));
+    $row= $sth->fetch(PDO::FETCH_ASSOC);
+    return $row['id'];
 }
 
 
