@@ -8,7 +8,8 @@
                 $contenu = $bienrecu = $desti ="";
                 $contenuErr = $destinataireErr = "";
                 $felicitation = false ;
-                $numero="";
+                $numero=1;
+
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // on regarde si l'utilisateur a bien rempli tous les champs
@@ -54,7 +55,9 @@
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
                                 $numero=getIdLettre($dbh,$envoyeur, $destinataire, addslashes($contenu), $design, $chupachups ,"$datetime");
-
+                                if($numero%3==0){
+                                    $felicitation=true;
+                                }
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";
                             }
@@ -87,13 +90,21 @@
                         ";}
                         ?>
                         <?php
-                        if ($felicitation){echo"
-                        <div class='alert alert-success' role='alert'>
-                            'Félicitation, vous avez envoyé la $numero ème lettre, vous avez gagné une sucette !!'
+                        var_dump($felicitation);
+                        var_dump($numero);
+                        if ($felicitation==true){echo<<<felicitation
+                        <div class="autohide: false">
+                        <div class="toast align-items-center"  role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                              <div class="toast-body">
+                              'Félicitation, vous avez envoyé la $numero ème lettre, vous avez gagné une sucette !!'
+                             </div>
+                              <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
                         </div>
-                        ";}
-                        ?>
-                        <?php 
+                        </div>
+felicitation;
+                        }
                         if ($contenuErr!=""){echo"
                         <div class='alert alert-danger' role='alert'>
                              $contenuErr
