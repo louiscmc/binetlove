@@ -134,37 +134,30 @@
                         <p> Choisis ton design </p>
                         <div class="container vertical-scrollable">  
                             <div class="row text-center"> 
-                                <div class=container> 
-                                <img class="design" src="upload/design1.png" >
-                                <br>
-                                <br>
-                                <br>
-                                 </div> 
-                                 <div class=container> 
-                                <input type="radio" id='design1' name="design" value="design1" chacked>
-                                <label for="design2">Design 1</label>
-                                <img class="design" src="upload/design2.png" >
-                                <br>
-                                <br>
-                                <br>
-                                 </div> 
-                                 <div class=container> 
-                                <input type="radio" id='design2' name="design" value="design2">
-                                <label for="design3">Design 2</label>
-                                <img class="design" src="upload/design3.png" >
-                                <br>
-                                <br>
-                                <br>
-                                 </div> 
-                                 <div class=container> 
-                                <input type="radio" id='design3' name="design" value="design3">
-                                <label for="design4">Design 3</label>
-                                <img class="design" src="upload/design4.png" >
-                                <div class="container">
-                                <input type="radio" id='design4' name="design" value="design4">
-                                <label for="design4">Design 4</label>
-                                </div>
-                                 </div> 
+                            <?php
+                                    $result = $dbh->prepare("SELECT image, nom "
+                                        . "FROM images "
+                                        . "WHERE selec=1 ");
+                                    $result->execute();
+                                    if ($result->rowCount() > 0){
+                                        $count_design=1;
+                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                            $image=$row['image'];
+                                            $nom = $row['nom'];
+                                            echo <<<lettre
+                                                <div class=container> 
+                                                    <img class="design" src="$image" >
+                                                    <input type="radio" id='$nom' name="$nom" value="$nom">
+                                                    <label for="$nom">Design $count_design</label>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                </div>
+lettre;
+                                            $count_design++;
+                                        }
+                                    }
+                                    ?>
                             </div>  
                         </div>
                         <div class="container-fluid">
