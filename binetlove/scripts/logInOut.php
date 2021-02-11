@@ -9,7 +9,6 @@ function logIn($dbh){
             $_SESSION['login']= $login;
             $_SESSION['user']=$user;
         }
-        else{}
     }
 }
 
