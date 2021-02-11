@@ -87,7 +87,7 @@ carte_modif;
                         <div class='row'>
                             <div class='col-sm'>
                                 <div class='card' >
-                                    <div class='card-header' style="background-image: url('$design.png'); background-position: center;">
+                                    <div class='card-header' style="background-image: url('$design'); background-position: center;">
                                         <span class="card-txt">
                                             $prenom $nom ($section $promotion)
                                         </span>
@@ -104,7 +104,7 @@ carte_modif;
                                                 <input type='submit' name='chupa$id' class='btn btn-$css_chupa' value='$btn_chupa' /> 
                                         </form> 
                                     </div>
-                                    <div class='card-footer text-muted' style="background-image: url('$design.png');background-position: bottom;">
+                                    <div class='card-footer text-muted' style="background-image: url('$design');background-position: bottom;">
                                     <span class="card-txt">
                                         Envoyé à $time</span>
                                     </div>
