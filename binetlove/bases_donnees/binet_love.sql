@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 30 jan. 2021 à 19:03
+-- Généré le :  jeu. 11 fév. 2021 à 21:28
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.11
 
@@ -32,20 +32,21 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `nom` varchar(32) NOT NULL,
   `login` varchar(32) NOT NULL,
-  `image` varchar(64) NOT NULL
+  `image` varchar(64) NOT NULL,
+  `selec` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `images`
 --
 
-INSERT INTO `images` (`id`, `nom`, `login`, `image`) VALUES
-(1, 'design1', 'louiscmc', 'upload/design1\r\n'),
-(2, 'design2', 'louiscmc', 'upload/design2'),
-(3, 'design3', 'louiscmc', 'upload/design3'),
-(4, 'design4', 'louiscmc', 'upload/design4\r\n'),
-(6, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png'),
-(7, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png');
+INSERT INTO `images` (`id`, `nom`, `login`, `image`, `selec`) VALUES
+(1, 'design1', 'louiscmc', 'upload/design1\r\n', 0),
+(2, 'design2', 'louiscmc', 'upload/design2', 0),
+(3, 'design3', 'louiscmc', 'upload/design3', 0),
+(4, 'design4', 'louiscmc', 'upload/design4\r\n', 0),
+(6, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png', 0),
+(7, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png', 0);
 
 -- --------------------------------------------------------
 
@@ -69,10 +70,22 @@ CREATE TABLE `lettre` (
 --
 
 INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `design`, `chupachups`, `time`, `supprime`) VALUES
-(45, 'louiscmc', 'louiscmc', '&lt;p&gt;sdffdfsdfsdfdfsdfs&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 18:59:42', 0),
-(46, 'louiscmc', 'mathildea', '&lt;p&gt;fsdfdfsfsdf&lt;/p&gt;', 'upload/design4', 0, '2021-01-30 19:02:27', 0),
-(47, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdfsfdfsfdfsdfdsfsdfsdfqsdferbgese gte rb g esrg serg esrg bserg ersg ddfs fsqdqsdsq&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:26', 0),
-(48, 'louiscmc', 'louiscmc', '&lt;p&gt;hgfjugfj&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:39', 0);
+(45, 'louiscmc', 'louiscmc', '&lt;p&gt;sdffdfsdfsdfdfsdfs&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 00:38:56', 1),
+(46, 'louiscmc', 'mathildea', '&lt;p&gt;fsdfdfsfsdf&lt;/p&gt;', 'upload/design4', 1, '2021-02-01 00:00:07', 0),
+(47, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdfsfdfsfdfsdfdsfsdfsdfqsdferbgese gte rb g esrg serg esrg bserg ersg ddfs fsqdqsdsq&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 23:59:43', 0),
+(48, 'louiscmc', 'louiscmc', '&lt;p&gt;hgfjugfj&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:39', 0),
+(49, 'louiscmc', 'louis_vaneau', '&lt;p&gt;nh,j n,j&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 00:37:08', 0),
+(50, 'louiscmc', 'mathildea', '&lt;p&gt;ghjgjkgh&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 00:37:58', 0),
+(51, 'louiscmc', 'mathildea', '&lt;p&gt;:(&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 02:18:12', 0),
+(52, 'louiscmc', 'mathildea', '&lt;p&gt;sdqsdsqdqsdqdqsdqsdqsdqsd&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 02:22:13', 0),
+(53, 'louiscmc', 'mathildea', '&lt;p&gt;cxcwxcwcw&lt;/p&gt;', 'upload/design1', 1, '2021-01-31 13:05:18', 0),
+(54, 'louiscmc', 'louiscmc', '&lt;p&gt;cbbbvcvbcb&lt;/p&gt;', 'upload/design3', 0, '2021-01-31 03:12:27', 1),
+(55, 'louiscmc', 'louiscmc', '&lt;p&gt;dqsdsqdqsdqsdqsd&lt;/p&gt;', 'upload/design2', 1, '2021-01-31 03:12:22', 0),
+(56, 'louiscmc', 'louiscmc', '&lt;p&gt;ddqsdqsds&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 23:59:27', 0),
+(57, 'louiscmc', 'louis_vaneau', '&lt;p&gt;ouin ouin le covid&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 21:18:47', 0),
+(59, 'louiscmc', 'louiscmc', '&lt;p&gt;efdffs&lt;span style=&quot;font-family:Fine College&quot;&gt;fdsfsfdsds&lt;/span&gt;&lt;/p&gt;', 'upload/design3', 1, '2021-02-06 15:06:06', 0),
+(60, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdqsdsqd&lt;/p&gt;', 'upload/design4', 0, '2021-02-06 15:06:24', 0),
+(61, 'louiscmc', 'mathildea', '&lt;p&gt;sdfsdfsdf&lt;/p&gt;', 'upload/design1', 1, '2021-02-11 21:23:17', 0);
 
 -- --------------------------------------------------------
 
@@ -137,7 +150,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `lettre`
 --
 ALTER TABLE `lettre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

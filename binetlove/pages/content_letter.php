@@ -130,8 +130,7 @@
                                 <br>
                                  </div> 
                                  <div class=container> 
-                                <input type="radio" id='design1' name="design" value="design1"
-                                        checked>
+                                <input type="radio" id='design1' name="design" value="design1" chacked>
                                 <label for="design2">Design 1</label>
                                 <img class="design" src="upload/design2.png" >
                                 <br>
@@ -139,8 +138,7 @@
                                 <br>
                                  </div> 
                                  <div class=container> 
-                                <input type="radio" id='design2' name="design" value="design2"
-                                        checked>
+                                <input type="radio" id='design2' name="design" value="design2">
                                 <label for="design3">Design 2</label>
                                 <img class="design" src="upload/design3.png" >
                                 <br>
@@ -148,13 +146,11 @@
                                 <br>
                                  </div> 
                                  <div class=container> 
-                                <input type="radio" id='design3' name="design" value="design3"
-                                        checked>
+                                <input type="radio" id='design3' name="design" value="design3">
                                 <label for="design4">Design 3</label>
                                 <img class="design" src="upload/design4.png" >
                                 <div class="container">
-                                <input type="radio" id='design4' name="design" value="design4"
-                                        checked>
+                                <input type="radio" id='design4' name="design" value="design4">
                                 <label for="design4">Design 4</label>
                                 </div>
                                  </div> 
