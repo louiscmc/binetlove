@@ -7,8 +7,10 @@
             <?php
                 $contenu = $bienrecu = $desti ="";
                 $contenuErr = $destinataireErr = "";
+                $felicitation = false ;
+                $numero="";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    
+
                     // on regarde si l'utilisateur a bien rempli tous les champs
                     if(isset($_POST['alea']) && $_POST['alea']=='Yes'){
                         $destinataire = dest_alea($dbh);
@@ -27,7 +29,7 @@
                     }
                     
                     if (empty($_POST["contenu"])) {
-                            $contenuErr = "Il faut remplir le contenu !";
+                            $contenuErr = "Il faut remplir le contenu !"; 
                         } 
                         else {
                             $contenu = test_input($_POST["contenu"]);
@@ -51,6 +53,8 @@
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
+                                $numero=getIdLettre($dbh,$envoyeur, $destinataire, addslashes($contenu), $design, $chupachups ,"$datetime");
+
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";
                             }
@@ -78,7 +82,14 @@
                         <?php
                         if ($bienrecu!=''){echo"
                         <div class='alert alert-success' role='alert'>
-                             $bienrecu
+                            $bienrecu
+                        </div>
+                        ";}
+                        ?>
+                        <?php
+                        if ($felicitation){echo"
+                        <div class='alert alert-success' role='alert'>
+                            'Félicitation, vous avez envoyé la $numero ème lettre, vous avez gagné une sucette !!'
                         </div>
                         ";}
                         ?>

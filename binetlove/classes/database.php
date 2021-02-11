@@ -31,6 +31,12 @@ function insererLettre($dbh, $login,$destinataire,$contenu, $design, $chupachups
     $sth -> execute(array($login, $destinataire, $contenu, $design, $chupachups, $date, 0));
 }
 
+function getIdLettre($dbh,$envoyeur, $destinataire, $contenu){
+    $sth = $dbh->prepare("SELECT id FROM lettre WHERE login=? and destinataire=? and contenu=?");
+    $sth -> execute(array($envoyeur, $destinataire, $contenu));
+}
+
+
 function modifierLettre($dbh, $id, $contenumod){
     $sth = $dbh->prepare("UPDATE lettre SET contenu=? WHERE id=?");
     $sth -> execute(array($contenumod,$id));
