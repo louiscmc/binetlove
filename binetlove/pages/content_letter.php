@@ -58,6 +58,7 @@
                                 var_dump($numero);
                                 if($numero%3==0){
                                     $felicitation=true;
+                                    updateGagnant($dhb,$envoyeur);
                                 }
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";

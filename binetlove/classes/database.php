@@ -38,6 +38,10 @@ function getIdLettre($dbh,$envoyeur, $destinataire, $contenu){
     return $row['id'];
 }
 
+function updateGagnant($dhb,$login){
+    $sth = $dbh->prepare("UPDATE polytechniciens SET gagnant=? WHERE login=?");
+    $sth -> execute(array(1,$login));
+}
 
 function modifierLettre($dbh, $id, $contenumod){
     $sth = $dbh->prepare("UPDATE lettre SET contenu=? WHERE id=?");
