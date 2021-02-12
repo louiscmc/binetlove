@@ -1,7 +1,3 @@
-
-
-
-
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
     <div class="container">
         <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne !</h1>
@@ -47,7 +43,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-<script src="js/chartist-plugin-axistitle.js"></script>
 <script src="js/chartist-plugin-zoom.js"></script>
 
 
@@ -95,7 +90,7 @@
             //Zoom
             Chartist.plugins.zoom({onZoom: onZoom }),
         ] 
-};
+    };
     //Magie !
     var chart = Chartist.Line('#timeline', data, options);
 
@@ -117,8 +112,6 @@
     var parent = document.querySelector('#timeline');
     !parent.querySelector('#reset-zoom-btn') && parent.appendChild(btn);
 
-
-    ​
 // pour le camembert
 new Chartist.Pie('#camembert', {
   series: [20, 10, 30, 40]
