@@ -1,5 +1,5 @@
 <?php
-function generateHTMLHeader($title, $CSS){
+function generateHTMLHeader($title){
     $act_letter="";
     $act_design="";
     $act_contact="";
@@ -32,12 +32,13 @@ function generateHTMLHeader($title, $CSS){
         <script src="js/bootstrap.min.js"></script>
         <!-- jQuery UI library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- CSS et scripts persos -->
-        <link href="$CSS" rel="stylesheet">
         <!-- Graphes pour stats -->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
         <!-- popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
+        <!-- CSS et scripts persos -->
+        <link href="css/perso.css" rel="stylesheet">
+        <link href="css/perso.scss" rel="stylesheet">
         
 
     </head>
