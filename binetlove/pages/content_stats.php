@@ -1,18 +1,19 @@
-
-
-
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
     <div class="container">
         <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne !</h1>
     </div>
 </div>
 <div class="container">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <p class="card-text"><span class="dot" id="dot-rose"></span> Nombre de Lettres</p>
-            <p class="card-text"><span class="dot" id="dot-rouge"></span> Nombre de Chupa Chups</p>
-        </div>
-    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card" >
+                <div class="card-body text-center">
+                    <p class="card-text"><span class="dot" id="dot-rose"></span> Nombre de Lettres</p>
+                    <p class="card-text"><span class="dot" id="dot-rouge"></span> Nombre de Chupa Chups</p>
+                </div>
+            </div>
+        <div class="col-sm-4"></div>
 </div>
 <div class='container chart'>
     <div class="ct-chart ct-major-sixth" id='timeline'></div> 
