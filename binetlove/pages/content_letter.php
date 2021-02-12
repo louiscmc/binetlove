@@ -51,15 +51,14 @@
                                 }
                                 else {$envoyeur = $_SESSION['login']; }
                                 insererLettre($dbh,$envoyeur, $destinataire, addslashes($contenu), $design, $chupachups ,"$datetime"); 
+                                $numero=getIdLettre($dbh,$envoyeur, $destinataire, $datetime);
+                                if($numero%3==0 && $numero!=NULL){
+                                    $felicitation=true;
+                                    //updateGagnant($dhb,$envoyeur);
+                                }
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
                                 $contenuErr = $destinataireErr = "";
-                                $numero=getIdLettre($dbh,$envoyeur, $destinataire, addslashes($contenu));
-                                var_dump($numero);
-                                if($numero%3==0){
-                                    $felicitation=true;
-                                    updateGagnant($dhb,$envoyeur);
-                                }
                             } else {
                                 $destinataireErr = "Ce Destinataire n'existe pas !";
                             }
