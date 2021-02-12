@@ -90,16 +90,17 @@
                         var_dump($felicitation);
                         var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
-                        <div class="autohide: false">
-                        <div class="toast align-items-center"  role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="d-flex">
-                              <div class="toast-body">
-                              'Félicitation, vous avez envoyé la $numero ème lettre, vous avez gagné une sucette !!'
-                             </div>
-                              <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            <div id="popup1" class="overlay">
+                                <div class="popup">
+                                    <h2>Félicitations !</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Vous avez envoyé la $numero ème lettre de la campagne, vous avez gagné une sucette !!
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        </div>
+
+                           
 felicitation;
                         }
                         if ($contenuErr!=""){echo"
