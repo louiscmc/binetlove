@@ -30,7 +30,6 @@ function generateHTMLHeader($title, $CSS){
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/perso.js"></script>
         <!-- jQuery UI library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- CSS et scripts persos -->
