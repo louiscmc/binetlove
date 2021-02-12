@@ -17,7 +17,7 @@
         <div class="col md-4"></div>
     </div>
 </div>
-<div class='container chart'>
+<div class='container chart' id='append_btn'>
     <div class="ct-chart ct-major-sixth" id='timeline'></div> 
 </div>
 <br>
@@ -44,6 +44,7 @@
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script src="js/chartist-plugin-zoom.js"></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/chartist-plugin-legend/0.6.2/chartist-plugin-legend.min.js></script>
 
 
 <script>
@@ -62,6 +63,7 @@
     for (i= 0; i < len_chupas; i++ ){
         JSONObject.chupas[i]['x']=new Date(JSONObject.chupas[i]['x']);
     }; 
+
 
     // on formate pour Chartist
     var data = { 
@@ -109,17 +111,21 @@
     btn.addEventListener('click', function() {
         resetFnc && resetFnc();
     });
-    var parent = document.querySelector('#timeline');
+    var parent = document.querySelector('#append_btn');
     !parent.querySelector('#reset-zoom-btn') && parent.appendChild(btn);
 
 // pour le camembert
 new Chartist.Pie('#camembert', {
-  series: [20, 10, 30, 40]
+    labels: ['Natation', 'Escalade', 'Roulade'],
+    series: [JSONObject.section.Natation, JSONObject.section.Escalade, JSONObject.section.Roulade]
 }, {
-  donut: true,
-  donutWidth: 60,
-  donutSolid: true,
-  startAngle: 270,
-  showLabel: true
+    donut: true,
+    donutWidth: 60,
+    donutSolid: true,
+    startAngle: 270,
+    showLabel: false,
+    plugins: [
+        Chartist.plugins.legend()
+    ]
 });
 </script>

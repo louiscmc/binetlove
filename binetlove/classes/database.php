@@ -127,24 +127,37 @@ function insererImage($dbh, $nom, $login, $image){
 function timeline($dbh){
     $lettres = array();
     $chupas = array();
-        $sql = "select time, chupachups from lettre where supprime=0 order by time";
-        $result = $dbh->prepare($sql);
-        $result-> execute();
-        $nb_lettre=0;
-        $nb_chupa=0;
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $nb_lettre++;
-            $has_chupa=$row['chupachups'];
-            $date_loc=date_create($row['time']);
-            if ($has_chupa==1){
-                $nb_chupa++;
-                array_push($chupas, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_chupa));
-            }
-            array_push($lettres, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_lettre));
-            
-            $data = array('lettres' => $lettres, 'chupas' => $chupas);
-        }
-        echo json_encode($data);
+    $sql = "select time, chupachups, login from lettre where supprime=0 order by time";
+    $result = $dbh->prepare($sql);
+    $result-> execute();
+    $nb_lettre=0;
+    $nb_chupa=0;
+    $nb_nat=0;
+    $nb_esc=0;
+    $nb_roul=0;
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $nb_lettre++;
+        $has_chupa=$row['chupachups'];
+        $date_loc=date_create($row['time']);
+        $login_local=$row['login'];
+        $sec_loc=getDestinataireReverse($dbh,$login_local)['section'];
+        switch ($sec_loc){
+            case 'Natation' : $nb_nat++;
+                break;
+            case 'Escalade' : $nb_esc++;
+                break;
+            case 'Roulade' : $nb_roul++;
+                break;
+    }
+    if ($has_chupa==1){
+            $nb_chupa++;
+            array_push($chupas, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_chupa));
+    }
+    array_push($lettres, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_lettre));
+    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul);
+    $data = array('lettres' => $lettres, 'chupas' => $chupas, 'section' => $section);
+    }
+    echo json_encode($data);
 }
 
 ?>
