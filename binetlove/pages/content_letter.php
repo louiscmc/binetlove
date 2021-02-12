@@ -41,7 +41,7 @@
                     }
                     $design = 'upload/design1.png';
                     if(isset($_POST['design'])){
-                        $design='upload/'.$_POST['design'].'.png';
+                        $design=$_POST['design'];
                     }
                     if ($destinataire !="" && $contenu != ""){
                         $datetime = date_create()->format('Y-m-d H:i:s');
@@ -156,7 +156,7 @@ felicitation;
                                             echo <<<lettre
                                                 <div class=container> 
                                                     <img class="design" src="$image" >
-                                                    <input type="radio" id='$nom' name="design" value="$nom">
+                                                    <input type="radio" id='$nom' name="design" value="$image">
                                                     <label for="$nom">Design $count_design</label>
                                                     <br>
                                                     <br>
