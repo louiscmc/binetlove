@@ -1,6 +1,7 @@
 
 
 
+
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
     <div class="container">
         <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne !</h1>

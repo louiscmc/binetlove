@@ -90,16 +90,14 @@
                         var_dump($felicitation);
                         var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
-                            <div id="popup1" class="overlay">
-                                <div class="popup">
-                                    <h2>Félicitations !</h2>
-                                    <a class="close" href="#">&times;</a>
-                                    <div class="content">
-                                        Vous avez envoyé la $numero ème lettre de la campagne, vous avez gagné une sucette !!
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="popup-with-zoom-anim" href="#small-dialog">Open with fade-zoom animation</a><br>
+                            <a class="popup-with-move-anim" href="#small-dialog">Open with fade-slide animation</a>
 
+                            <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                            <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                                <h1>Dialog example</h1>
+                                <p>Vous avez envoyé la $numero ème lettre de la campagne, vous avez gagné une sucette !!</p>
+                            </div>
                            
 felicitation;
                         }
@@ -204,4 +202,22 @@ lettre;
             <script src="ckeditor/ckeditor.js"></script>
             <script>
                 CKEDITOR.replace('contenu');
+                // Popup 1000eme lettre :
+                $(document).ready(function() {
+                    $('.popup-with-zoom-anim').magnificPopup({
+                        type: 'inline',
+
+                        fixedContentPos: false,
+                        fixedBgPos: true,
+
+                        overflowY: 'auto',
+
+                        closeBtnInside: true,
+                        preloader: false,
+                        
+                        midClick: true,
+                        removalDelay: 300,
+                        mainClass: 'my-mfp-zoom-in'
+                    });
+                });
             </script>
