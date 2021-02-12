@@ -363,3 +363,17 @@ input[type=text], input[type=password] {
 /* axistitle */
 .ct-axis-title-x { fill: #d1098e !important; font-family: "Fira Sans", Helvetica, Roboto, Arial, sans-serif; font-weight: 200; }
 
+#dot-rouge {
+  height: 15px;
+  width: 15px;
+  background-color: rgb(255, 30, 0);
+  border-radius: 50%;
+  display: inline-block;
+}
+#dot-rose {
+  height: 15px;
+  width: 15px;
+  background-color: rgb(223, 6, 158);
+  border-radius: 50%;
+  display: inline-block;
+}

@@ -3,7 +3,15 @@
 
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
     <div class="container">
-        <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne en cours !</h1>
+        <h1 class="display-4 text-focus-in">Quelques <span class='red'>statistiques</span> de la campagne !</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text"><span class="dot" id="dot-rose"></span> Nombre de Lettres</p>
+            <p class="card-text"><span class="dot" id="dot-rouge"></span> Nombre de Chupa Chups</p>
+        </div>
     </div>
 </div>
 <div class='container chart'>
@@ -64,28 +72,6 @@
         plugins: [
             //Zoom
             Chartist.plugins.zoom({onZoom: onZoom }),
-            //Axes
-            Chartist.plugins.ctAxisTitle({
-                axisX: {
-                axisTitle: 'Rose :  Lettres, Rouge :  Chupa Chups',
-                axisClass: 'ct-axis-title-x',
-                offset: {
-                    x: 0,
-                    y: 30
-                },
-                textAnchor: 'middle'
-                },
-                axisY: {
-                axisTitle: 'Rose :  Lettres, Rouge :  Chupa Chups',
-                axisClass: 'ct-axis-title-y',
-                offset: {
-                    x: 0,
-                    y: -1000
-                },
-                textAnchor: 'middle',
-                flipTitle: true
-                }
-            })
         ] 
 };
     //Magie !
