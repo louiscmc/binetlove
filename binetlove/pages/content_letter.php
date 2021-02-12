@@ -91,8 +91,6 @@
                         var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
                             <a class="popup-with-zoom-anim" href="#small-dialog">Open with fade-zoom animation</a><br>
-                            <a class="popup-with-move-anim" href="#small-dialog">Open with fade-slide animation</a>
-
                             <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                             <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
                                 <h1>Dialog example</h1>
@@ -200,6 +198,7 @@ lettre;
             </form>  
             <br>
             <script src="ckeditor/ckeditor.js"></script>
+            <script src="js/jquery.magnific-popup.js"></script>
             <script>
                 CKEDITOR.replace('contenu');
                 // Popup 1000eme lettre :

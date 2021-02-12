@@ -37,6 +37,8 @@ function generateHTMLHeader($title, $CSS){
         <link href="$CSS" rel="stylesheet">
         <!-- Graphes pour stats -->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <!-- popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
         
 
     </head>
