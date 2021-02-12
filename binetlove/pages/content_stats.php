@@ -26,6 +26,21 @@
 </div>
 <br>
 <br>
+<div class="row">
+        <div class="col md-4"></div>
+        <div class="col md-4 text-center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p> Camemberts ! </p>
+                </div>
+            </div>
+        </div>
+        <div class="col md-4"></div>
+    </div>
+<div class='container chart'>
+    <div class="ct-chart ct-major-sixth" id='camembert'></div> 
+</div>
+
 
 
 <!-- scripts pour graphes -->
@@ -82,7 +97,7 @@
         ] 
 };
     //Magie !
-    var chart = Chartist.Line('.ct-chart', data, options);
+    var chart = Chartist.Line('#timeline', data, options);
 
     //On crée le bouton pour dézoomer
     var resetFnc;
@@ -99,6 +114,19 @@
     btn.addEventListener('click', function() {
         resetFnc && resetFnc();
     });
-    var parent = document.querySelector('.chart');
+    var parent = document.querySelector('#timeline');
     !parent.querySelector('#reset-zoom-btn') && parent.appendChild(btn);
+
+
+    ​
+// pour le camembert
+new Chartist.Pie('#camembert', {
+  series: [20, 10, 30, 40]
+}, {
+  donut: true,
+  donutWidth: 60,
+  donutSolid: true,
+  startAngle: 270,
+  showLabel: true
+});
 </script>
