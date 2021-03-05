@@ -109,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <option value="Boxe">Boxe</option>
      <option value="Crossfit">Crossfit</option>
      <option value="Équitation">Équitation</option>
+     <option value="Escrime">Escrime</option>
      <option value="Escalade">Escalade</option>
      <option value="Foot">Foot</option>
      <option value="Hand">Hand</option>
