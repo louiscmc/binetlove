@@ -55,45 +55,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
-<div class="container">
-<h1 class="display-4 text-focus-in">Envoie ton plus <span class='red'>beau</span> design !</h1>
-</div>
+  <div class="container">
+    <h1 class="display-4 text-focus-in">Envoie ton plus <span class='red'>beau</span> design !</h1>
+  </div>
 </div>
 <div class="container-fluid">
-                <div class="row">
-                    <div class="col-6">
-<div class="container">
-</div>
-<?php
-if ($upload==1){echo"
-<div class='alert alert-success' role='alert'>
-Le fichier $patate a bien été uploadé !.
-</div>
-";}
-if($upload==0){echo"
-<div class='alert alert-danger' role='alert'>
-Votre design n'a pas pu être uploadé... :(
-</div>
-";}
-?>
-<div class="col"></div>
- </div>
- <form action="
-                <?php 
-                    $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
-                    echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
-                ?>
-            " method="post" enctype="multipart/form-data">
-  Choisir un fichier à uploader:
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" name="submit">
-  <?php if (isAdmin($dbh, $_SESSION['login'])){
-                        echo<<<fulldesign
-                        <a class="btn btn-light" href="index.php?page=design_admin" role="button">Voir tous les designs</a>
-fulldesign;
-                    } ?>
-</form>
-    <div id="err"></div>
- <hr>
-</div>
+    <?php
+    if ($upload==1){echo"
+    <div class='alert alert-success' role='alert'>
+    Le fichier $patate a bien été uploadé !.
+    </div>
+    ";}
+    if($upload==0){echo"
+    <div class='alert alert-danger' role='alert'>
+    Votre design n'a pas pu être uploadé... :(
+    </div>
+    ";}
+    ?>
+  </div>
+  <div class="container-login">
+    <form action="
+          <?php 
+              $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
+              echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
+          ?>
+      " method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <button class="btn btn-rose" type="submit" value="Upload Image" name="submit">Envoyer</button>
+        <?php if (isAdmin($dbh, $_SESSION['login'])){
+                              echo<<<fulldesign
+                              <a class="btn btn-light" href="index.php?page=design_admin" role="button">Voir tous les designs</a>
+      fulldesign;
+                          } ?>
+    </form>
+  </div>
 
