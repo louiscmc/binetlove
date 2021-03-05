@@ -165,6 +165,21 @@ function timeline($dbh){
     $nb_nat=0;
     $nb_esc=0;
     $nb_roul=0;
+    $nb_avir=0;
+    $nb_bad=0;
+    $nb_bask=0;
+    $nb_box=0;
+    $nb_cross=0;
+    $nb_pon=0;
+    $nb_esc=0;
+    $nb_foot=0;
+    $nb_hand=0;
+    $nb_judo=0;
+    $nb_raid=0;
+    $nb_rugby=0;
+    $nb_ten=0;
+    $nb_ulti=0;
+    $nb_vol=0;
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $nb_lettre++;
         $has_chupa=$row['chupachups'];
@@ -178,13 +193,44 @@ function timeline($dbh){
                 break;
             case 'Roulade' : $nb_roul++;
                 break;
+            case 'Aviron' : $nb_avir++;
+                break;
+            case 'Bad' : $nb_bad++;
+                break;
+            case 'Basket' : $nb_bask++;
+                break;
+            case 'Boxe' : $nb_box++;
+                break;
+            case 'Crossfit' : $nb_cross++;
+                break;
+            case 'Equitation' : $nb_pon++;
+                break;
+            case 'Escrime' : $nb_esc++;
+                break;
+            case 'Foot' : $nb_foot++;
+                break;
+            case 'Handball' : $nb_hand++;
+                break;
+            case 'Judo' : $nb_judo++;
+                break;
+            case 'Raid' : $nb_raid++;
+                break;
+            case 'Rugby' : $nb_rugby++;
+                break;
+            case 'Tennis' : $nb_ten++;
+                break;
+            case 'Ultimate' : $nb_ultimate++;
+                break;
+            case 'Volley' : $nb_vol++;
+                break;
     }
     if ($has_chupa==1){
             $nb_chupa++;
             array_push($chupas, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_chupa));
     }
     array_push($lettres, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_lettre));
-    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul);
+    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul, 'Aviron' => $nb_avir, 'Bad' => $nb_bad, 'Basket' => $nb_bask, 'Boxe' => $nb_box, 'Crossfit' => $nb_cross, 
+'Equitation' => $nb_pon, 'Escrime' => $nb_esc, 'Foot' => $nb_foot, 'Handball' => $nb_hand, 'Judo' => $nb_judo, 'Raid' => $nb_raid, 'Rugby' => $nb_rugby, 'Tennis' => $nb_ten, 'Ultimate' => $nb_ultimate, 'Volley' => $nb_vol);
     $data = array('lettres' => $lettres, 'chupas' => $chupas, 'section' => $section);
     }
     echo json_encode($data);
