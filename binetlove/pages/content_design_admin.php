@@ -4,7 +4,7 @@
     <br>
     <?php
     $login = $_SESSION['login'];
-    $result = $dbh->prepare("SELECT id, destinataire, contenu, time, chupachups, design "
+    $result = $dbh->prepare("SELECT image, selec "
             . "FROM lettre "
             . "WHERE login=? and supprime=0 "
             . "order by time desc");
@@ -123,8 +123,5 @@ carte; }
         }
     ?>
     <br>
-    <div class='row justify-content-md-center'>
-    <a class="btn btn-light" href="index.php?page=letter" role="button">Revenir au formulaire</a>
-    </div>
     <br>
 </div>
