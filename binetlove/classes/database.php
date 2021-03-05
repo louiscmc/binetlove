@@ -38,7 +38,7 @@ function getIdLettre($dbh,$envoyeur, $destinataire, $datetime){
     return $row['id'];
 }
 
-function updateGagnant($dhb,$login){
+function updateGagnant($dbh,$login){
     $sth = $dbh->prepare("UPDATE polytechniciens SET gagnant=? WHERE login=?");
     $sth -> execute(array(1,$login));
 }
