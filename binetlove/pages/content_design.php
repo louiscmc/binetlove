@@ -87,9 +87,9 @@ Votre design n'a pas pu être uploadé... :(
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
   <?php if (isAdmin($dbh, $_SESSION['login'])){
-                        echo<<<fulllettres
+                        echo<<<fulldesign
                         <a class="btn btn-light" href="index.php?page=design_admin" role="button">Voir tous les designs</a>
-fulllettres;
+fulldesign;
                     } ?>
 </form>
     <div id="err"></div>
