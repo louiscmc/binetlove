@@ -101,45 +101,61 @@ $page_list = array(
     array(
     "name"=>"welcome",
     "title"=>"Binet Love",
-    "menutitle"=>"Binet Love"),
+    "menutitle"=>"Binet Love",
+    "admin"=>0),
     array(
     "name"=>"design",
     "title"=>"Soumettre un design",
-    "menutitle"=>"Soumettre un design"),
+    "menutitle"=>"Soumettre un design",
+    "admin"=>0),
      array(
     "name"=>"letter",
     "title"=>"Écrire une lettre",
-    "menutitle"=>"Écrire une lettre"),
+    "menutitle"=>"Écrire une lettre",
+    "admin"=>0),
     array(
     "name"=>"envoye",
     "title"=>"Lettres envoyées",
-    "menutitle"=>"Lettres envoyées"),
+    "menutitle"=>"Lettres envoyées",
+    "admin"=>0),
      array(
     "name"=>"contact",
     "title"=>"Nous contacter",
-    "menutitle"=>"Nous contacter"),
+    "menutitle"=>"Nous contacter",
+    "admin"=>0),
      array(
-         "name"=>'merci',
-         "title"=>"Merci !",
-    "menutitle"=>"Merci !"),
+    "name"=>'merci',
+    "title"=>"Merci !",
+    "menutitle"=>"Merci !",
+    "admin"=>0),
     array(
-        "name"=>"register",
-        "title"=>"S'inscrire",
-        "menutitle"=>"S'inscrire"),
+    "name"=>"register",
+    "title"=>"S'inscrire",
+    "menutitle"=>"S'inscrire",
+    "admin"=>0),
     array(
-        "name"=>"stats",
-        "title"=>"Statistiques",
-        "menutitle"=>"Statiqtiques"),
+    "name"=>"stats",
+    "title"=>"Statistiques",
+    "menutitle"=>"Statistiques",
+    "admin"=>0),
+    array(
+    "name"=>"envoye_admin",
+    "title"=>"Lettres ADMIN",
+    "menutitle"=>"Lettres ADMIN",
+    "admin"=>1),
      );
 
 function checkPage($askedPage){
     global $page_list;
     foreach($page_list as $page){
-        if ($askedPage === $page["name"]){
-            return true;
-        }  
+        if ($askedPage === $page["name"] && $page["admin"] === 0){
+            return 'nonadmin';
+        }
+        else if ($askedPage === $page["name"] || $page["admin"] === 1){
+            return 'admin';
+        }
     }
-    return false;
+    return 'false';
 }
 
 function getPageTitle($name){
