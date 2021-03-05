@@ -116,8 +116,8 @@
 
 // pour le camembert
 new Chartist.Pie('#camembert', {
-    labels: ['Natation', 'Escalade', 'Roulade'],
-    series: [JSONObject.section.Natation, JSONObject.section.Escalade, JSONObject.section.Roulade]
+    labels: ['Natation', 'Escalade', 'Roulade', 'Aviron', 'Bad', 'Basket', 'Boxe', 'Crossfit', 'Equitation', 'Escrime', 'Foot', 'Hand', 'Judo', 'Raid', 'Rugby', 'Tennis', 'Ultimate', 'Volley'],
+    series: [JSONObject.section.Natation, JSONObject.section.Escalade, JSONObject.section.Roulade, JSONObject.section.Aviron, JSONObject.section.Bad, JSONObject.section.Basket, JSONObject.section.Boxe, JSONObject.section.Crossfit, JSONObject.section.Equitation, JSONObject.section.Escrime, JSONObject.section.Foot, JSONObject.section.Hand, JSONObject.section.Judo, JSONObject.section.Raid, JSONObject.section.Rugby, JSONObject.section.Tennis, JSONObject.section.Ultimate, JSONObject.section.Volley]
 }, {
     donut: true,
     donutWidth: 60,
