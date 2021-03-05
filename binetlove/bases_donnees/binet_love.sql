@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  ven. 05 mars 2021 à 21:53
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.3.11
+-- Hôte : localhost
+-- Généré le : ven. 05 mars 2021 à 22:41
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `binet_love`
+-- Base de données : `binet_love`
 --
 
 -- --------------------------------------------------------
@@ -30,23 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `images` (
   `id` int(11) NOT NULL,
-  `nom` varchar(32) NOT NULL,
   `login` varchar(32) NOT NULL,
   `image` varchar(64) NOT NULL,
+  `time` datetime NOT NULL,
   `selec` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `images`
---
-
-INSERT INTO `images` (`id`, `nom`, `login`, `image`, `selec`) VALUES
-(1, 'design1', 'louiscmc', 'upload/design1\r\n', 0),
-(2, 'design2', 'louiscmc', 'upload/design2', 0),
-(3, 'design3', 'louiscmc', 'upload/design3', 0),
-(4, 'design4', 'louiscmc', 'upload/design4\r\n', 0),
-(6, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png', 0),
-(7, 'Asterix34AnniversaireRep-1024x46', 'louiscmc', 'upload/Asterix34AnniversaireRep-1024x468.png', 0);
 
 -- --------------------------------------------------------
 
