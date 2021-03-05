@@ -37,13 +37,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $casert = test_input($_POST["casert"]);
     }
-    $section="Roulade";
-    $promotion="2019";
-
+    if (empty($_POST["section"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $section = $_POST["section"];
+    }
+    if (empty($_POST["promotion"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $promotion = $_POST["promotion"];
+    }
 
     if ($Err == ""){
             if ($checkLogin==true){
-                insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
+                insererUtilisateur($dbh,$login,$password, $nom, $prenom, $section, $promotion, $casert);
                 $bienrecu = "Tu es bien inscrit sur le site !  <br> N'hésite pas à aller écrire une lettre &#128151;";
                 $prenom = $nom = $promotion = $casert = $section = $password = $login = "";
                 $Err = "";
@@ -93,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <input  type="text" class="form-control" name="login" value="" placeholder="Login"/>
      <input  type="password" class="form-control" name="password" value="" placeholder="Mot de Passe"/>
    <select class="form-select" name='section' id="section" aria-label="Default select example">
-     <option selected>Section</option>
+     <option selected="selected">Section</option>
      <option value="Aviron">Aviron</option>
      <option value="Bad">Bad</option>
      <option value="Basket">Basket</option>
@@ -113,12 +122,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <option value="Volley">Volley</option>
    </select>  
    <select class="form-select" name="promotion" id="promotion" aria-label="Default select example">
-   <option selected>Promotion</option>
-   <option value="2018">2018</option>
-   <option value="2019">2019</option>
-   <option value="2020">2020</option>
-   </select>  
-     <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
-     <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>   
-    </form>
+    <option selected="selected">Promotion</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+   </select>
+    <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
+    <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>   
+</form>
 </div>
