@@ -209,7 +209,7 @@ function timeline($dbh){
                 break;
             case 'Foot' : $nb_foot++;
                 break;
-            case 'Handball' : $nb_hand++;
+            case 'Hand' : $nb_hand++;
                 break;
             case 'Judo' : $nb_judo++;
                 break;
@@ -219,7 +219,7 @@ function timeline($dbh){
                 break;
             case 'Tennis' : $nb_ten++;
                 break;
-            case 'Ultimate' : $nb_ultimate++;
+            case 'Ultimate' : $nb_ulti++;
                 break;
             case 'Volley' : $nb_vol++;
                 break;
@@ -229,8 +229,7 @@ function timeline($dbh){
             array_push($chupas, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_chupa));
     }
     array_push($lettres, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_lettre));
-    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul, 'Aviron' => $nb_avir, 'Bad' => $nb_bad, 'Basket' => $nb_bask, 'Boxe' => $nb_box, 'Crossfit' => $nb_cross, 
-'Equitation' => $nb_pon, 'Escrime' => $nb_esc, 'Foot' => $nb_foot, 'Handball' => $nb_hand, 'Judo' => $nb_judo, 'Raid' => $nb_raid, 'Rugby' => $nb_rugby, 'Tennis' => $nb_ten, 'Ultimate' => $nb_ultimate, 'Volley' => $nb_vol);
+    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul, 'Aviron' => $nb_avir, 'Bad' => $nb_bad, 'Basket' => $nb_bask, 'Boxe' => $nb_box, 'Crossfit' => $nb_cross, 'Equitation' => $nb_pon, 'Escrime' => $nb_esc, 'Foot' => $nb_foot, 'Hand' => $nb_hand, 'Judo' => $nb_judo, 'Raid' => $nb_raid, 'Rugby' => $nb_rugby, 'Tennis' => $nb_ten, 'Ultimate' => $nb_ulti, 'Volley' => $nb_vol);
     $data = array('lettres' => $lettres, 'chupas' => $chupas, 'section' => $section);
     }
     echo json_encode($data);
