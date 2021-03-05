@@ -10,7 +10,6 @@ $prenom="" ;
 if (array_key_exists('casert',$_POST)){
     $casert=$_POST['casert'];
 }
-$prenom="" ;
 $section="Roulade";
 $promotion="2019";
 

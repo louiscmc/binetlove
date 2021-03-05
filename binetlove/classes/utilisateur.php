@@ -33,10 +33,10 @@ class Polytechniciens {
 
     function insertUser($dbh, $login, $password,$nom,$prenom,$section,$promotion,$casert){
         if(Polytechniciens::getUser($dbh,$login)==null){
-            $query= "INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert) VALUES (?, ?, ?, ?, ?,?,?,?)";
+            $query= "INSERT INTO polytechniciens (login, admin, password , nom, prenom,section , promotion, casert, gagnant) VALUES (?, ?, ?, ?, ?,?,?,?,?)";
             $sth=$dbh->prepare($query);
             $sth->setFetchMode(PDO::FETCH_CLASS, 'Polytechniciens');
-            $sth->execute(array($login, 0, hash('sha1', $password),$nom,$prenom,$section,$promotion,$casert));
+            $sth->execute(array($login, 0, hash('sha1', $password),$nom,$prenom,$section,$promotion,$casert,0));
             return($sth->rowCount()==1);
         }
         return false;
