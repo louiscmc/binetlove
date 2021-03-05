@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 12 fév. 2021 à 00:00
+-- Généré le : ven. 05 mars 2021 à 14:03
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -63,36 +63,6 @@ CREATE TABLE `lettre` (
   `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `supprime` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `lettre`
---
-
-INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `design`, `chupachups`, `time`, `supprime`) VALUES
-(45, 'louiscmc', 'louiscmc', '&lt;p&gt;sdffdfsdfsdfdfsdfs&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 00:38:56', 1),
-(46, 'louiscmc', 'mathildea', '&lt;p&gt;fsdfdfsfsdf&lt;/p&gt;', 'upload/design4', 1, '2021-02-01 00:00:07', 0),
-(47, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdfsfdfsfdfsdfdsfsdfsdfqsdferbgese gte rb g esrg serg esrg bserg ersg ddfs fsqdqsdsq&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 23:59:43', 0),
-(48, 'louiscmc', 'louiscmc', '&lt;p&gt;hgfjugfj&lt;/p&gt;', 'upload/design4', 1, '2021-01-30 19:02:39', 0),
-(49, 'louiscmc', 'louis_vaneau', '&lt;p&gt;nh,j n,j&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 00:37:08', 0),
-(50, 'louiscmc', 'mathildea', '&lt;p&gt;ghjgjkgh&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 00:37:58', 0),
-(51, 'louiscmc', 'mathildea', '&lt;p&gt;:(&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 02:18:12', 0),
-(52, 'louiscmc', 'mathildea', '&lt;p&gt;sdqsdsqdqsdqdqsdqsdqsdqsd&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 02:22:13', 0),
-(53, 'louiscmc', 'mathildea', '&lt;p&gt;cxcwxcwcw&lt;/p&gt;', 'upload/design1', 1, '2021-01-31 13:05:18', 0),
-(54, 'louiscmc', 'louiscmc', '&lt;p&gt;cbbbvcvbcb&lt;/p&gt;', 'upload/design3', 0, '2021-01-31 03:12:27', 1),
-(55, 'louiscmc', 'louiscmc', '&lt;p&gt;dqsdsqdqsdqsdqsd&lt;/p&gt;', 'upload/design2', 1, '2021-01-31 03:12:22', 0),
-(56, 'louiscmc', 'louiscmc', '&lt;p&gt;ddqsdqsds&lt;/p&gt;', 'upload/design4', 0, '2021-01-31 23:59:27', 0),
-(57, 'louiscmc', 'louis_vaneau', '&lt;p&gt;ouin ouin le covid&lt;/p&gt;', 'upload/design4', 1, '2021-01-31 21:18:47', 0),
-(59, 'louiscmc', 'louiscmc', '&lt;p&gt;efdffs&lt;span style=&quot;font-family:Fine College&quot;&gt;fdsfsfdsds&lt;/span&gt;&lt;/p&gt;', 'upload/design3', 1, '2021-02-06 15:06:06', 0),
-(60, 'louiscmc', 'louis_vaneau', '&lt;p&gt;sdqsdsqd&lt;/p&gt;', 'upload/design4', 0, '2021-02-06 15:06:24', 0),
-(61, 'louiscmc', 'mathildea', '&lt;p&gt;sdfsdfsdf&lt;/p&gt;', 'upload/design1', 1, '2021-02-11 21:23:17', 0),
-(62, 'mathildea', 'louiscmc', '&lt;p&gt;qzfsnmoi&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:32:17', 0),
-(63, 'mathildea', 'louiscmc', '&lt;p&gt;lseixjm&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:32:38', 0),
-(64, 'mathildea', 'louiscmc', '&lt;p&gt;lseixjm&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:34:34', 0),
-(65, 'mathildea', 'louiscmc', '&lt;p&gt;kjdvnw&amp;lt;m&amp;ugrave;op&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:35:29', 0),
-(66, 'mathildea', 'louiscmc', '&lt;p&gt;kjdvnw&amp;lt;m&amp;ugrave;op&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:35:40', 0),
-(67, 'mathildea', 'louiscmc', '&lt;p&gt;&amp;ugrave;poezis;:&amp;ugrave;&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:35:48', 0),
-(68, 'mathildea', 'louiscmc', '&lt;p&gt;msdjlkbm&lt;/p&gt;', 'upload/design1', 0, '2021-02-11 22:52:16', 0),
-(69, 'mathildea', 'louis_vaneau', '&lt;p&gt;s&amp;lt;evtrb&amp;sect;qest&amp;egrave;nudy,tifu;oppo,inurbyetvzrcaevtbyqnru,io;rp;o!,i&amp;egrave;nubyvt&amp;#39;r&amp;quot;c&amp;eacute;er&amp;quot;vt&amp;#39;by(nui,ouriptouori,eyunybetzvarcEVTRIYU&lt;/p&gt;', 'upload/design1', 1, '2021-02-11 22:55:23', 0);
 
 -- --------------------------------------------------------
 
@@ -158,7 +128,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `lettre`
 --
 ALTER TABLE `lettre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
