@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : ven. 05 mars 2021 à 22:49
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.0
+-- Hôte : 127.0.0.1
+-- Généré le :  ven. 05 mars 2021 à 22:58
+-- Version du serveur :  10.4.8-MariaDB
+-- Version de PHP :  7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `binet_love`
+-- Base de données :  `binet_love`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +35,17 @@ CREATE TABLE `images` (
   `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `selec` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `images`
+--
+
+INSERT INTO `images` (`id`, `login`, `image`, `time`, `selec`) VALUES
+(8, 'louiscmc', 'upload/logobp19FINAL.png', '2021-03-05 22:56:29', 0),
+(9, 'louiscmc', 'upload/design1.png', '2021-03-05 22:58:17', 0),
+(10, 'louiscmc', 'upload/design2.png', '2021-03-05 22:58:22', 0),
+(11, 'louiscmc', 'upload/design3.png', '2021-03-05 22:58:28', 0),
+(12, 'louiscmc', 'upload/design4.png', '2021-03-05 22:58:36', 0);
 
 -- --------------------------------------------------------
 
@@ -126,7 +138,7 @@ ALTER TABLE `polytechniciens`
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `lettre`
