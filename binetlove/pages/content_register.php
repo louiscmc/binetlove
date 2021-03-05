@@ -1,40 +1,97 @@
 <?php
-if (array_key_exists('nom',$_POST)){
-    $nom=$_POST['nom'];
-}
-$nom="";
-if (array_key_exists('prenom',$_POST)){
-    $prenom=$_POST['prenom'];
-}
-$prenom="" ;
-if (array_key_exists('casert',$_POST)){
-    $casert=$_POST['casert'];
-}
-$section="Roulade";
-$promotion="2019";
+$nom = $prenom = $promotion = $casert = $section = $password = $login = $bienrecu ="";
+$Err= $loginErr="";
+$checkLogin=false;
 
-$erreur ="";
-$ok= false;
-$attempt = false;
-if(array_key_exists('login',$_POST) && !$_POST['login']=="" && array_key_exists("password",$_POST)){
-    $tentative=true;
-    $ok=Polytechniciens::insertUser($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
-}
-if ($ok) {
-    echo "<p> Inscription réussie ! </p>";
-}
-else if ($attempt){
-    echo "<p> Login déjà pris !</p>";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // on regarde si l'utilisateur a bien rempli tous les champs
+    if (empty($_POST["prenom"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $prenom = test_input($_POST["prenom"]);
+    }
+    if (empty($_POST["nom"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $nom = test_input($_POST["nom"]);
+    }
+    if (empty($_POST["login"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $login = test_input($_POST["login"]);
+        $checkLogin = checkLogin($dbh,$login);
+    }
+    if (empty($_POST["password"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $password = test_input($_POST["password"]);
+    } 
+    if (empty($_POST["casert"])) {
+        $Err = "Il manque des champs à remplir !"; 
+    } 
+    else {
+        $casert = test_input($_POST["casert"]);
+    }
+    $section="Roulade";
+    $promotion="2019";
+
+
+    if ($Err == ""){
+            if ($checkLogin==true){
+                inserertUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
+                $bienrecu = "Tu es bien inscrit sur le site !  <br> N'hésite pas à aller écrire une lettre &#128151;";
+                $prenom = $nom = $promotion = $casert = $section = $password = $login = "";
+                $Err = "";
+            } else {
+                $loginErr = "Ce login est déjà pris :/ ...";
+            }
+    }
+
 }
 ?>
 
 <div id="container" class="container-login">
-<form class="form-login" role="form" action="index.php?page=register" method="POST">
-    <h4>Bienvenue au Binet Love &#128149;</h4>
-     <input type="text" class="form-control" name="prenom" value="" placeholder="Prénom" required/>
-     <input type="text" class="form-control" name="nom" value="" placeholder="Nom" required/>
-     <input  type="text" class="form-control" name="login" value="" placeholder="Login"required/>
-     <input  type="password" class="form-control" name="password" value="" placeholder="Mot de Passe"required/>
+    <form action="
+        <?php 
+            $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
+            echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
+        ?>
+    " method="post"> 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    <?php
+                    if ($Err!=''){echo"
+                    <div class='alert alert-danger' role='alert'>
+                        $Err
+                    </div>
+                    ";}
+                    if ($bienrecu!=''){echo"
+                    <div class='alert alert-success' role='alert'>
+                        $bienrecu
+                    </div>
+                    ";}
+                    if ($loginErr!=""){echo"
+                    <div class='alert alert-danger' role='alert'>
+                        $loginErr
+                    </div>
+                    ";}
+                    ?>
+                </div>
+                <div class="col"></div>  
+            </div>
+        </div> 
+        <h4>Bienvenue au Binet Love &#128149;</h4>
+     <input type="text" class="form-control" name="prenom" value="" placeholder="Prénom" />
+     <input type="text" class="form-control" name="nom" value="" placeholder="Nom" />
+     <input  type="text" class="form-control" name="login" value="" placeholder="Login"/>
+     <input  type="password" class="form-control" name="password" value="" placeholder="Mot de Passe"/>
    <select class="form-select" name='section' id="section" aria-label="Default select example">
      <option selected>Section</option>
      <option value="Aviron">Aviron</option>
@@ -61,7 +118,7 @@ else if ($attempt){
    <option value="2019">2019</option>
    <option value="2020">2020</option>
    </select>  
-     <input type="text" class="form-control" name="casert" value="" placeholder="Casert" required/>
-     <button  class="btn-rose btn-login heartbeat" type="submit" action="index.php?page=welcome">S'inscire</button>
-</form>
+     <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
+     <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>   
+    </form>
 </div>
