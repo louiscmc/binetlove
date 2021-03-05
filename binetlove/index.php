@@ -32,7 +32,7 @@
 
     
     $authorized= checkPage($askedPage);
-    if($authorized){
+    if($authorized=='nonadmin' || ($authorized=='admin' && isAdmin($dbh, $_SESSION['login']))){
         $pageTitle= getPageTitle($askedPage);
     }
     else{
@@ -43,7 +43,7 @@
 
     <div id=content>
         <?php
-            if($authorized){
+            if($authorized=='nonadmin' || ($authorized=='admin' && isAdmin($dbh, $_SESSION['login']))){
             require("pages/content_$askedPage.php");
             }
             else{echo "Cette page n'existe pas";}

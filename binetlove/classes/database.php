@@ -119,6 +119,19 @@ function insererImage($dbh, $nom, $login, $image){
     $sth -> execute(array($nom, $login, $image));
 }
 
+function isAdmin($dbh, $login){
+    $sql = "select admin from polytechniciens where login=?";
+    $result = $dbh->prepare($sql);
+    $result-> execute(array($login));
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    if ($row['admin']==1){
+        return true;
+    }
+    else { 
+        return false;
+    }
+}
+
 function timeline($dbh){
     $lettres = array();
     $chupas = array();

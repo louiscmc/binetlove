@@ -193,6 +193,11 @@ lettre;
                     <br>
                 <div class="container-fluid col-md-2 offset-md-1">
                     <a class="btn btn-light" href="index.php?page=envoye" role="button">Voir les lettres envoyées</a>
+                    <?php if (isAdmin($dbh, $_SESSION['login'])){
+                        echo<<<fulllettres
+                        <a class="btn btn-light" href="index.php?page=envoye_admin" role="button">Voir TOUTES LES LETTRES</a>
+fulllettres;
+                    } ?>
                 </div>
             </div>
             </form>  
