@@ -38,7 +38,6 @@ function generateHTMLHeader($title){
         <link rel="stylesheet" href="css/magnific-popup.css">
         <!-- CSS et scripts persos -->
         <link href="css/perso.css" rel="stylesheet">
-        <link href="css/perso.scss" rel="stylesheet">
         
 
     </head>
