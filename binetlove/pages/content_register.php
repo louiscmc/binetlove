@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 ?>
-
+<div class="crossfade">
 <div id="container" class="container-login">
     <form action="
         <?php 
@@ -130,4 +130,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
     <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>   
 </form>
+</div>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+</div>
 </div>
