@@ -121,8 +121,8 @@ new Chartist.Pie('#camembert', {
 }, {
     donut: true,
     donutWidth: 60,
-    donutSolid: true,
-    startAngle: 270,
+    donutSolid: false,
+    startAngle: 0,
     showLabel: false,
     plugins: [
         Chartist.plugins.legend()
