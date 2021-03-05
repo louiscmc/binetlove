@@ -54,7 +54,6 @@
                                 $numero=getIdLettre($dbh,$envoyeur, $destinataire, $datetime);
                                 if($numero%3==0 && $numero!=NULL){
                                     $felicitation=true;
-                                    //updateGagnant($dhb,$envoyeur);
                                 }
                                 $bienrecu = "Votre lettre a bien été reçue ! <br> N'hésitez pas à en écrire une autre &#128151;";
                                 $contenu = $destinataire = "";
@@ -90,14 +89,15 @@
                         var_dump($felicitation);
                         var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
-                            <a class="popup-with-zoom-anim" href="#small-dialog">Open with fade-zoom animation</a><br>
+                            <a class="popup-with-zoom-anim" href="#small-dialog">Vous avez gagné</a><br>
                             <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                             <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                                <h1>Dialog example</h1>
+                                <h1>Bravo !!</h1>
                                 <p>Vous avez envoyé la $numero ème lettre de la campagne, vous avez gagné une sucette !!</p>
                             </div>
                            
 felicitation;
+                        updateGagnant($dbh,$envoyeur);
                         }
                         if ($contenuErr!=""){echo"
                         <div class='alert alert-danger' role='alert'>
