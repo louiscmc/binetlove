@@ -32,6 +32,15 @@
                     $contenu=html_entity_decode($contenu);
                     //var_dump(htmlentities($contenu));
                     echo <<<carte
+                    <div class="card bg-dark text-white">
+                        <img class="card-img" src="$image" alt="Card image">
+                        <div class="card-img-overlay">
+                            <span class='float-right'>$dessin_selec</span>
+                            <form method='post'> 
+                                <input type='submit' name='selec$id' class='btn btn-$css_selec' value='$btn_selec' /> 
+                            </form> 
+                        </div>
+                    </div>
                         <div class='row'>
                             <div class='col-sm'>
                                 <div class='card' >
