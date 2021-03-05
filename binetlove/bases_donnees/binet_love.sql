@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 05 mars 2021 à 22:41
+-- Généré le : ven. 05 mars 2021 à 22:49
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -31,7 +31,7 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `login` varchar(32) NOT NULL,
   `image` varchar(64) NOT NULL,
-  `time` datetime NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `selec` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

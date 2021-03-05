@@ -2,7 +2,6 @@
 $upload=3;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $target_dir = "upload/";
-  $nom = basename($_FILES["fileToUpload"]["name"]);
   $target_file = $target_dir . $nom;
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
