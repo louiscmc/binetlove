@@ -94,7 +94,6 @@ function generateHTMLFooter(){
         </footer>
 
         <script src="js/ac_js.js"></script>
-        <script src="js/perso.js"></script>
         </body>
         </html>
 CHAINE_DE_FIN;}
