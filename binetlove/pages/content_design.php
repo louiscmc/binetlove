@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $target_file = $target_dir . $nom;
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+  $datetime = date_create()->format('Y-m-d H:i:s');
 
   // Check if image file is a actual image or fake image
   if(isset($_POST["submit"])) {
@@ -44,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $patate =htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
       $upload=1;
-      insererImage($dbh,$nom, $_SESSION['login'], $target_file); 
+      insererImage($dbh, $_SESSION['login'], $target_file, $datetime, 0); 
     }
     else{
       $upload=0;

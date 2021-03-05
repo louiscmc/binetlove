@@ -130,9 +130,9 @@ function dest_alea($dbh){
     return $result->fetch(PDO::FETCH_ASSOC)['login'];
 }
 
-function insererImage($dbh, $nom, $login, $image){
-    $sth = $dbh->prepare("INSERT INTO images (nom, login, image) VALUES (?, ?, ?)");
-    $sth -> execute(array($nom, $login, $image));
+function insererImage($dbh, $login, $image,$time){
+    $sth = $dbh->prepare("INSERT INTO images (login, image, time, selec) VALUES (?, ?, ?, ? , ?)");
+    $sth -> execute(array($login, $image, $time, 0));
 }
 
 function isAdmin($dbh, $login){
