@@ -198,7 +198,6 @@ lettre;
             </form>  
             <br>
             <script src="ckeditor/ckeditor.js"></script>
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="js/jquery.magnific-popup.js"></script>
             <script>
                 CKEDITOR.replace('contenu');
