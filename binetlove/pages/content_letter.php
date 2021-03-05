@@ -148,13 +148,12 @@ felicitation;
                                         $count_design=1;
                                         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                             $image=$row['image'];
-                                            $nom = $row['nom'];
                                             $id=$row['id'];
                                             echo <<<lettre
                                                 <div class=container> 
                                                     <img class="design" src="$image" >
-                                                    <input type="radio" id='$nom' name="design" value="$image">
-                                                    <label for="$nom">Design $count_design</label>
+                                                    <input type="radio" id='$id' name="design" value="$image">
+                                                    <label for="$id">Design $count_design</label>
                                                     <br>
                                                     <br>
                                                     <br>
