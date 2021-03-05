@@ -70,6 +70,12 @@ function modifierChupa($dbh, $id, $chupa){
     $sth->execute(array($id));
 }
 
+function modifierSelec($dbh, $id, $selec){
+    if ($selec==1) {$sth= $dbh->prepare("UPDATE images SET selec=0 WHERE id=?");}
+    else{$sth= $dbh->prepare("UPDATE images SET selec=1 WHERE id=?");}
+    $sth->execute(array($id));
+}
+
 function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
     $result = $dbh->prepare("SELECT login FROM polytechniciens WHERE nom = ? AND prenom = ? AND section = ? AND promotion = ?");
     $result -> execute(array($nom, $prenom,$section,$promotion));
