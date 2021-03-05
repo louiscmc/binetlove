@@ -143,7 +143,12 @@ $page_list = array(
     "title"=>"Lettres ADMIN",
     "menutitle"=>"Lettres ADMIN",
     "admin"=>1),
-     );
+    array(
+        "name"=>"design_admin",
+        "title"=>"Design ADMIN",
+        "menutitle"=>"Design ADMIN",
+        "admin"=>1)
+    );
 
 function checkPage($askedPage){
     global $page_list;

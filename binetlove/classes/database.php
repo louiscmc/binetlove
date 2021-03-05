@@ -23,7 +23,7 @@ $dbh= Database::connect();
 
 function insererUtilisateur($dbh,$login,$password, $nom, $prenom, $section, $promotion, $casert){
     $sth = $dbh->prepare("INSERT INTO polytechniciens (login, admin, password , nom, prenom, section , promotion, casert, gagnant) VALUES (?, ?, ?, ?, ?,?,?,?,?)");
-    $sth -> exectute(array($login, 0, hash('sha1', $password),$nom,$prenom, $section, $promotion, $casert,0));
+    $sth -> execute(array($login, 0, hash('sha1', $password),$nom,$prenom, $section, $promotion, $casert,0));
 }
 
 function checkLogin($dbh,$login){

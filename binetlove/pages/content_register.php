@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($Err == ""){
             if ($checkLogin==true){
-                inserertUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
+                insererUtilisateur($dbh,$_POST['login'],$_POST['password'], $nom, $prenom, $section, $promotion, $casert);
                 $bienrecu = "Tu es bien inscrit sur le site !  <br> N'hésite pas à aller écrire une lettre &#128151;";
                 $prenom = $nom = $promotion = $casert = $section = $password = $login = "";
                 $Err = "";
