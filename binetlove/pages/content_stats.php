@@ -42,7 +42,6 @@
 <!-- scripts pour graphes -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
-<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script src="js/chartist-plugin-zoom.js"></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/chartist-plugin-legend/0.6.2/chartist-plugin-legend.min.js></script>
 
@@ -115,19 +114,22 @@
     !parent.querySelector('#reset-zoom-btn') && parent.appendChild(btn);
 
 // pour le camembert
-data_camembert = {
-    labels: ['Natation', 'Escalade', 'Roulade', 'Aviron', 'Bad', 'Basket', 'Boxe', 'Crossfit', 'Equitation', 'Escrime', 'Foot', 'Hand', 'Judo', 'Raid', 'Rugby', 'Tennis', 'Ultimate', 'Volley'],
-    series: [JSONObject.section.Natation, JSONObject.section.Escalade, JSONObject.section.Roulade, JSONObject.section.Aviron, JSONObject.section.Bad, JSONObject.section.Basket, JSONObject.section.Boxe, JSONObject.section.Crossfit, JSONObject.section.Equitation, JSONObject.section.Escrime, JSONObject.section.Foot, JSONObject.section.Hand, JSONObject.section.Judo, JSONObject.section.Raid, JSONObject.section.Rugby, JSONObject.section.Tennis, JSONObject.section.Ultimate, JSONObject.section.Volley]
-};
-new Chartist.Pie('#camembert', data_camembert, {
-    labelInterpolationFnc: function(value) {
-            return value[0];
+
+var labels_cam = ['Natation', 'Escalade', 'Roulade', 'Aviron', 'Bad', 'Basket', 'Boxe', 'Crossfit', 'Equitation', 'Escrime', 'Foot', 'Hand', 'Judo', 'Raid', 'Rugby', 'Tennis', 'Ultimate', 'Volley'];
+var series_cam = [JSONObject.section.Natation, JSONObject.section.Escalade, JSONObject.section.Roulade, JSONObject.section.Aviron, JSONObject.section.Bad, JSONObject.section.Basket, JSONObject.section.Boxe, JSONObject.section.Crossfit, JSONObject.section.Equitation, JSONObject.section.Escrime, JSONObject.section.Foot, JSONObject.section.Hand, JSONObject.section.Judo, JSONObject.section.Raid, JSONObject.section.Rugby, JSONObject.section.Tennis, JSONObject.section.Ultimate, JSONObject.section.Volley];
+var data_cam = { labels: labels_cam, series: series_cam };
+new Chartist.Pie('#camembert', data_cam, {
+    labelInterpolationFnc: function(value, idx) {
+            if (series_cam[idx]==0){
+                return "";
+            }
+            else {return value + " - " + series_cam[idx];}
     },
     donut: true,
-    donutWidth: 60,
+    donutWidth: 80,
     donutSolid: false,
     startAngle: 0,
-    showLabel: false,
+    showLabel: true,
     plugins: [
         Chartist.plugins.legend()
     ]

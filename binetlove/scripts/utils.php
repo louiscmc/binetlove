@@ -38,6 +38,7 @@ function generateHTMLHeader($title){
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
         <!-- popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
+        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
         <!-- CSS et scripts persos -->
         <link href="css/perso.css" rel="stylesheet">
         
@@ -46,7 +47,7 @@ function generateHTMLHeader($title){
     <body>
         <header>
             <nav class="navbar navbar-expand-md navbar-dark  bg-pink">
-                <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="https://media.discordapp.net/attachments/671453585422155788/781895454858149888/Logo_Love.png?width=679&amp;height=679"> Binet Love</a>
+                <a class="navbar-brand" href="index.php?page=welcome"> <img id="brand-image" alt="Logo" src="images\Logo_Love.png"> Binet Love</a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
