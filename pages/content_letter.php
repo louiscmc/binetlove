@@ -25,7 +25,8 @@
                                 $destinataire = test_input($_POST["champ_cache"]);
                         }
                     }
-                    if (! empty($_POST["destinataire"])) {
+                    # On vérifie que le destinataire existe (au cas où l'utilisateur enlève le champ caché) :
+                    if (! empty($_POST["destinataire"]) && checkDesti($dbh,$destinataire)==true) {
                         $desti = test_input($_POST["destinataire"]);
                     }
                     
