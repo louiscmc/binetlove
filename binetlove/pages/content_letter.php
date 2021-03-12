@@ -86,8 +86,6 @@
                             $bienrecu
                         </div>
                         ";}
-                        var_dump($felicitation);
-                        var_dump($numero);
                         if ($felicitation==true){echo<<<felicitation
                             <a class="popup-with-zoom-anim" href="#small-dialog">Vous avez gagné</a><br>
                             <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
