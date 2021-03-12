@@ -1,9 +1,9 @@
-$colors: darkslateblue rgb(196, 21, 240) seagreen rgb(19, 95, 42) #ed1440 #9a0db0 #fea20e;
-content: counter(chapter, lower-alpha);
-
+$colors: darkslateblue rgb(247, 9, 195) seagreen rgb(19, 95, 42) #ed1440 #9a0db0 #fea20e #ff7300 #855d3d #a29b96 #eb3737 #f7ea5a #e2450c #46baf0 #ec0f0f #f5d84a #1fef61 #c40be0;
+$alphabet: a b c d e f g h i j k l m n o p q r s t u v w x y z;
 @for $i from 0 to length($colors) {
-    .ct-series-#{$i} .ct-bar, .ct-series-#{$i} .ct-line, .ct-series-#{$i} .ct-point, .ct-series-#{$i} .ct-slice-donut {
-        stroke: nth($colors, $i + 1) !important;
+    $lettre: nth($alphabet, $i + 1);
+    .ct-series-#{$lettre} .ct-bar, .ct-series-#{$lettre} .ct-line, .ct-series-#{$lettre} .ct-point, .ct-series-#{$lettre} .ct-slice-donut {
+        stroke: nth($colors, $i + 1);
     }
 }
 

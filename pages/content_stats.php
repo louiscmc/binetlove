@@ -24,13 +24,6 @@
 <br>
 <div class="row">
         <div class="col md-4"></div>
-        <div class="col md-4 text-center">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p> Camemberts ! </p>
-                </div>
-            </div>
-        </div>
         <div class="col md-4"></div>
     </div>
 <div class='container chart'>
@@ -129,9 +122,6 @@ new Chartist.Pie('#camembert', data_cam, {
     donutWidth: 80,
     donutSolid: false,
     startAngle: 0,
-    showLabel: true,
-    plugins: [
-        Chartist.plugins.legend()
-    ]
+    showLabel: true
 });
 </script>
