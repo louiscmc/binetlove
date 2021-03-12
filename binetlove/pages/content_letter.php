@@ -138,7 +138,7 @@ felicitation;
                         <div class="container vertical-scrollable">  
                             <div class="row text-center"> 
                             <?php
-                                    $result = $dbh->prepare("SELECT image, nom, id "
+                                    $result = $dbh->prepare("SELECT image, id "
                                         . "FROM images "
                                         . "WHERE selec=1 ");
                                     $result->execute();
