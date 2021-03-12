@@ -516,98 +516,75 @@ input[type=text], input[type=password] {
   line-height: 1;
 }
 
-.ct-series-0 .ct-bar, .ct-series-0 .ct-line, .ct-series-0 .ct-point, .ct-series-0 .ct-slice-donut {
-	stroke: darkslateblue !important;
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+	stroke: darkslateblue;
 }
 
-.ct-series-1 .ct-bar, .ct-series-1 .ct-line, .ct-series-1 .ct-point, .ct-series-1 .ct-slice-donut {
-	stroke: #c415f0 !important;
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+	stroke: #f709c3;
 }
 
-.ct-series-2 .ct-bar, .ct-series-2 .ct-line, .ct-series-2 .ct-point, .ct-series-2 .ct-slice-donut {
-	stroke: seagreen !important;
+.ct-series-c .ct-bar, .ct-series-c .ct-line, .ct-series-c .ct-point, .ct-series-c .ct-slice-donut {
+	stroke: seagreen;
 }
 
-.ct-series-3 .ct-bar, .ct-series-3 .ct-line, .ct-series-3 .ct-point, .ct-series-3 .ct-slice-donut {
-	stroke: #135f2a !important;
+.ct-series-d .ct-bar, .ct-series-d .ct-line, .ct-series-d .ct-point, .ct-series-d .ct-slice-donut {
+	stroke: #135f2a;
 }
 
-.ct-series-4 .ct-bar, .ct-series-4 .ct-line, .ct-series-4 .ct-point, .ct-series-4 .ct-slice-donut {
-	stroke: #ed1440 !important;
+.ct-series-e .ct-bar, .ct-series-e .ct-line, .ct-series-e .ct-point, .ct-series-e .ct-slice-donut {
+	stroke: #ed1440;
 }
 
-.ct-series-5 .ct-bar, .ct-series-5 .ct-line, .ct-series-5 .ct-point, .ct-series-5 .ct-slice-donut {
-	stroke: #9a0db0 !important;
+.ct-series-f .ct-bar, .ct-series-f .ct-line, .ct-series-f .ct-point, .ct-series-f .ct-slice-donut {
+	stroke: #9a0db0;
 }
 
-.ct-series-6 .ct-bar, .ct-series-6 .ct-line, .ct-series-6 .ct-point, .ct-series-6 .ct-slice-donut {
-	stroke: #fea20e !important;
+.ct-series-g .ct-bar, .ct-series-g .ct-line, .ct-series-g .ct-point, .ct-series-g .ct-slice-donut {
+	stroke: #fea20e;
 }
 
-.ct-legend {
-	position: relative;
-	z-index: 10;
+.ct-series-h .ct-bar, .ct-series-h .ct-line, .ct-series-h .ct-point, .ct-series-h .ct-slice-donut {
+	stroke: #ff7300;
 }
 
-.ct-legend li {
-	position: relative;
-	padding-left: 23px;
-	margin-bottom: 3px;
+.ct-series-i .ct-bar, .ct-series-i .ct-line, .ct-series-i .ct-point, .ct-series-i .ct-slice-donut {
+	stroke: #855d3d;
 }
 
-.ct-legend li:before {
-	width: 12px;
-	height: 12px;
-	position: absolute;
-	left: 0;
-	content: '';
-	border: 3px solid transparent;
-	border-radius: 2px;
+.ct-series-j .ct-bar, .ct-series-j .ct-line, .ct-series-j .ct-point, .ct-series-j .ct-slice-donut {
+	stroke: #a29b96;
 }
 
-.ct-legend li.inactive:before {
-	background: transparent;
+.ct-series-k .ct-bar, .ct-series-k .ct-line, .ct-series-k .ct-point, .ct-series-k .ct-slice-donut {
+	stroke: #eb3737;
 }
 
-.ct-legend.ct-legend-inside {
-	position: absolute;
-	top: 0;
-	right: 0;
+.ct-series-l .ct-bar, .ct-series-l .ct-line, .ct-series-l .ct-point, .ct-series-l .ct-slice-donut {
+	stroke: #f7ea5a;
 }
 
-.ct-legend .ct-series-0:before {
-	background-color: darkslateblue;
-	border-color: darkslateblue;
+.ct-series-m .ct-bar, .ct-series-m .ct-line, .ct-series-m .ct-point, .ct-series-m .ct-slice-donut {
+	stroke: #e2450c;
 }
 
-.ct-legend .ct-series-1:before {
-	background-color: #c415f0;
-	border-color: #c415f0;
+.ct-series-n .ct-bar, .ct-series-n .ct-line, .ct-series-n .ct-point, .ct-series-n .ct-slice-donut {
+	stroke: #46baf0;
 }
 
-.ct-legend .ct-series-2:before {
-	background-color: seagreen;
-	border-color: seagreen;
+.ct-series-o .ct-bar, .ct-series-o .ct-line, .ct-series-o .ct-point, .ct-series-o .ct-slice-donut {
+	stroke: #ec0f0f;
 }
 
-.ct-legend .ct-series-3:before {
-	background-color: #135f2a;
-	border-color: #135f2a;
+.ct-series-p .ct-bar, .ct-series-p .ct-line, .ct-series-p .ct-point, .ct-series-p .ct-slice-donut {
+	stroke: #f5d84a;
 }
 
-.ct-legend .ct-series-4:before {
-	background-color: #ed1440;
-	border-color: #ed1440;
+.ct-series-q .ct-bar, .ct-series-q .ct-line, .ct-series-q .ct-point, .ct-series-q .ct-slice-donut {
+	stroke: #1fef61;
 }
 
-.ct-legend .ct-series-5:before {
-	background-color: #9a0db0;
-	border-color: #9a0db0;
+.ct-series-r .ct-bar, .ct-series-r .ct-line, .ct-series-r .ct-point, .ct-series-r .ct-slice-donut {
+	stroke: #c40be0;
 }
-
-.ct-legend .ct-series-6:before {
-	background-color: #fea20e;
-	border-color: #fea20e;
-}
-
 
