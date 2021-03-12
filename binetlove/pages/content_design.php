@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   $datetime = date_create()->format('Y-m-d H:i:s');
 
-  // Check if image file is a actual image or fake image
+  // On regarde si le fichier envoyé est une image (on bloque les "fausses images")
   if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -19,28 +19,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  // Check if file already exists
+  // On regarde si le fichier est déjà existant
   if (file_exists($target_file)) {
     echo "Ce fichier existe déjà ! (change le nom)";
     $uploadOk = 0;
   }
 
-  // Check file size
+  // Taille de l'image 
   if ($_FILES["fileToUpload"]["size"] > 3000000) {
     echo "Taille max 3Mo.";
     $uploadOk = 0;
   }
 
-  // Allow certain file formats
+  // On autorise uniquement certains formats (sécurité)
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
     echo "Formats autorisés : jpg, jpeg ou png.";
     $uploadOk = 0;
   }
 
-  // Check if $uploadOk is set to 0 by an error
+  //On regarde si on a une erreur d'upload avec $uploadOk
   if ($uploadOk == 0) {
     echo "Votre design n'a pas pu être uploadé... :(";
-  // if everything is ok, try to upload file
+  // Si tout est ok, on essaie de mettre le fichier dans la base de données :
   } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $patate =htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
