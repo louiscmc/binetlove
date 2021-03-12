@@ -27,7 +27,7 @@
         top: 0;
         right: 0;
     }
-    $colors: darkslateblue mediumorchid seagreen steelblue;
+    $colors: darkslateblue mediumorchid seagreen steelblue ;
     @for $i from 0 to length($colors) {
         .ct-series-#{$i}:before {
             background-color: nth($colors, $i + 1);
