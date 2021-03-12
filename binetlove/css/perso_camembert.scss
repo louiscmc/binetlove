@@ -1,4 +1,5 @@
 $colors: darkslateblue rgb(196, 21, 240) seagreen rgb(19, 95, 42) #ed1440 #9a0db0 #fea20e;
+content: counter(chapter, lower-alpha);
 
 @for $i from 0 to length($colors) {
     .ct-series-#{$i} .ct-bar, .ct-series-#{$i} .ct-line, .ct-series-#{$i} .ct-point, .ct-series-#{$i} .ct-slice-donut {
