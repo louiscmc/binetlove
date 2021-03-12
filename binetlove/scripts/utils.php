@@ -30,6 +30,8 @@ function generateHTMLHeader($title){
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <!-- Captcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <!-- jQuery UI library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- Graphes pour stats -->

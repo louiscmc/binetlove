@@ -37,13 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $casert = test_input($_POST["casert"]);
     }
-    if (empty($_POST["section"])) {
+    if (empty($_POST["promotion"]) || $_POST["section"]=="0") {
         $Err = "Il manque des champs à remplir !"; 
     } 
     else {
         $section = $_POST["section"];
     }
-    if (empty($_POST["promotion"])) {
+    if (empty($_POST["promotion"])||$_POST["promotion"]=="0") {
         $Err = "Il manque des champs à remplir !"; 
     } 
     else {
@@ -65,12 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <div class="crossfade">
     <div id="container" class="container-login">
-        <form action="
+        <form id="regi-form" action="
             <?php 
                 $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
                 echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
             ?>
         " method="post"> 
+        <div class="g-recaptcha" data-sitekey="6LfUmnwaAAAAAEkTndR4SfaVRa0HB4QRa4gBTxXU"></div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col"></div>
@@ -103,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input  type="text" class="form-control" name="login" value="" placeholder="Login"/>
         <input  type="password" class="form-control" name="password" value="" placeholder="Mot de Passe"/>
         <select class="form-select" name='section' id="section" aria-label="Default select example">
-            <option selected="selected">Section</option>
+            <option selected="selected" value="0">Section</option>
             <option value="Aviron">Aviron</option>
             <option value="Bad">Bad</option>
             <option value="Basket">Basket</option>
@@ -124,14 +125,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="Volley">Volley</option>
         </select>  
         <select class="form-select" name="promotion" id="promotion" aria-label="Default select example">
-            <option selected="selected">Promotion</option>
+            <option selected="selected" value="0">Promotion</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
             <option value="2020">2020</option>
         </select>
         <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
-        <button  class="btn-rose btn-login heartbeat" type="submit">S'inscire</button>   
+        <button  class="btn-rose btn-login heartbeat" type="submit" value="Submit">S'inscire</button>
         </form>
+                <!-- Script pour le captcha google -->
+                <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfUmnwaAAAAAEkTndR4SfaVRa0HB4QRa4gBTxXU'
+        });
+      };
+    </script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     </div>
     </div>
 </div>

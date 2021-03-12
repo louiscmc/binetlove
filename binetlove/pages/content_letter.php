@@ -152,9 +152,6 @@ felicitation;
                                                     <img class="design" src="$image" >
                                                     <input type="radio" id='$id' name="design" value="$image">
                                                     <label for="$id">Design $count_design</label>
-                                                    <br>
-                                                    <br>
-                                                    <br>
                                                 </div>
 lettre;
                                             $count_design++;
