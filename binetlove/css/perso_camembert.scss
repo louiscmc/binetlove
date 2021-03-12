@@ -27,11 +27,14 @@
         top: 0;
         right: 0;
     }
-    $colors: darkslateblue mediumorchid seagreen steelblue ;
+    $colors: darkslateblue rgb(196, 21, 240) seagreen rgb(19, 95, 42) #ed1440 #9a0db0 #fea20e;
     @for $i from 0 to length($colors) {
         .ct-series-#{$i}:before {
             background-color: nth($colors, $i + 1);
             border-color: nth($colors, $i + 1);
+        }
+        .ct-series-#{$i} .ct-bar, .ct-series-j .ct-line, .ct-series-#{$i} .ct-slice-donut, .ct-series-#{$i} .ct-slice-donut {
+            stroke: nth($colors, $i + 1);
         }
     }
 }

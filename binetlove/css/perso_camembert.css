@@ -1,0 +1,58 @@
+.ct-legend {
+  position: relative;
+  z-index: 10; }
+  .ct-legend li {
+    position: relative;
+    padding-left: 23px;
+    margin-bottom: 3px; }
+  .ct-legend li:before {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 0;
+    content: '';
+    border: 3px solid transparent;
+    border-radius: 2px; }
+  .ct-legend li.inactive:before {
+    background: transparent; }
+  .ct-legend.ct-legend-inside {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .ct-legend .ct-series-0:before {
+    background-color: darkslateblue;
+    border-color: darkslateblue; }
+  .ct-legend .ct-series-0 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-0 .ct-slice-donut, .ct-legend .ct-series-0 .ct-slice-donut {
+    stroke: darkslateblue; }
+  .ct-legend .ct-series-1:before {
+    background-color: #c415f0;
+    border-color: #c415f0; }
+  .ct-legend .ct-series-1 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-1 .ct-slice-donut, .ct-legend .ct-series-1 .ct-slice-donut {
+    stroke: #c415f0; }
+  .ct-legend .ct-series-2:before {
+    background-color: seagreen;
+    border-color: seagreen; }
+  .ct-legend .ct-series-2 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-2 .ct-slice-donut, .ct-legend .ct-series-2 .ct-slice-donut {
+    stroke: seagreen; }
+  .ct-legend .ct-series-3:before {
+    background-color: #135f2a;
+    border-color: #135f2a; }
+  .ct-legend .ct-series-3 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-3 .ct-slice-donut, .ct-legend .ct-series-3 .ct-slice-donut {
+    stroke: #135f2a; }
+  .ct-legend .ct-series-4:before {
+    background-color: #ed1440;
+    border-color: #ed1440; }
+  .ct-legend .ct-series-4 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-4 .ct-slice-donut, .ct-legend .ct-series-4 .ct-slice-donut {
+    stroke: #ed1440; }
+  .ct-legend .ct-series-5:before {
+    background-color: #9a0db0;
+    border-color: #9a0db0; }
+  .ct-legend .ct-series-5 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-5 .ct-slice-donut, .ct-legend .ct-series-5 .ct-slice-donut {
+    stroke: #9a0db0; }
+  .ct-legend .ct-series-6:before {
+    background-color: #fea20e;
+    border-color: #fea20e; }
+  .ct-legend .ct-series-6 .ct-bar, .ct-legend .ct-series-j .ct-line, .ct-legend .ct-series-6 .ct-slice-donut, .ct-legend .ct-series-6 .ct-slice-donut {
+    stroke: #fea20e; }
+
+/*# sourceMappingURL=perso_camembert.css.map */
