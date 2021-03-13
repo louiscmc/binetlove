@@ -1,7 +1,9 @@
 <?php
+// reCaptcha :
+require_once 'scripts/autoload.php';
 $nom = $prenom = $promotion = $casert = $section = $password = $login = $bienrecu ="";
 $Err= $loginErr="";
-$checkLogin=false;
+$checkLogin=$captcha=false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -49,6 +51,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $promotion = $_POST["promotion"];
     }
+    // vérification du captcha :
+    $secret = '6LfkL30aAAAAAOE388ZS3yc2dnmvzUY06GQ8PjcT';
+    $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+    if(isset($_POST['g-recaptcha-response'])){
+        $resp = $recaptcha->setExpectedHostname('binetlove.localhost')
+                        ->verify($_POST['g-recaptcha-response']);
+        if ($resp->isSuccess()) {
+            $captcha=true;
+        } else {
+            $errors = $resp->getErrorCodes();
+        }
+    }
+    else {
+        $Err = "N'oublie pas le captcha !";
+    }
 
     if ($Err == ""){
             if ($checkLogin==true){
@@ -62,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 }
+
 ?>
 <div class="crossfade">
     <div id="container" class="container-login">
@@ -71,7 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo htmlspecialchars($url, ENT_QUOTES, 'utf-8');
             ?>
         " method="post"> 
-        <div class="g-recaptcha" data-sitekey="6LfUmnwaAAAAAEkTndR4SfaVRa0HB4QRa4gBTxXU"></div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col"></div>
@@ -85,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if ($bienrecu!=''){echo"
                             <div class='alert alert-success' role='alert'>
                                 $bienrecu
-                                <script> location = index.php?page=welcome; </script>;
+                                <script> location = index.php?page=welcome; </script>
                             </div>
                             ";}
                             if ($loginErr!=""){echo"
@@ -131,19 +148,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="2020">2020</option>
         </select>
         <input type="text" class="form-control" name="casert" value="" placeholder="Casert"/>
+        <div class="g-recaptcha" data-sitekey="6LfkL30aAAAAAGGgfhO7n-jUOV0Jyl4FkSAZVGg6"></div>
         <button  class="btn-rose btn-login heartbeat" type="submit" value="Submit">S'inscire</button>
         </form>
-                <!-- Script pour le captcha google -->
-                <script type="text/javascript">
-      var onloadCallback = function() {
-        grecaptcha.render('html_element', {
-          'sitekey' : '6LfUmnwaAAAAAEkTndR4SfaVRa0HB4QRa4gBTxXU'
-        });
-      };
-    </script>
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-    </script>
     </div>
     </div>
 </div>
