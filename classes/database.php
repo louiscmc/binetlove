@@ -214,6 +214,7 @@ function timeline($dbh){
     $nb_ten=0;
     $nb_ulti=0;
     $nb_vol=0;
+    $nb_anon=0;
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $nb_lettre++;
         $has_chupa=$row['chupachups'];
@@ -257,13 +258,14 @@ function timeline($dbh){
                 break;
             case 'Volley' : $nb_vol++;
                 break;
+            case '' : $nb_anon++;
     }
     if ($has_chupa==1){
             $nb_chupa++;
             array_push($chupas, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_chupa));
     }
     array_push($lettres, array('x' => $date_loc->getTimestamp()*1000, 'y' => $nb_lettre));
-    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul, 'Aviron' => $nb_avir, 'Bad' => $nb_bad, 'Basket' => $nb_bask, 'Boxe' => $nb_box, 'Crossfit' => $nb_cross, 'Equitation' => $nb_pon, 'Escrime' => $nb_esc, 'Foot' => $nb_foot, 'Hand' => $nb_hand, 'Judo' => $nb_judo, 'Raid' => $nb_raid, 'Rugby' => $nb_rugby, 'Tennis' => $nb_ten, 'Ultimate' => $nb_ulti, 'Volley' => $nb_vol);
+    $section = array('Natation' => $nb_nat, 'Escalade' => $nb_esc, 'Roulade' => $nb_roul, 'Aviron' => $nb_avir, 'Bad' => $nb_bad, 'Basket' => $nb_bask, 'Boxe' => $nb_box, 'Crossfit' => $nb_cross, 'Equitation' => $nb_pon, 'Escrime' => $nb_esc, 'Foot' => $nb_foot, 'Hand' => $nb_hand, 'Judo' => $nb_judo, 'Raid' => $nb_raid, 'Rugby' => $nb_rugby, 'Tennis' => $nb_ten, 'Ultimate' => $nb_ulti, 'Volley' => $nb_vol, 'Anonyme' => $nb_anon);
     $data = array('lettres' => $lettres, 'chupas' => $chupas, 'section' => $section);
     }
     echo json_encode($data);
