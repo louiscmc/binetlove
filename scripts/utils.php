@@ -95,7 +95,6 @@ function generateHTMLFooter(){
                 <p>© 2021 Louis Cattin--Mota de Campos, Mathilde André X2019
         </footer>
 
-        <script src="js/ac_js.js"></script>
         </body>
         </html>
 CHAINE_DE_FIN;}

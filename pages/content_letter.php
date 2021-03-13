@@ -199,6 +199,7 @@ fulllettres;
             <br>
             <script src="ckeditor/ckeditor.js"></script>
             <script src="js/jquery.magnific-popup.js"></script>
+            <script src='js/ac_js.js'></script>
             <script>
                 CKEDITOR.replace('contenu');
                 // Popup 1000eme lettre :

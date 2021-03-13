@@ -53,6 +53,14 @@ function checkDesti($dbh,$destinataire){
     }
 }
 
+//Autocomplete de letter : sert à récupérer le login à partir du nom complet
+function getDestinataire($dbh, $nom,$prenom,$section,$promotion){
+    $result = $dbh->prepare("SELECT login FROM polytechniciens WHERE nom = ? AND prenom = ? AND section = ? AND promotion = ?");
+    $result -> execute(array($nom, $prenom,$section,$promotion));
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    return $row['login'];
+}
+
 // Letter : insère une nouvelle lettre dans la base de données lettre :
 function insererLettre($dbh, $login,$destinataire,$contenu, $design, $chupachups ,$date){
     $sth = $dbh->prepare("INSERT INTO lettre (login, destinataire, contenu, design, chupachups, time, supprime) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -78,6 +86,8 @@ function modifierLettre($dbh, $id, $contenumod){
     $sth = $dbh->prepare("UPDATE lettre SET contenu=? WHERE id=?");
     $sth -> execute(array($contenumod,$id));
 }
+
+
 
 // Envoye : Supprime la lettre n°id :
 function supprimerLettre($dbh, $id){
