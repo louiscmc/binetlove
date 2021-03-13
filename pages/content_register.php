@@ -1,14 +1,9 @@
-<div id="jumbo1" class="jumbotron jumbotron-fluid bg-faded">
-              <div class="container">
-                  <h1 class="display-4 text-focus-in">Bienvenue au <span class='red'>Binet Love</span> !</h1>
-              </div>
-</div>
 <?php
 // reCaptcha :
 require_once 'scripts/autoload.php';
 $nom = $prenom = $promotion = $casert = $section = $password = $login = $bienrecu ="";
 $Err= $loginErr="";
-$checkLogin=false;
+$checkLogin=$captcha=false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -63,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resp = $recaptcha->setExpectedHostname('binetlove.localhost')
                         ->verify($_POST['g-recaptcha-response']);
         if ($resp->isSuccess()) {
-            // le captcha est validé !
+            $captcha=true;
         } else {
             $errors = $resp->getErrorCodes();
         }
@@ -86,7 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-<div id="container" class="container-login">
+<div class="crossfade">
+    <div id="container" class="container-login">
         <form id="regi-form" action="
             <?php 
                 $url = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
@@ -119,6 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="col"></div>  
                 </div>
             </div> 
+            <h4>Bienvenue au Binet Love &#128149;</h4>
         <input type="text" class="form-control" name="prenom" value="" placeholder="Prénom" />
         <input type="text" class="form-control" name="nom" value="" placeholder="Nom" />
         <input  type="text" class="form-control" name="login" value="" placeholder="Login"/>
@@ -154,5 +151,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="g-recaptcha" data-sitekey="6LfkL30aAAAAAGGgfhO7n-jUOV0Jyl4FkSAZVGg6"></div>
         <button  class="btn-rose btn-login heartbeat" type="submit" value="Submit">S'inscire</button>
         </form>
+    </div>
     </div>
 </div>

@@ -190,6 +190,7 @@ and open the template in the editor.
 .container-login {
     width:400px;
     margin:0 auto;
+    margin-top:10%;
 }
 /* Bordered form */
 .form-login {
@@ -229,7 +230,18 @@ input[type=text], input[type=password] {
     margin-right: 2%;
 }
 
+@keyframes color-change-2x {
+  0% {
+    background: #f1a0dc ;
+  }
+  100% {
+    background:  #ef59d3;
+  }
+}
 
+.color-change-2x {
+	animation: color-change-2x 2s linear infinite alternate;
+}
 
 .small {
   font-size: 12px !important;
