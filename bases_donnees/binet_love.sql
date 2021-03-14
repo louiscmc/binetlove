@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 05 mars 2021 à 22:58
+-- Généré le :  Dim 14 mars 2021 à 19:25
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.11
 
@@ -41,8 +41,7 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `login`, `image`, `time`, `selec`) VALUES
-(8, 'louiscmc', 'upload/logobp19FINAL.png', '2021-03-05 22:56:29', 0),
-(9, 'louiscmc', 'upload/design1.png', '2021-03-05 22:58:17', 0),
+(9, 'louiscmc', 'upload/design1.png', '2021-03-05 23:10:57', 1),
 (10, 'louiscmc', 'upload/design2.png', '2021-03-05 22:58:22', 0),
 (11, 'louiscmc', 'upload/design3.png', '2021-03-05 22:58:28', 0),
 (12, 'louiscmc', 'upload/design4.png', '2021-03-05 22:58:36', 0);
@@ -63,20 +62,6 @@ CREATE TABLE `lettre` (
   `time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `supprime` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `lettre`
---
-
-INSERT INTO `lettre` (`id`, `login`, `destinataire`, `contenu`, `design`, `chupachups`, `time`, `supprime`) VALUES
-(89, 'louiscmc', 'louis_vaneau', '&lt;p&gt;dfsdfsd&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 15:40:25', 1),
-(90, 'louiscmc', 'louiscmc', '&lt;p&gt;dfsdfsd&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 15:40:30', 1),
-(91, 'louiscmc', 'mathildea', '&lt;p&gt;dfsdfsd&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 15:40:28', 1),
-(92, 'louiscmc', 'louiscmc', '&lt;p&gt;dfsdfsd&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 14:09:02', 0),
-(93, 'louiscmc', 'mathildea', '&lt;p&gt;dfsdfsd&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 15:40:26', 1),
-(94, 'mathildea', 'louis_vaneau', '&lt;p&gt;ghgfhgfh&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 15:40:26', 1),
-(95, 'mathildea', 'louiscmc', '&lt;p&gt;tu es le plus beau&lt;/p&gt;', 'upload/design1.png', 1, '2021-03-05 15:40:56', 0),
-(96, 'louis', 'louiscmc', '&lt;p&gt;fsdfsdfsdfsdf&lt;/p&gt;', 'upload/design1.png', 0, '2021-03-05 16:18:21', 0);
 
 -- --------------------------------------------------------
 
@@ -104,9 +89,7 @@ CREATE TABLE `polytechniciens` (
 INSERT INTO `polytechniciens` (`id`, `login`, `admin`, `password`, `nom`, `prenom`, `section`, `promotion`, `casert`, `gagnant`) VALUES
 (1, 'louiscmc', 1, 'd82ece8d514aca7e24d3fc11fbb8dada57f2966c', 'Cattin--Mota de Campos', 'Louis', 'Natation', 2019, 702013, 1),
 (2, 'mathildea', 1, 'e05bfbc4670d242fdf5e9512e408adb7df517863', 'André', 'Mathilde', 'Escalade', 2019, 123003, 0),
-(3, 'louis_vaneau', 0, 'pass_vaneau', 'Vaneau', 'Louis', 'Roulade', 1828, 11001, 0),
-(4, 'louis', 0, 'd82ece8d514aca7e24d3fc11fbb8dada57f2966c', 'qsdas dqsf erztergsfg', 'hgdavdqsdsqd', 'Roulade', 2019, 1, 1),
-(5, 'louis2', 0, 'd82ece8d514aca7e24d3fc11fbb8dada57f2966c', 'fgdfgfdg', 'louis', 'Raid', 2019, 212121, 0);
+(6, 'mathv', 0, '543f1918df382a23d6680f90d9ab51137a0fb752', 'Vergnolle', 'Mathéo', 'Raid', 2020, 121022, 1);
 
 --
 -- Index pour les tables déchargées
@@ -138,19 +121,19 @@ ALTER TABLE `polytechniciens`
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `lettre`
 --
 ALTER TABLE `lettre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT pour la table `polytechniciens`
 --
 ALTER TABLE `polytechniciens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
